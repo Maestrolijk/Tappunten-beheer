@@ -1,0 +1,28 @@
+<ion-content>
+  <ion-grid>
+    <ion-row style="background-color: #266286">
+      <ion-col style="color: white">Afdeling</ion-col>
+      <ion-col style="color: white">Ruimte</ion-col>
+      <ion-col style="color: white">Omschrijving</ion-col>
+      <ion-col style="color: white">Functie</ion-col>
+      <ion-col style="color: white">Gespoeld</ion-col>
+    </ion-row>
+    <ion-row *ngFor="let tappunt of tappunten">
+      <ion-col>
+        {{tappunt.afdeling}}
+      </ion-col>
+      <ion-col>
+        {{tappunt.ruimte}}
+      </ion-col>
+      <ion-col>
+        {{tappunt.omschrijving}}
+      </ion-col>
+      <ion-col>
+        {{tappunt.functie}}
+      </ion-col>
+      <ion-col>
+        {{tappunt.gespoeld}}
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

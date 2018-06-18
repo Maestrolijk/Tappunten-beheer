@@ -22,7 +22,11 @@ export class EdituserPage {
   telefoon: number;
   beheerder: boolean;
 
+  userDataADNaam: any;
   userDataNaam: any;
+  userDataAfdeling: any;
+  userDataTelefoon: any;
+  userDataBeheerder: any;
 
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
@@ -30,8 +34,16 @@ export class EdituserPage {
     private toastCtrl: ToastController,
     params: NavParams) {
 
+    this.userDataADNaam = params.get('myUserDataADNaam')
     this.userDataNaam = params.get('myUserDataNaam');
-    this.adnaam = this.userDataNaam;
+    this.userDataAfdeling = params.get('myUserDataAfdeling');
+    this.userDataTelefoon = params.get('myUserDataTelefoon');
+    this.userDataBeheerder = params.get('myUserDataBeheerder');
+    this.adnaam = this.userDataADNaam;
+    this.naam = this.userDataNaam;
+    this.afdeling = this.userDataAfdeling;
+    this.telefoon = this.userDataTelefoon;
+    this.beheerder = this.userDataBeheerder;
 
     this.afdelingen = [
       { text: 'Fysiotherapie', value: 'Fysiotherapie' },

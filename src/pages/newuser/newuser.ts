@@ -48,7 +48,8 @@ export class NewuserPage {
   expandAction(item: ItemSliding, _: any, text: string) {
     setTimeout(() => {
       const toast = this.toastCtrl.create({
-        message: text
+        message: text,
+        cssClass: "myToast"
       });
       toast.present();
       setTimeout(() => toast.dismiss(), 2000);

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, AlertController, PopoverController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, PopoverController } from 'ionic-angular';
 
 // imported pages
 import { InstellingenPage } from '../instellingen/instellingen';
@@ -60,7 +60,6 @@ export class UsersPage {
 
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
-    private alertCtrl: AlertController,
     public popoverCtrl: PopoverController) {
   }
 
@@ -82,7 +81,11 @@ export class UsersPage {
 
   editUser(myEvent) {
 
-    let popover = this.popoverCtrl.create(EdituserPage, {'myUserDataNaam': myEvent.naam}, { cssClass: 'custom-popover' });
+    let popover = this.popoverCtrl.create(EdituserPage, {'myUserDataADNaam': myEvent.AD_naam, 
+    'myUserDataNaam': myEvent.naam, 
+    'myUserDataAfdeling': myEvent.afdeling,
+    'myUserDataTelefoon': myEvent.telefoon,
+    'myUserDataBeheerder': myEvent.beheerder}, { cssClass: 'custom-popover' });
     popover.present({
       ev: myEvent
     });

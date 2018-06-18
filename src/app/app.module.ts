@@ -22,6 +22,11 @@ import { AfdelingenPage } from '../pages/afdelingen/afdelingen';
 import { RuimtesPage } from '../pages/ruimtes/ruimtes';
 import { TappuntenkoppelenPage } from '../pages/tappuntenkoppelen/tappuntenkoppelen';
 import { NewuserPage } from '../pages/newuser/newuser';
+import { NewtappuntgroepPage } from '../pages/newtappuntgroep/newtappuntgroep';
+import { NewtappuntPage } from '../pages/newtappunt/newtappunt';
+import { NewafdelingPage } from '../pages/newafdeling/newafdeling';
+import { NewruimtePage } from '../pages/newruimte/newruimte';
+import { EdituserPage } from '../pages/edituser/edituser';
 
 //imported providers
 import { StorageProvider } from '../providers/storage/storage';
@@ -40,7 +45,12 @@ import { StorageProvider } from '../providers/storage/storage';
     AfdelingenPage,
     RuimtesPage,
     TappuntenkoppelenPage,
-    NewuserPage
+    NewuserPage,
+    NewtappuntgroepPage,
+    NewtappuntPage,
+    NewafdelingPage,
+    NewruimtePage,
+    EdituserPage
   ],
   imports: [
     BrowserModule,
@@ -66,7 +76,12 @@ import { StorageProvider } from '../providers/storage/storage';
     AfdelingenPage,
     RuimtesPage,
     TappuntenkoppelenPage,
-    NewuserPage
+    NewuserPage,
+    NewtappuntgroepPage,
+    NewtappuntPage,
+    NewafdelingPage,
+    NewruimtePage,
+    EdituserPage
   ],
   providers: [
     StatusBar,

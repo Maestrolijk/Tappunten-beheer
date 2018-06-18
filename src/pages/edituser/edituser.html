@@ -1,0 +1,36 @@
+<ion-header style="background-color: #266286" text-center padding>
+    <ion-note style="color: white">Gebruikergegevens</ion-note>
+  </ion-header>
+  
+  <ion-content>
+    <ion-card class="card" padding>
+      <h2>{{userDataNaam}}</h2>
+      <div padding> 
+        <ion-input placeholder="AD naam" [(ngModel)]="adnaam">{{adnaam}}</ion-input>
+      </div>
+      <div padding>
+        <ion-input placeholder="Naam" [(ngModel)]="naam"></ion-input>
+      </div>
+      <div padding>
+        <ion-item>
+          <ion-label>Afdeling</ion-label>
+          <ion-select okText="OK" cancelText="Annuleren" [(ngModel)]="afdeling">
+            <ion-option *ngFor="let afdeling of afdelingen">{{afdeling.text}}</ion-option>
+          </ion-select>
+        </ion-item>
+      </div>
+      <div padding>
+        <ion-input placeholder="Telefoonnummer" type="number" [(ngModel)]="telefoon"></ion-input>
+      </div>
+      <div padding>
+        <ion-item>
+          <ion-label style="color: rgb(150, 150, 150)">Beheerder</ion-label>
+          <ion-toggle [(ngModel)]="beheerder"></ion-toggle>
+        </ion-item>
+      </div>
+      <div text-center>
+        <button ion-button small color="dz" class="button" (click)="close()">Annuleren</button>
+        <button ion-button small color="dz" class="button" (click)="opslaan()">Opslaan</button>
+      </div>
+    </ion-card>
+  </ion-content>

@@ -1,0 +1,24 @@
+page-newtappuntgroep {
+    
+    .card {
+        background: linear-gradient(white, lightgrey);
+     }
+
+     .item.item-trns {
+        border-color: rgba(0, 0, 0, 0);
+        background-color: rgba(0, 0, 0, 0);
+    }
+
+    ion-input {
+        background-color: white;
+        border-radius: 10px;
+    }
+
+    ion-item {
+        border-radius: 10px;
+    }
+
+    .button {
+        border-radius: 10px;
+    }
+}

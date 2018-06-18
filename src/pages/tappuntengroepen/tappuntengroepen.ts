@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController, PopoverController } from 'ionic-angular';
 
 // imported pages
 import { InstellingenPage } from '../instellingen/instellingen';
+import { NewtappuntgroepPage } from '../newtappuntgroep/newtappuntgroep';
 
 /**
  * Generated class for the TappuntengroepenPage page.
@@ -36,7 +37,10 @@ export class TappuntengroepenPage {
       "naam": "Geriatrie"
     }]
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, 
+    public navParams: NavParams,
+    private alertCtrl: AlertController,
+    public popoverCtrl: PopoverController) {
   }
 
   ionViewDidLoad() {
@@ -45,6 +49,14 @@ export class TappuntengroepenPage {
 
   openInstellingenPage() {
     this.navCtrl.push(InstellingenPage)
+  }
+
+  newTappuntgroep(myEvent) {
+
+    let popover = this.popoverCtrl.create(NewtappuntgroepPage, {}, { cssClass: 'custom-popover' });
+    popover.present({
+      ev: myEvent
+    });
   }
 
 }

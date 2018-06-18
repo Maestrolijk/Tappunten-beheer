@@ -4,6 +4,7 @@ import { IonicPage, NavController, NavParams, AlertController, PopoverController
 // imported pages
 import { InstellingenPage } from '../instellingen/instellingen';
 import { NewuserPage } from '../newuser/newuser';
+import { EdituserPage } from '../edituser/edituser';
 
 /**
  * Generated class for the UsersPage page.
@@ -73,54 +74,17 @@ export class UsersPage {
 
   newUser(myEvent) {
 
-    let popover = this.popoverCtrl.create(NewuserPage, {}, {cssClass: 'custom-popover'});
+    let popover = this.popoverCtrl.create(NewuserPage, {}, { cssClass: 'custom-popover' });
     popover.present({
       ev: myEvent
     });
   }
 
-  // let alert = this.alertCtrl.create({
-  //   title: 'Nieuwe gebruiker aanmaken',
-  //   message: 'Vul de volgende velden',
-  //   inputs: [
-  //     {
-  //       name: 'adnaam',
-  //       placeholder: 'AD_naam'
-  //     },
-  //     {
-  //       name: 'naam',
-  //       placeholder: 'Naam'
-  //     },
-  //     {
-  //       name: 'beheerder',
-  //       placeholder: 'Beheerder'
-  //     },
-  //     {
-  //       name: 'afdeling',
-  //       type: 'radio',
-  //       placeholder: 'Afdeling'
-  //     },
-  //     {
-  //       name: 'telefoon',
-  //       type: 'number',
-  //       placeholder: 'Telefoon'
-  //     },
-  //   ],
-  //   buttons: [
-  //     {
-  //       text: 'Annuleer',
-  //       handler: () => {
-  //         console.log('Cancel clicked');
-  //       }
-  //     },
-  //     {
-  //       text: 'Opslaan',
-  //       handler: () => {
-  //         console.log('Saved clicked');
-  //       }
-  //     }
-  //   ]
-  // });
-  // alert.present();
+  editUser(myEvent) {
 
+    let popover = this.popoverCtrl.create(EdituserPage, {'myUserDataNaam': myEvent.naam}, { cssClass: 'custom-popover' });
+    popover.present({
+      ev: myEvent
+    });
+  }
 }

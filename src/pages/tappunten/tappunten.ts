@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController, PopoverController } from 'ionic-angular';
 
 // imported pages
 import { InstellingenPage } from '../instellingen/instellingen';
+import { NewtappuntPage } from '../newtappunt/newtappunt';
 
 /**
  * Generated class for the TappuntenPage page.
@@ -165,7 +166,10 @@ export class TappuntenPage {
     }
   ]
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, 
+    public navParams: NavParams,
+    private alertCtrl: AlertController,
+    public popoverCtrl: PopoverController) {
   }
 
   ionViewDidLoad() {
@@ -174,6 +178,14 @@ export class TappuntenPage {
 
   openInstellingenPage() {
     this.navCtrl.push(InstellingenPage)
+  }
+
+  newTappunt(myEvent) {
+
+    let popover = this.popoverCtrl.create(NewtappuntPage, {}, { cssClass: 'custom-popover' });
+    popover.present({
+      ev: myEvent
+    });
   }
 
 }

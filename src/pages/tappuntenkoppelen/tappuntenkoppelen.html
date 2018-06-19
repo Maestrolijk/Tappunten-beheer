@@ -1,5 +1,52 @@
 <ion-content>
+  <div padding>
+    <h2>Kies de tappuntgroep</h2>
+    <p>waaraan u de tappunten wilt koppelen</p>
+  </div>
+  <div>
+    <ion-item style="width: 33%">
+      <ion-label>Tappuntgroep</ion-label>
+      <ion-select okText="OK" cancelText="Annuleren" [(ngModel)]="tappuntgroep">
+        <ion-option *ngFor="let tappuntgroep of tappuntgroepen">{{tappuntgroep.text}}</ion-option>
+      </ion-select>
+    </ion-item>
+  </div>
+  <ion-card>
+    <ion-row text-center style="font-weight: bold">
+      <ion-col>Tappunten</ion-col>
+      <ion-col></ion-col>
+      <ion-col>Toegevoegde tappunten</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+          <ion-item *ngFor="let tappunt of tappunten; let even = even" [color]="even? 'light' : 'tap'">
+            <ion-checkbox (ionChange)="addTappunten(tappunt)"></ion-checkbox>
+          <ion-label>
+            <h4>{{tappunt.afdeling}} - {{tappunt.ruimte}}</h4>
+            <p>{{tappunt.functie}}</p>
+            <p>{{tappunt.omschrijving}}</p>
+          </ion-label>
+        </ion-item> 
+      </ion-col>
+      <ion-col text-center>
+<        <button ion-button (click)="addTappunten(tappunt)">Voeg toe</button>
+        <button ion-button>Verwijder</button>>
+      </ion-col>
+      <ion-col>
+        <ion-list>
+            <ion-item *ngFor="let tappunt of tappuntenAdded; let even = even" [color]="even? 'light' : 'tap'">
+                <ion-checkbox (ionChange)="deleteTappunten(tappunt)"></ion-checkbox>
+              <ion-label>
+                <h4>{{tappunt.afdeling}} - {{tappunt.ruimte}}</h4>
+                <p>{{tappunt.functie}}</p>
+                <p>{{tappunt.omschrijving}}</p>
+              </ion-label>
+            </ion-item> 
+        </ion-list>
+      </ion-col>
+      </ion-row>
+  </ion-card>
 </ion-content>
 <ion-footer text-right>
-    <button ion-button (click)="openInstellingenPage()" color="dz">Terug naar instellingen</button>
-  </ion-footer>
+  <button ion-button (click)="openInstellingenPage()" color="dz">Terug naar instellingen</button>
+</ion-footer>

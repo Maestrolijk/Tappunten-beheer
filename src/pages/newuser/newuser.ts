@@ -49,7 +49,7 @@ export class NewuserPage {
     setTimeout(() => {
       const toast = this.toastCtrl.create({
         message: text,
-        cssClass: "myToast"
+        cssClass: "myToast",
       });
       toast.present();
       setTimeout(() => toast.dismiss(), 2000);

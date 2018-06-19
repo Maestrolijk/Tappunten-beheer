@@ -47,8 +47,12 @@ export class EdituserPage {
 
     this.afdelingen = [
       { text: 'Fysiotherapie', value: 'Fysiotherapie' },
+      { text: 'Intensive Care', value: 'Intensive Care' },
       { text: 'Dialyse', value: 'Dialyse' },
+      { text: 'Neonatologie', value: 'Neonatologie' },
       { text: 'KNO', value: 'KNO' },
+      { text: 'ICT', value: 'ICT' },
+      { text: 'Spoed Eisende Hulp', value: 'Spoed Eisende Hulp' },
       { text: 'Geriatrie', value: 'Geriatrie' }
     ];
   }

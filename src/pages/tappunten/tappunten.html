@@ -4,11 +4,8 @@
             <ion-icon name="add"></ion-icon>
         </button>
     </ion-fab>
-    <ion-input placeholder="filter" (ionInput)="getItems($event)">></ion-input>
-    <ion-list *ngFor="let item of items">
-        <ion-item>{{item}}</ion-item>
-    </ion-list>
-
+    
+    <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
     <ion-grid>
         <ion-row style="background-color: #266286">
             <ion-col style="color: white">Afdeling</ion-col>

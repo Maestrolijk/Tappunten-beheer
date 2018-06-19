@@ -172,7 +172,8 @@ export class TappuntenkoppelenPage {
     }
   ]
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, 
+    public navParams: NavParams) {
 
     this.tappuntgroepen = [
       { text: 'Fysiotherapie', value: 'Fysiotherapie' },
@@ -186,6 +187,7 @@ export class TappuntenkoppelenPage {
     ];
 
     this.tappuntenOriginal = this.tappunten;
+    this.tappuntgroep = navParams.get('myDataTappuntgroep');
   }
 
   ionViewDidLoad() {

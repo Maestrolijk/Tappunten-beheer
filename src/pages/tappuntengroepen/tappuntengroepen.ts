@@ -4,6 +4,7 @@ import { IonicPage, NavController, NavParams, PopoverController } from 'ionic-an
 // imported pages
 import { InstellingenPage } from '../instellingen/instellingen';
 import { NewtappuntgroepPage } from '../newtappuntgroep/newtappuntgroep';
+import { EdittappuntgroepPage } from '../edittappuntgroep/edittappuntgroep';
 
 /**
  * Generated class for the TappuntengroepenPage page.
@@ -53,6 +54,14 @@ export class TappuntengroepenPage {
   newTappuntgroep(myEvent) {
 
     let popover = this.popoverCtrl.create(NewtappuntgroepPage, {}, { cssClass: 'custom-popover' });
+    popover.present({
+      ev: myEvent
+    });
+  }
+
+  editTappuntgroep(myEvent) {
+
+    let popover = this.popoverCtrl.create(EdittappuntgroepPage, {'myUserDataNaam': myEvent.naam}, { cssClass: 'custom-popover' });
     popover.present({
       ev: myEvent
     });

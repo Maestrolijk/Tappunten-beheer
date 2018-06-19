@@ -9,7 +9,7 @@
       <ion-col col-1 style="color: white">GroepID</ion-col>
       <ion-col col-2 style="color: white">Naam</ion-col>
     </ion-row>
-    <ion-row *ngFor="let tappuntgroep of tappuntengroepen">
+    <ion-row *ngFor="let tappuntgroep of tappuntengroepen" (click)="editTappuntgroep(tappuntgroep)">
       <ion-col col-1>
         {{tappuntgroep.groepid}}
       </ion-col>

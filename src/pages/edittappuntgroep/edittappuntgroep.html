@@ -1,0 +1,16 @@
+<ion-header style="background-color: #266286" text-center padding>
+  <ion-note style="color: white">Tappuntgroep gegevens</ion-note>
+</ion-header>
+
+<ion-content>
+  <ion-card class="card" padding>
+    <div padding>
+      <ion-input placeholder="Naam" [(ngModel)]="naam"></ion-input>
+    </div>
+    <div text-center>
+      <button ion-button small color="dz" class="button" (click)="close()">Annuleren</button>
+      <button ion-button small color="dz" class="button" (click)="opslaan()">Opslaan</button>
+      <button ion-button small color="dz" class="button" (click)="openTappuntenKoppelen()">Koppelen tappunten</button>
+    </div>
+  </ion-card>
+</ion-content>

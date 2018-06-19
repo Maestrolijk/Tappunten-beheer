@@ -27,6 +27,7 @@ import { NewtappuntPage } from '../pages/newtappunt/newtappunt';
 import { NewafdelingPage } from '../pages/newafdeling/newafdeling';
 import { NewruimtePage } from '../pages/newruimte/newruimte';
 import { EdituserPage } from '../pages/edituser/edituser';
+import { EdittappuntgroepPage } from '../pages/edittappuntgroep/edittappuntgroep';
 
 //imported providers
 import { StorageProvider } from '../providers/storage/storage';
@@ -50,7 +51,8 @@ import { StorageProvider } from '../providers/storage/storage';
     NewtappuntPage,
     NewafdelingPage,
     NewruimtePage,
-    EdituserPage
+    EdituserPage,
+    EdittappuntgroepPage
   ],
   imports: [
     BrowserModule,
@@ -81,7 +83,8 @@ import { StorageProvider } from '../providers/storage/storage';
     NewtappuntPage,
     NewafdelingPage,
     NewruimtePage,
-    EdituserPage
+    EdituserPage,
+    EdittappuntgroepPage
   ],
   providers: [
     StatusBar,

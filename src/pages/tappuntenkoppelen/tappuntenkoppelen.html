@@ -1,21 +1,17 @@
 <ion-content>
-  <div padding>
-    <h2>Kies de tappuntgroep</h2>
-    <p>waaraan u de tappunten wilt koppelen</p>
-  </div>
-  <div>
-    <ion-item style="width: 33%">
-      <ion-label>Tappuntgroep</ion-label>
-      <ion-select okText="OK" cancelText="Annuleren" [(ngModel)]="tappuntgroep">
-        <ion-option *ngFor="let tappuntgroep of tappuntgroepen">{{tappuntgroep.text}}</ion-option>
-      </ion-select>
-    </ion-item>
-  </div>
   <ion-card>
+      <div>
+          <ion-item style="width: 33%">
+            <ion-label>Tappuntgroep</ion-label>
+            <ion-select okText="OK" cancelText="Annuleren" [(ngModel)]="tappuntgroep">
+              <ion-option *ngFor="let tappuntgroep of tappuntgroepen">{{tappuntgroep.text}}</ion-option>
+            </ion-select>
+          </ion-item>
+        </div>
     <ion-row text-center style="font-weight: bold">
       <ion-col>Tappunten</ion-col>
       <ion-col></ion-col>
-      <ion-col>Toegevoegde tappunten</ion-col>
+      <ion-col>Gekoppelde tappunten</ion-col>
     </ion-row>
     <ion-row>
       <ion-col>
@@ -29,8 +25,12 @@
         </ion-item> 
       </ion-col>
       <ion-col text-center>
-<        <button ion-button (click)="addTappunten(tappunt)">Voeg toe</button>
-        <button ion-button>Verwijder</button>>
+        <ion-card class="card">
+          <h2 style="font-weight: bold">Werkwijze</h2>
+          <div padding>
+            Selecteer de tappunten aan de linkerkant die gekoppeld moeten worden. Deze zullen daarna automatisch aan de rechterkant verschijnen onder [Gekoppelde tappunten].
+          </div>
+        </ion-card>
       </ion-col>
       <ion-col>
         <ion-list>
@@ -47,6 +47,6 @@
       </ion-row>
   </ion-card>
 </ion-content>
-<ion-footer text-right>
+<ion-footer text-right style="background-color: #f4f4f4">
   <button ion-button (click)="openInstellingenPage()" color="dz">Terug naar instellingen</button>
 </ion-footer>

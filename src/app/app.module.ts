@@ -29,8 +29,12 @@ import { NewruimtePage } from '../pages/newruimte/newruimte';
 import { EdituserPage } from '../pages/edituser/edituser';
 import { EdittappuntgroepPage } from '../pages/edittappuntgroep/edittappuntgroep';
 
-//imported providers
+// imported providers
 import { StorageProvider } from '../providers/storage/storage';
+
+// imported pipes
+import { SearchPipe } from '../pipes/search/search';
+import { SortPipe } from '../pipes/sort/sort';
 
 @NgModule({
   declarations: [
@@ -52,7 +56,9 @@ import { StorageProvider } from '../providers/storage/storage';
     NewafdelingPage,
     NewruimtePage,
     EdituserPage,
-    EdittappuntgroepPage
+    EdittappuntgroepPage,
+    SearchPipe,
+    SortPipe
   ],
   imports: [
     BrowserModule,

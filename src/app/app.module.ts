@@ -8,6 +8,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { IonicStorageModule } from '@ionic/storage';
+import { SelectSearchableModule } from 'ionic-select-searchable';
 
 // imported pages
 import { LoginPage } from './../pages/login/login';
@@ -64,6 +65,7 @@ import { SortPipe } from '../pipes/sort/sort';
     BrowserModule,
     HttpModule,
     HttpClientModule,
+    SelectSearchableModule,
     IonicStorageModule.forRoot(),
     IonicModule.forRoot(MyApp, {
       tabsPlacement: 'top',

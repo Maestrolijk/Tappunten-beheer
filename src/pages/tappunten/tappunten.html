@@ -14,7 +14,7 @@
             <ion-col style="color: white"><button (click)="sort('omschrijving')">Omschrijving</button></ion-col>
             <ion-col style="color: white"><button (click)="sort('functie')">Functie</button></ion-col>
         </ion-row>
-        <ion-row *ngFor="let tappunt of tappunten | search : terms | sort: {property: column, order: order}">
+        <ion-row *ngFor="let tappunt of tappunten | search : terms | sort: {property: column, order: order}" (click)="editTappunt(tappunt)">
             <ion-col>
                 {{tappunt.afdeling}}
             </ion-col>

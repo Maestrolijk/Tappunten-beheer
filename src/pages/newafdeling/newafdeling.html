@@ -1,18 +1,15 @@
-<!--
-  Generated template for the NewafdelingPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<ion-header>
-
-  <ion-navbar>
-    <ion-title>newafdeling</ion-title>
-  </ion-navbar>
-
+<ion-header style="background-color: #266286" text-center padding>
+  <ion-note style="color: white">Nieuwe afdeling aanmaken</ion-note>
 </ion-header>
 
-
-<ion-content padding>
-
+<ion-content>
+  <ion-card class="card" padding>
+    <div padding>
+      <ion-input placeholder="Naam" [(ngModel)]="naam"></ion-input>
+    </div>
+    <div text-center>
+      <button ion-button small color="dz" class="button" (click)="close()">Annuleren</button>
+      <button ion-button small color="dz" class="button" (click)="opslaan()">Opslaan</button>
+    </div>
+  </ion-card>
 </ion-content>

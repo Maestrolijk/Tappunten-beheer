@@ -4,6 +4,7 @@ import { IonicPage, NavController, NavParams, PopoverController } from 'ionic-an
 // imported pages
 import { InstellingenPage } from '../instellingen/instellingen';
 import { NewtappuntPage } from '../newtappunt/newtappunt';
+import { EdittappuntPage } from '../edittappunt/edittappunt';
 
 
 @IonicPage()
@@ -19,7 +20,7 @@ export class TappuntenPage {
   order: number;
   column: string = 'afdeling';
 
-  public tappunten :any = [
+  public tappunten: any = [
     {
       "tappuntId": 1,
       "ruimte": "A.0.052",
@@ -166,7 +167,7 @@ export class TappuntenPage {
     }
   ]
 
-  constructor(public navCtrl: NavController, 
+  constructor(public navCtrl: NavController,
     public navParams: NavParams,
     public popoverCtrl: PopoverController) {
   }
@@ -191,11 +192,24 @@ export class TappuntenPage {
   // SOURCE: https://www.djamware.com/post/5a37ceaf80aca7059c142970/ionic-3-and-angular-5-search-and-sort-list-of-data
   // Sorting on 'Functie' needs some fixing...
   // And sorting a second column requires 2 clicks...
-  sort(sortme: string){
+  sort(sortme: string) {
     this.column = sortme
     console.log('Lets sort column: ', sortme)
     this.descending = !this.descending;
     this.order = this.descending ? 1 : -1;
+  }
+
+  editTappunt(myEvent) {
+
+    let popover = this.popoverCtrl.create(EdittappuntPage, {
+      'myUserDataAfdeling': myEvent.afdeling,
+      'myUserDataRuimte': myEvent.ruimte,
+      'myUserDataOmschrijving': myEvent.omschrijving,
+      'myUserDataFunctie': myEvent.functie
+    }, { cssClass: 'custom-popover' });
+    popover.present({
+      ev: myEvent
+    });
   }
 
 }

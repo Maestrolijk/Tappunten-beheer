@@ -1,6 +1,6 @@
 <ion-content>
   <ion-fab top right>
-    <button ion-fab mini color="dzroze">
+    <button ion-fab mini color="dzroze" (click)="newRuimte()">
       <ion-icon name="add"></ion-icon>
     </button>
   </ion-fab>
@@ -9,7 +9,7 @@
       <ion-col col-1 style="color: white">RuimteID</ion-col>
       <ion-col col-2 style="color: white">Naam</ion-col>
     </ion-row>
-    <ion-row *ngFor="let ruimte of ruimtes">
+    <ion-row *ngFor="let ruimte of ruimtes" (click)="editRuimte(ruimte)">
       <ion-col col-1>
         {{ruimte.ruimteid}}
       </ion-col>
@@ -21,5 +21,5 @@
 </ion-content>
 <ion-footer text-right style="background-color: #f4f4f4">
   <button ion-button (click)="openInstellingenPage()" color="dz">Terug naar instellingen</button>
-  <button ion-button (click)="openInstellingenPage()" color="dz">Nieuwe ruimte</button>
+  <button ion-button (click)="newRuimte()" color="dz">Nieuwe ruimte</button>
 </ion-footer>

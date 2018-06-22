@@ -1,12 +1,13 @@
 <ion-header style="background-color: #266286" text-center padding>
-  <ion-note style="color: white">Nieuw tappunt aanmaken</ion-note>
+  <ion-note style="color: white">Tappunt gegevens</ion-note>
 </ion-header>
 
 <ion-content>
   <ion-card class="card" padding>
     <div padding>
       <ion-item>
-        <select-searchable [(ngModel)]="afdeling" [items]="afdelingen" itemValueField="id" itemTextField="name" [canSearch]="true" searchPlaceholder = "Filter op afdeling" [focusSearchbar]="true">
+          <select-searchable [(ngModel)]="afdeling" [items]="afdelingen" itemValueField="id" itemTextField="name" [canSearch]="true" searchPlaceholder="Filter op afdeling"
+          [focusSearchbar]="true">
           <ng-template selectSearchableLabelTemplate>
             Afdeling
           </ng-template>
@@ -15,7 +16,8 @@
     </div>
     <div padding>
       <ion-item>
-        <select-searchable [(ngModel)]="ruimte" [items]="ruimtes" itemValueField="id" itemTextField="name" [canSearch]="true" searchPlaceholder = "Filter op ruimte" [focusSearchbar]="true">
+        <select-searchable [(ngModel)]="ruimte" [items]="ruimtes" itemValueField="id" itemTextField="name" [canSearch]="true" searchPlaceholder="Filter op ruimte"
+          [focusSearchbar]="true">
           <ng-template selectSearchableLabelTemplate>
             Ruimte
           </ng-template>

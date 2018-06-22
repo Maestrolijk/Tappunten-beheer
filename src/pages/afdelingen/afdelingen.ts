@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, PopoverController } from 'ionic-angular';
 
 // imported pages
 import { InstellingenPage } from '../instellingen/instellingen';
+import { NewafdelingPage } from '../newafdeling/newafdeling';
+import { EditafdelingPage } from '../editafdeling/editafdeling';
 
 /**
  * Generated class for the AfdelingenPage page.
@@ -36,7 +38,9 @@ export class AfdelingenPage {
       "naam": "Geriatrie"
     }]
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, 
+    public navParams: NavParams,
+    public popoverCtrl: PopoverController) {
   }
 
   ionViewDidLoad() {
@@ -45,6 +49,22 @@ export class AfdelingenPage {
 
   openInstellingenPage() {
     this.navCtrl.push(InstellingenPage)
+  }
+
+  newAfdeling(myEvent) {
+
+    let popover = this.popoverCtrl.create(NewafdelingPage, {}, { cssClass: 'custom-popover' });
+    popover.present({
+      ev: myEvent
+    });
+  }
+
+  editAfdeling(myEvent) {
+
+    let popover = this.popoverCtrl.create(EditafdelingPage, {'myUserDataNaam': myEvent.naam}, { cssClass: 'custom-popover' });
+    popover.present({
+      ev: myEvent
+    });
   }
 
 }

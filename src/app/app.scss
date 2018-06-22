@@ -21,5 +21,18 @@
 
   ::-webkit-scrollbar,
 *::-webkit-scrollbar {
-  display: none;
+  // display: none;
+}
+
+
+.table-header {
+  display: table-header-group;
+  vertical-align: middle;
+  border-color: inherit;
+}
+
+.ion-grid .row {
+  background-color: color($colors, dzroze);
+  cursor: pointer;
+  color: white;
 }

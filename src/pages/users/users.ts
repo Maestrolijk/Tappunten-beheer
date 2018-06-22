@@ -26,7 +26,6 @@ export class UsersPage {
       "AD_naam": "GeurinkJ",
       "naam": "Geurink J. (John)",
       "beheerder": 0,
-      "afdeling": "Intensive Care",
       "telefoon": "6382",
       "weken_terug": "0"
     },
@@ -35,7 +34,6 @@ export class UsersPage {
       "AD_naam": "WiltinkG",
       "naam": "Wiltink G. (Gerrike)",
       "beheerder": 0,
-      "afdeling": "Neonatologie",
       "telefoon": "6153",
       "weken_terug": "0"
     },
@@ -44,7 +42,6 @@ export class UsersPage {
       "AD_naam": "BosgoedR",
       "naam": "Bosgoed R. (Robert)",
       "beheerder": 1,
-      "afdeling": "ICT",
       "telefoon": "6076",
       "weken_terug": "0"
     },
@@ -53,7 +50,6 @@ export class UsersPage {
       "AD_naam": "MeijdJ",
       "naam": "Meij J.E. de (Jacobine)",
       "beheerder": 0,
-      "afdeling": "Spoed Eisende Hulp",
       "telefoon": "2948",
       "weken_terug": "0"
     }]
@@ -83,7 +79,6 @@ export class UsersPage {
 
     let popover = this.popoverCtrl.create(EdituserPage, {'myUserDataADNaam': myEvent.AD_naam, 
     'myUserDataNaam': myEvent.naam, 
-    'myUserDataAfdeling': myEvent.afdeling,
     'myUserDataTelefoon': myEvent.telefoon,
     'myUserDataBeheerder': myEvent.beheerder}, { cssClass: 'custom-popover' });
     popover.present({

@@ -1,6 +1,6 @@
 <ion-content>
   <ion-fab top right>
-    <button ion-fab mini color="dzroze">
+    <button ion-fab mini color="dzroze" (click)="newAfdeling()">
       <ion-icon name="add"></ion-icon>
     </button>
   </ion-fab>
@@ -9,7 +9,7 @@
       <ion-col col-1 style="color: white">AfdelingsID</ion-col>
       <ion-col col-2 style="color: white">Naam</ion-col>
     </ion-row>
-    <ion-row *ngFor="let afdeling of afdelingen">
+    <ion-row *ngFor="let afdeling of afdelingen" (click)="editAfdeling(afdeling)">
       <ion-col col-1>
         {{afdeling.afdelingsid}}
       </ion-col>
@@ -21,5 +21,5 @@
 </ion-content>
 <ion-footer text-right style="background-color: #f4f4f4">
   <button ion-button (click)="openInstellingenPage()" color="dz">Terug naar instellingen</button>
-  <button ion-button (click)="openInstellingenPage()" color="dz">Nieuwe afdeling</button>
+  <button ion-button (click)="newAfdeling()" color="dz">Nieuwe afdeling</button>
 </ion-footer>

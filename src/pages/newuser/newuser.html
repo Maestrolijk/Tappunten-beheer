@@ -11,14 +11,6 @@
       <ion-input placeholder="Naam" [(ngModel)]="naam"></ion-input>
     </div>
     <div padding>
-      <ion-item>
-        <ion-label>Afdeling</ion-label>
-        <ion-select okText="OK" cancelText="Annuleren" [(ngModel)]="afdeling">
-          <ion-option *ngFor="let afdeling of afdelingen">{{afdeling.text}}</ion-option>
-        </ion-select>
-      </ion-item>
-    </div>
-    <div padding>
       <ion-input placeholder="Telefoonnummer" type="number" [(ngModel)]="telefoon"></ion-input>
     </div>
     <div padding>

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController, ItemSliding, ToastController } from 'ionic-angular';
 
 /**
- * Generated class for the EdituserPage page.
+ * Generated class for the EditruimtePage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -10,31 +10,23 @@ import { IonicPage, NavController, NavParams, ViewController, ItemSliding, Toast
 
 @IonicPage()
 @Component({
-  selector: 'page-edituser',
-  templateUrl: 'edituser.html',
+  selector: 'page-editruimte',
+  templateUrl: 'editruimte.html',
 })
-export class EdituserPage {
+export class EditruimtePage {
 
-  afdelingen: any;
-  adnaam: string;
   naam: string;
-  telefoon: number;
-  beheerder: boolean;
 
-  constructor(public navCtrl: NavController,
+  constructor(public navCtrl: NavController, 
     public navParams: NavParams,
     public viewCtrl: ViewController,
-    private toastCtrl: ToastController,
-    params: NavParams) {
+    private toastCtrl: ToastController) {
 
-    this.adnaam = params.get('myUserDataADNaam');
-    this.naam = params.get('myUserDataNaam');
-    this.telefoon = params.get('myUserDataTelefoon');
-    this.beheerder = params.get('myUserDataBeheerder');
+      this.naam = navParams.get('myUserDataNaam');
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad EdituserPage');
+    console.log('ionViewDidLoad EditruimtePage');
   }
 
   close() {
@@ -42,9 +34,9 @@ export class EdituserPage {
   }
 
   opslaan(item) {
-    console.log(this.adnaam + ", " + this.naam + ", " + this.telefoon + ", " + this.beheerder);
+    console.log(this.naam);
     this.viewCtrl.dismiss();
-    this.expandAction(item, 'checked', 'Gebruiker is opgeslagen.');
+    this.expandAction(item, 'checked', 'Ruimte is opgeslagen.');
   }
 
   expandAction(item: ItemSliding, _: any, text: string) {

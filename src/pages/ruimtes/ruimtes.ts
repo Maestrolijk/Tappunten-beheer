@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, PopoverController } from 'ionic-angular';
 
 // imported pages
 import { InstellingenPage } from '../instellingen/instellingen';
+import { NewruimtePage } from '../newruimte/newruimte';
+import { EditruimtePage } from '../editruimte/editruimte';
 
 /**
  * Generated class for the RuimtesPage page.
@@ -60,7 +62,9 @@ export class RuimtesPage {
       "naam": "A.0.003"
     }]
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, 
+    public navParams: NavParams,
+    public popoverCtrl: PopoverController) {
   }
 
   ionViewDidLoad() {
@@ -69,6 +73,22 @@ export class RuimtesPage {
 
   openInstellingenPage() {
     this.navCtrl.push(InstellingenPage)
+  }
+
+  newRuimte(myEvent) {
+
+    let popover = this.popoverCtrl.create(NewruimtePage, {}, { cssClass: 'custom-popover' });
+    popover.present({
+      ev: myEvent
+    });
+  }
+
+  editRuimte(myEvent) {
+
+    let popover = this.popoverCtrl.create(EditruimtePage, {'myUserDataNaam': myEvent.naam}, { cssClass: 'custom-popover' });
+    popover.present({
+      ev: myEvent
+    });
   }
 
 }

@@ -29,6 +29,9 @@ import { NewafdelingPage } from '../pages/newafdeling/newafdeling';
 import { NewruimtePage } from '../pages/newruimte/newruimte';
 import { EdituserPage } from '../pages/edituser/edituser';
 import { EdittappuntgroepPage } from '../pages/edittappuntgroep/edittappuntgroep';
+import { EdittappuntPage } from '../pages/edittappunt/edittappunt';
+import { EditafdelingPage } from '../pages/editafdeling/editafdeling';
+import { EditruimtePage } from '../pages/editruimte/editruimte';
 
 // imported providers
 import { StorageProvider } from '../providers/storage/storage';
@@ -58,6 +61,9 @@ import { SortPipe } from '../pipes/sort/sort';
     NewruimtePage,
     EdituserPage,
     EdittappuntgroepPage,
+    EdittappuntPage,
+    EditafdelingPage,
+    EditruimtePage,
     SearchPipe,
     SortPipe
   ],
@@ -92,7 +98,10 @@ import { SortPipe } from '../pipes/sort/sort';
     NewafdelingPage,
     NewruimtePage,
     EdituserPage,
-    EdittappuntgroepPage
+    EdittappuntgroepPage,
+    EdittappuntPage,
+    EditafdelingPage,
+    EditruimtePage
   ],
   providers: [
     StatusBar,

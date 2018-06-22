@@ -7,6 +7,11 @@ import { NavController } from 'ionic-angular';
 })
 export class OverzichtPage {
 
+  errorMessage: string;
+  descending: boolean = false;
+  order: number;
+  column: string = 'overzicht';
+
   public tappunten :any = [
     {
       "tappuntId": 1,
@@ -2868,6 +2873,13 @@ export class OverzichtPage {
 
   constructor(public navCtrl: NavController) {
 
+  }
+
+  sort(sortme: string) {
+    this.column = sortme
+    console.log('Lets sort column: ', sortme)
+    this.descending = !this.descending;
+    this.order = this.descending ? 1 : -1;
   }
 
 }

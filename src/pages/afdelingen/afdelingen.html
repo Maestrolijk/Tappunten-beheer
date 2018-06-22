@@ -4,16 +4,15 @@
       <ion-icon name="add"></ion-icon>
     </button>
   </ion-fab>
-  <ion-grid>
+
+  <ion-searchbar [(ngModel)]="terms" placeholder="Filter op afdeling"></ion-searchbar>
+
+  <ion-grid class="table">
     <ion-row style="background-color: #266286">
-      <ion-col col-1 style="color: white">AfdelingsID</ion-col>
-      <ion-col col-2 style="color: white">Naam</ion-col>
+      <ion-col style="color: white"><button (click)="sort('naam')">Naam</button></ion-col>
     </ion-row>
-    <ion-row *ngFor="let afdeling of afdelingen" (click)="editAfdeling(afdeling)">
-      <ion-col col-1>
-        {{afdeling.afdelingsid}}
-      </ion-col>
-      <ion-col col-2>
+    <ion-row *ngFor="let afdeling of afdelingen | search : terms | sort: {property: column, order: order}" (click)="editAfdeling(afdeling)">
+      <ion-col>
         {{afdeling.naam}}
       </ion-col>
     </ion-row>

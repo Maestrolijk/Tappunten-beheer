@@ -39,6 +39,11 @@ export class EditafdelingPage {
     this.expandAction(item, 'checked', 'Afdeling is opgeslagen.');
   }
 
+  verwijderen(item) {
+    this.viewCtrl.dismiss();
+    this.expandAction(item, 'checked', 'Afdeling is verwijderd.');
+  }
+
   expandAction(item: ItemSliding, _: any, text: string) {
     setTimeout(() => {
       const toast = this.toastCtrl.create({

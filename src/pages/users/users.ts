@@ -20,6 +20,11 @@ import { EdituserPage } from '../edituser/edituser';
 })
 export class UsersPage {
 
+  errorMessage: string;
+  descending: boolean = false;
+  order: number;
+  column: string = 'user';
+
   public users: any = [
     {
       "gebruikerid": 36,
@@ -84,5 +89,12 @@ export class UsersPage {
     popover.present({
       ev: myEvent
     });
+  }
+
+  sort(sortme: string) {
+    this.column = sortme
+    console.log('Lets sort column: ', sortme)
+    this.descending = !this.descending;
+    this.order = this.descending ? 1 : -1;
   }
 }

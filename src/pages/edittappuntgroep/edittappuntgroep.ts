@@ -44,6 +44,11 @@ export class EdittappuntgroepPage {
     this.expandAction(item, 'checked', 'Tappuntgroep is opgeslagen.');
   }
 
+  verwijderen(item) {
+    this.viewCtrl.dismiss();
+    this.expandAction(item, 'checked', 'Tappuntgroep is verwijderd.');
+  }
+
   expandAction(item: ItemSliding, _: any, text: string) {
     setTimeout(() => {
       const toast = this.toastCtrl.create({

@@ -20,6 +20,11 @@ import { EditafdelingPage } from '../editafdeling/editafdeling';
 })
 export class AfdelingenPage {
 
+  errorMessage: string;
+  descending: boolean = false;
+  order: number;
+  column: string = 'naam';
+
   public afdelingen :any = [
     {
       "afdelingsid": 1,
@@ -65,6 +70,13 @@ export class AfdelingenPage {
     popover.present({
       ev: myEvent
     });
+  }
+
+  sort(sortme: string) {
+    this.column = sortme
+    console.log('Lets sort column: ', sortme)
+    this.descending = !this.descending;
+    this.order = this.descending ? 1 : -1;
   }
 
 }

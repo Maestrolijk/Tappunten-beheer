@@ -7,9 +7,9 @@
 
     <ion-searchbar [(ngModel)]="terms" placeholder="Filter op afdeling"></ion-searchbar>
 
-    <ion-grid>
+    <ion-grid class="table">
         <ion-row style="background-color: #266286">
-            <ion-col style="color: white"><button (click)="sort('afdeling')">Afdeling </button></ion-col>
+            <ion-col style="color: white"><button (click)="sort('afdeling')">Afdeling</button></ion-col>
             <ion-col style="color: white"><button (click)="sort('ruimte')">Ruimte</button></ion-col>
             <ion-col style="color: white"><button (click)="sort('omschrijving')">Omschrijving</button></ion-col>
             <ion-col style="color: white"><button (click)="sort('functie')">Functie</button></ion-col>

@@ -39,6 +39,11 @@ export class EditruimtePage {
     this.expandAction(item, 'checked', 'Ruimte is opgeslagen.');
   }
 
+  verwijderen(item) {
+    this.viewCtrl.dismiss();
+    this.expandAction(item, 'checked', 'Ruimte is verwijderd.');
+  }
+
   expandAction(item: ItemSliding, _: any, text: string) {
     setTimeout(() => {
       const toast = this.toastCtrl.create({

@@ -20,6 +20,11 @@ import { EdittappuntgroepPage } from '../edittappuntgroep/edittappuntgroep';
 })
 export class TappuntengroepenPage {
 
+  errorMessage: string;
+  descending: boolean = false;
+  order: number;
+  column: string = 'tappuntgroep';
+
   public tappuntengroepen :any = [
     {
       "groepid": 1,
@@ -65,6 +70,13 @@ export class TappuntengroepenPage {
     popover.present({
       ev: myEvent
     });
+  }
+
+  sort(sortme: string) {
+    this.column = sortme
+    console.log('Lets sort column: ', sortme)
+    this.descending = !this.descending;
+    this.order = this.descending ? 1 : -1;
   }
 
 }

@@ -102,6 +102,11 @@ export class EdittappuntPage {
     this.expandAction(item, 'checked', 'Tappunt is opgeslagen.');
   }
 
+  verwijderen(item) {
+    this.viewCtrl.dismiss();
+    this.expandAction(item, 'checked', 'Tappunt is verwijderd.');
+  }
+
   expandAction(item: ItemSliding, _: any, text: string) {
     setTimeout(() => {
       const toast = this.toastCtrl.create({

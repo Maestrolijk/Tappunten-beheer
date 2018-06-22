@@ -20,6 +20,11 @@ import { EditruimtePage } from '../editruimte/editruimte';
 })
 export class RuimtesPage {
 
+  errorMessage: string;
+  descending: boolean = false;
+  order: number;
+  column: string = 'ruimte';
+
   public ruimtes :any = [
     {
       "ruimteid": 1,
@@ -89,6 +94,13 @@ export class RuimtesPage {
     popover.present({
       ev: myEvent
     });
+  }
+
+  sort(sortme: string) {
+    this.column = sortme
+    console.log('Lets sort column: ', sortme)
+    this.descending = !this.descending;
+    this.order = this.descending ? 1 : -1;
   }
 
 }

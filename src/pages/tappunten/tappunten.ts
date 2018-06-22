@@ -14,7 +14,6 @@ import { EdittappuntPage } from '../edittappunt/edittappunt';
 })
 export class TappuntenPage {
 
-  countries: string[];
   errorMessage: string;
   descending: boolean = false;
   order: number;

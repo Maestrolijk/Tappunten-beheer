@@ -4,16 +4,15 @@
       <ion-icon name="add"></ion-icon>
     </button>
   </ion-fab>
-  <ion-grid>
+
+  <ion-searchbar [(ngModel)]="terms" placeholder="Filter op ruimte"></ion-searchbar>
+
+  <ion-grid class="table">
     <ion-row style="background-color: #266286">
-      <ion-col col-1 style="color: white">RuimteID</ion-col>
-      <ion-col col-2 style="color: white">Naam</ion-col>
+      <ion-col style="color: white"><button (click)="sort('naam')">Naam</button></ion-col>
     </ion-row>
-    <ion-row *ngFor="let ruimte of ruimtes" (click)="editRuimte(ruimte)">
-      <ion-col col-1>
-        {{ruimte.ruimteid}}
-      </ion-col>
-      <ion-col col-2>
+    <ion-row *ngFor="let ruimte of ruimtes | search : terms | sort: {property: column, order: order}" (click)="editRuimte(ruimte)">
+      <ion-col>
         {{ruimte.naam}}
       </ion-col>
     </ion-row>

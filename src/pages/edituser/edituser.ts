@@ -47,6 +47,11 @@ export class EdituserPage {
     this.expandAction(item, 'checked', 'Gebruiker is opgeslagen.');
   }
 
+  verwijderen(item) {
+    this.viewCtrl.dismiss();
+    this.expandAction(item, 'checked', 'Gebruiker is verwijderd.');
+  }
+
   expandAction(item: ItemSliding, _: any, text: string) {
     setTimeout(() => {
       const toast = this.toastCtrl.create({

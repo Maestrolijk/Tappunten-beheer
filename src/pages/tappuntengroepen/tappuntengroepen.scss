@@ -6,4 +6,9 @@ page-tappuntengroepen {
   ion-row:nth-of-type(odd) {
       background: lightgray;
   }
+
+  ion-col > button {
+    background-color: #266286;
+    color: white;
+}
 }

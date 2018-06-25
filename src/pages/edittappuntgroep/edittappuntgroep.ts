@@ -1,5 +1,5 @@
 //imported plugins
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController, App } from 'ionic-angular';
 
 // imported pages
@@ -14,6 +14,9 @@ import { ToastProvider } from '../../providers/toast/toast';
   templateUrl: 'edittappuntgroep.html',
 })
 export class EdittappuntgroepPage {
+
+  // used for autofocus
+  @ViewChild('myInput') myInput;
 
   // variables
   naam: string;
@@ -31,8 +34,11 @@ export class EdittappuntgroepPage {
     this.naam = navParams.get('myTappuntgroepDataNaam');
     this.index = navParams.get('myTappuntgroepDataIndex');
   }
-
-  ionViewDidLoad() { }
+  
+  // set autofocus on this field
+  ngAfterViewChecked() {
+    this.myInput.setFocus();
+  }
 
   // close popover
   close() {
@@ -41,7 +47,6 @@ export class EdittappuntgroepPage {
 
   // save the changes
   opslaan(item) {
-    console.log(this.naam);
     this.viewCtrl.dismiss();
     this.tappuntgroepen.splice(this.index, 1, {
       naam: this.naam

@@ -1,5 +1,5 @@
 // imported plugins
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
 
 // imported providers
@@ -11,6 +11,9 @@ import { ToastProvider } from '../../providers/toast/toast';
   templateUrl: 'newuser.html',
 })
 export class NewuserPage {
+
+  // used for autofocus
+  @ViewChild('myInput') myInput;
 
   // variables
   afdelingen: any;
@@ -30,6 +33,11 @@ export class NewuserPage {
     this.user = navParams.get('myUsers');
   }
 
+  // set autofocus on this field
+  ngAfterViewChecked() {
+    this.myInput.setFocus();
+  }
+
   // close popover
   close() {
     this.viewCtrl.dismiss();
@@ -46,7 +54,6 @@ export class NewuserPage {
       telefoon: this.telefoon,
       weken_terug: "0"
     });
-
     // show toast message
     this.toastProvider.expandAction(item, 'checked', 'Gebruiker is opgeslagen.');
   }

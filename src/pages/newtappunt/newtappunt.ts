@@ -66,8 +66,6 @@ export class NewtappuntPage {
 
   }
 
-  ionViewDidLoad() { }
-
   // close popover
   close() {
     this.viewCtrl.dismiss();
@@ -84,7 +82,6 @@ export class NewtappuntPage {
       opmerkingen: "",
       afdeling: this.afdeling.name
     });
-
     // show toast message
     this.toastProvider.expandAction(item, 'checked', 'Tappunt is opgeslagen.');
   }

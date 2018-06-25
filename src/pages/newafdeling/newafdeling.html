@@ -5,7 +5,7 @@
 <ion-content>
   <ion-card class="card" padding>
     <div padding>
-      <ion-input placeholder="Naam" [(ngModel)]="naam"></ion-input>
+      <ion-input #myInput placeholder="Naam" [(ngModel)]="naam"></ion-input>
     </div>
     <div text-center>
       <button ion-button small color="dz" class="button" (click)="close()">Annuleren</button>

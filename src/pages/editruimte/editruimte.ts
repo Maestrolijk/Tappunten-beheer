@@ -1,5 +1,5 @@
 // imported plugins
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
 
 // imported providers
@@ -11,6 +11,9 @@ import { ToastProvider } from '../../providers/toast/toast';
   templateUrl: 'editruimte.html',
 })
 export class EditruimtePage {
+
+  // used for autofocus
+  @ViewChild('myInput') myInput;
 
   // variables
   naam: string;
@@ -28,7 +31,10 @@ export class EditruimtePage {
     this.index = navParams.get('myRuimteDataIndex');
   }
 
-  ionViewDidLoad() { }
+  // set autofocus on this field
+  ngAfterViewChecked() {
+    this.myInput.setFocus();
+  }
 
   // close popover
   close() {

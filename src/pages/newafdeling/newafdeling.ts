@@ -1,5 +1,5 @@
 // imported plugins
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
 
 // imported providers
@@ -11,6 +11,9 @@ import { ToastProvider } from '../../providers/toast/toast';
   templateUrl: 'newafdeling.html',
 })
 export class NewafdelingPage {
+
+  // used for autofocus
+  @ViewChild('myInput') myInput;
 
   // variables
   naam: string;
@@ -25,7 +28,10 @@ export class NewafdelingPage {
     this.afdeling = navParams.get('myAfdelingen');
   }
 
-  ionViewDidLoad() { }
+  // set autofocus on this field
+  ngAfterViewChecked() {
+    this.myInput.setFocus();
+  }
 
   // close popover
   close() {
@@ -39,7 +45,6 @@ export class NewafdelingPage {
       afdelingsid: 999,
       naam: this.naam
     });
-
     // show toast message
     this.toastProvider.expandAction(item, 'checked', 'Afdeling is opgeslagen.');
   }

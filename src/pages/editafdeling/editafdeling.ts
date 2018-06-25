@@ -1,5 +1,5 @@
 // imported plugins
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
 
 // imported providers
@@ -11,6 +11,9 @@ import { ToastProvider } from '../../providers/toast/toast';
   templateUrl: 'editafdeling.html',
 })
 export class EditafdelingPage {
+
+  // used for autofocus
+  @ViewChild('myInput') myInput;
 
   // variables
   naam: string;
@@ -28,7 +31,10 @@ export class EditafdelingPage {
     this.index = navParams.get('myAfdelingDataIndex');
   }
 
-  ionViewDidLoad() { }
+  // set autofocus on this field
+  ngAfterViewChecked() {
+    this.myInput.setFocus();
+  }
 
   // close popover
   close() {
@@ -37,7 +43,6 @@ export class EditafdelingPage {
 
   // save the changes
   opslaan(item) {
-    console.log(this.naam);
     this.viewCtrl.dismiss();
     this.afdelingen.splice(this.index, 1, {
       naam: this.naam

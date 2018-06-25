@@ -1,5 +1,5 @@
 // imported plugins
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
 
 // imported providers
@@ -11,6 +11,9 @@ import { ToastProvider } from '../../providers/toast/toast';
   templateUrl: 'newruimte.html',
 })
 export class NewruimtePage {
+
+  // used for autofocus
+  @ViewChild('myInput') myInput;
 
   // variables
   naam: string;
@@ -25,7 +28,10 @@ export class NewruimtePage {
     this.ruimte = navParams.get('myRuimtes');
   }
 
-  ionViewDidLoad() { }
+  // set autofocus on this field
+  ngAfterViewChecked() {
+    this.myInput.setFocus();
+  }
 
   // close popover
   close() {
@@ -34,12 +40,12 @@ export class NewruimtePage {
 
   // add the ruimte to the JSON object
   opslaan(item) {
-    this.viewCtrl.dismiss();
+
     this.ruimte.push({
       ruimteid: 999,
       naam: this.naam
     });
-
+    this.viewCtrl.dismiss();
     // show toast message
     this.toastProvider.expandAction(item, 'checked', 'Ruimte is opgeslagen.');
   }

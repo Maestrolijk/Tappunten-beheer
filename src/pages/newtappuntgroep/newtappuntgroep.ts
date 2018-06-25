@@ -1,5 +1,5 @@
 // imported plugins
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
 
 // imported providers
@@ -11,6 +11,9 @@ import { ToastProvider } from '../../providers/toast/toast';
   templateUrl: 'newtappuntgroep.html',
 })
 export class NewtappuntgroepPage {
+
+  // used for autofocus
+  @ViewChild('myInput') myInput;
 
   // variables
   naam: string;
@@ -26,7 +29,10 @@ export class NewtappuntgroepPage {
     this.tappuntgroep = navParams.get('myTappuntgroepen');
   }
 
-  ionViewDidLoad() { }
+  // set autofocus on this field
+  ngAfterViewChecked() {
+    this.myInput.setFocus();
+  }
 
   // close popover
   close() {
@@ -40,7 +46,6 @@ export class NewtappuntgroepPage {
       groepid: 999,
       naam: this.naam
     });
-
     // show toast message
     this.toastProvider.expandAction(item, 'checked', 'Tappuntgroep is opgeslagen.');
   }

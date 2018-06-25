@@ -97,8 +97,6 @@ export class EdittappuntPage {
     this.index = navParams.get('myTappuntDataIndex');
   }
 
-  ionViewDidLoad() { }
-
   // close popover
   close() {
     this.viewCtrl.dismiss();

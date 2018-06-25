@@ -1,6 +1,9 @@
 // imported plugins
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ViewController, ItemSliding, ToastController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
+
+// imported providers
+import { ToastProvider } from '../../providers/toast/toast';
 
 @IonicPage()
 @Component({
@@ -15,7 +18,7 @@ export class NewtappuntgroepPage {
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
     public viewCtrl: ViewController,
-    private toastCtrl: ToastController) {
+    public toastProvider: ToastProvider) {
   }
 
   ionViewDidLoad() { }
@@ -29,17 +32,6 @@ export class NewtappuntgroepPage {
   opslaan(item) {
     console.log(this.naam);
     this.viewCtrl.dismiss();
-    this.expandAction(item, 'checked', 'Tappuntgroep is opgeslagen.');
-  }
-
-  // function for creating the toast message
-  expandAction(item: ItemSliding, _: any, text: string) {
-    setTimeout(() => {
-      const toast = this.toastCtrl.create({
-        message: text
-      });
-      toast.present();
-      setTimeout(() => toast.dismiss(), 2000);
-    }, 500);
+    this.toastProvider.expandAction(item, 'checked', 'Tappuntgroep is opgeslagen.');
   }
 }

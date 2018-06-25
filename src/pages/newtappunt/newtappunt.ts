@@ -1,6 +1,9 @@
 // imported plugins
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ViewController, ItemSliding, ToastController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
+
+// imported providers
+import { ToastProvider } from '../../providers/toast/toast';
 
 // class for afdeling search
 class afdeling {
@@ -33,7 +36,7 @@ export class NewtappuntPage {
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
     public viewCtrl: ViewController,
-    private toastCtrl: ToastController) {
+    public toastProvider: ToastProvider) {
 
     // afdelingen JSON object
     this.afdelingen = [
@@ -69,17 +72,6 @@ export class NewtappuntPage {
   opslaan(item) {
     console.log(this.afdeling + ", " + this.ruimte + ", " + this.omschrijving + ", " + this.functie);
     this.viewCtrl.dismiss();
-    this.expandAction(item, 'checked', 'Tappunt is opgeslagen.');
-  }
-
-  // function for creating the toast message
-  expandAction(item: ItemSliding, _: any, text: string) {
-    setTimeout(() => {
-      const toast = this.toastCtrl.create({
-        message: text
-      });
-      toast.present();
-      setTimeout(() => toast.dismiss(), 2000);
-    }, 500);
+    this.toastProvider.expandAction(item, 'checked', 'Tappunt is opgeslagen.');
   }
 }

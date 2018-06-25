@@ -35,6 +35,7 @@ import { EditruimtePage } from '../pages/editruimte/editruimte';
 
 // imported providers
 import { StorageProvider } from '../providers/storage/storage';
+import { ToastProvider } from '../providers/toast/toast';
 
 // imported pipes
 import { SearchPipe } from '../pipes/search/search';
@@ -108,7 +109,8 @@ import { SortPipe } from '../pipes/sort/sort';
     StatusBar,
     SplashScreen,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
-    StorageProvider
+    StorageProvider,
+    ToastProvider
   ]
 })
 export class AppModule { }

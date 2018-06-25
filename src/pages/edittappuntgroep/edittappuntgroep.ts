@@ -47,6 +47,7 @@ export class EdittappuntgroepPage {
 
   // save the changes
   opslaan(item) {
+    this.viewCtrl.dismiss();
     this.tappuntgroepen.splice(this.index, 1, {
       naam: this.naam
     })

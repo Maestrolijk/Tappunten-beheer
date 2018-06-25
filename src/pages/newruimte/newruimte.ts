@@ -40,6 +40,7 @@ export class NewruimtePage {
 
   // add the ruimte to the JSON object
   opslaan(item) {
+    this.viewCtrl.dismiss();
     this.ruimte.push({
       ruimteid: 999,
       naam: this.naam

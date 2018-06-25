@@ -41,6 +41,7 @@ export class NewtappuntgroepPage {
 
   // add the tappuntgroep to the JSON object
   opslaan(item) {
+    this.viewCtrl.dismiss();
     this.tappuntgroep.push({
       groepid: 999,
       naam: this.naam

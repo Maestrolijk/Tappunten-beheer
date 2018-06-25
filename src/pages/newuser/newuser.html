@@ -3,7 +3,6 @@
 </ion-header>
 
 <ion-content>
-  <form (ngSubmit)="opslaan()">
     <ion-card class="card" padding>
       <div padding>
         <ion-input #myInput placeholder="AD naam" [(ngModel)]="adnaam" name="adnaam" required="required"></ion-input>
@@ -25,5 +24,4 @@
         <button ion-button small color="dz" class="button" (click)="opslaan()">Opslaan</button>
       </div>
     </ion-card>
-  </form>
 </ion-content>

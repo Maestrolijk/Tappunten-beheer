@@ -3,7 +3,6 @@
 </ion-header>
 
 <ion-content>
-  <form (ngSubmit)="opslaan()">
     <ion-card class="card" padding>
       <div padding>
         <ion-input #myInput placeholder="Naam" [(ngModel)]="naam" name="naam"></ion-input>
@@ -15,5 +14,4 @@
         <button ion-button small color="dz" class="button" (click)="openTappuntenKoppelen()">Koppelen tappunten</button>
       </div>
     </ion-card>
-  </form>
 </ion-content>

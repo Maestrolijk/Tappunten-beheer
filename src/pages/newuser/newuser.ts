@@ -45,6 +45,7 @@ export class NewuserPage {
 
   // add the user to the JSON object
   opslaan(item) {
+    this.viewCtrl.dismiss();
     this.user.push({
       gebruikerid: 999,
       AD_naam: this.adnaam,

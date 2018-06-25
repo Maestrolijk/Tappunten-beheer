@@ -43,6 +43,7 @@ export class EditruimtePage {
 
   // save the changes
   opslaan(item) {
+    this.viewCtrl.dismiss();
     this.ruimtes.splice(this.index, 1, {
       naam: this.naam
     });

@@ -39,20 +39,22 @@ export class EdittappuntgroepPage {
     this.viewCtrl.dismiss();
   }
 
-  // show toast message
+  // save the changes
   opslaan(item) {
     console.log(this.naam);
     this.viewCtrl.dismiss();
     this.tappuntgroepen.splice(this.index, 1, {
       naam: this.naam
     })
+    // show toast message
     this.toastProvider.expandAction(item, 'checked', 'Tappuntgroep is opgeslagen.');
   }
 
-  // show toast message
+  // delete the item
   verwijderen(item) {
     this.viewCtrl.dismiss();
     this.tappuntgroepen.splice(this.index, 1);
+    // show toast message
     this.toastProvider.expandAction(item, 'checked', 'Tappuntgroep is verwijderd.');
   }
 

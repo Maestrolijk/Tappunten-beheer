@@ -35,20 +35,22 @@ export class EditafdelingPage {
     this.viewCtrl.dismiss();
   }
 
-  // show toast message
+  // save the changes
   opslaan(item) {
     console.log(this.naam);
     this.viewCtrl.dismiss();
     this.afdelingen.splice(this.index, 1, {
       naam: this.naam
     })
+    // show toast message
     this.toastProvider.expandAction(item, 'checked', 'Afdeling is opgeslagen.');
   }
 
-  // show toast message
+  // delete the afdeling
   verwijderen(item) {
     this.viewCtrl.dismiss();
     this.afdelingen.splice(this.index, 1);
+    // show toast message
     this.toastProvider.expandAction(item, 'checked', 'Afdeling is verwijderd.');
   }
 }

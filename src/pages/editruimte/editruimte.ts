@@ -35,19 +35,21 @@ export class EditruimtePage {
     this.viewCtrl.dismiss();
   }
 
-  // show toast message
+  // save the changes
   opslaan(item) {
     this.viewCtrl.dismiss();
     this.ruimtes.splice(this.index, 1, {
       naam: this.naam
     });
+    // show toast message
     this.toastProvider.expandAction(item, 'checked', 'Ruimte is opgeslagen.');
   }
 
-  // show toast message
+  // delete the item
   verwijderen(item) {
     this.viewCtrl.dismiss();
     this.ruimtes.splice(this.index, 1);
+    // show toast message
     this.toastProvider.expandAction(item, 'checked', 'Ruimte is verwijderd.');
   }
 }

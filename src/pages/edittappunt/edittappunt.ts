@@ -104,7 +104,7 @@ export class EdittappuntPage {
     this.viewCtrl.dismiss();
   }
 
-  // show toast message
+  // save the changes
   opslaan(item) {
     this.viewCtrl.dismiss();
     this.tappunten.splice(this.index, 1, {
@@ -113,13 +113,15 @@ export class EdittappuntPage {
       omschrijving: this.omschrijving,
       afdeling: this.afdeling.name
     })
+    // show toast message
     this.toastProvider.expandAction(item, 'checked', 'Tappunt is opgeslagen.');
   }
 
-  // show toast message
+  // delete the item
   verwijderen(item) {
     this.viewCtrl.dismiss();
     this.tappunten.splice(this.index, 1);
+    // show toast message
     this.toastProvider.expandAction(item, 'checked', 'Tappunt is verwijderd.');
   }
 }

@@ -43,7 +43,7 @@ export class EdituserPage {
     this.viewCtrl.dismiss();
   }
 
-  // show toast message
+  // save the changes
   opslaan(item) {
     this.viewCtrl.dismiss();
     this.users.splice(this.index, 1, {
@@ -52,13 +52,15 @@ export class EdituserPage {
       beheerder: this.beheerder,
       telefoon: this.telefoon
     })
+    // show toast message
     this.toastProvider.expandAction(item, 'checked', 'Gebruiker is opgeslagen.');
   }
 
-  // show toast message
+  // delete the item
   verwijderen(item) {
     this.viewCtrl.dismiss();
     this.users.splice(this.index, 1);
+    // show toast message
     this.toastProvider.expandAction(item, 'checked', 'Gebruiker is verwijderd.');
   }
 }

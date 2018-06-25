@@ -75,8 +75,9 @@ import { SortPipe } from '../pipes/sort/sort';
     IonicStorageModule.forRoot(),
     IonicModule.forRoot(MyApp, {
       tabsPlacement: 'top',
-      scrollAssist: false, 
-      autoFocusAssist: false})
+      scrollAssist: false,
+      autoFocusAssist: false
+    })
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -106,8 +107,8 @@ import { SortPipe } from '../pipes/sort/sort';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
     StorageProvider
   ]
 })
-export class AppModule {}
+export class AppModule { }

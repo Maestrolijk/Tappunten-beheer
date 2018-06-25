@@ -1,18 +1,14 @@
+// imported plugins
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController, ItemSliding, ToastController } from 'ionic-angular';
 
-/**
- * Generated class for the EdittappuntPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
+// class for afdeling search
 class afdeling {
   public id: number;
   public name: string;
 }
 
+// class for ruimte search
 class ruimte {
   public id: number;
   public name: string;
@@ -25,6 +21,7 @@ class ruimte {
 })
 export class EdittappuntPage {
 
+  // variables
   omschrijving: string;
   functie: string;
 
@@ -46,6 +43,7 @@ export class EdittappuntPage {
     public viewCtrl: ViewController,
     private toastCtrl: ToastController) {
 
+    // afdelingen JSON object
     this.afdelingen = [
       { id: 0, name: '' },
       { id: 1, name: 'Fysiotherapie' },
@@ -54,6 +52,7 @@ export class EdittappuntPage {
       { id: 4, name: 'Geriatrie' }
     ];
 
+    // ruimtes JSON object
     this.ruimtes = [
       { id: 0, name: '' },
       { id: 1, name: 'A.0.003' },
@@ -85,28 +84,31 @@ export class EdittappuntPage {
     }
     this.ruimte = this.ruimtes[this.ruimtenummer];
 
+    // get variables from tappunt page
     this.omschrijving = navParams.get('myUserDataOmschrijving');
     this.functie = navParams.get('myUserDataFunctie');
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad EdittappuntPage');
-  }
+  ionViewDidLoad() { }
 
+  // close popover
   close() {
     this.viewCtrl.dismiss();
   }
 
+  // show toast message
   opslaan(item) {
     this.viewCtrl.dismiss();
     this.expandAction(item, 'checked', 'Tappunt is opgeslagen.');
   }
 
+  // show toast message
   verwijderen(item) {
     this.viewCtrl.dismiss();
     this.expandAction(item, 'checked', 'Tappunt is verwijderd.');
   }
 
+  // function for creating the toast message
   expandAction(item: ItemSliding, _: any, text: string) {
     setTimeout(() => {
       const toast = this.toastCtrl.create({
@@ -116,5 +118,4 @@ export class EdittappuntPage {
       setTimeout(() => toast.dismiss(), 2000);
     }, 500);
   }
-
 }

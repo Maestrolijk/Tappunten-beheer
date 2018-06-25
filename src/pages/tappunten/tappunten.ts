@@ -1,3 +1,4 @@
+// imported plugins
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, PopoverController } from 'ionic-angular';
 
@@ -14,11 +15,13 @@ import { EdittappuntPage } from '../edittappunt/edittappunt';
 })
 export class TappuntenPage {
 
+  // variables for sorting
   errorMessage: string;
   descending: boolean = false;
   order: number;
   column: string = 'afdeling';
 
+  // tappunten JSON object
   public tappunten: any = [
     {
       "tappuntId": 1,
@@ -83,7 +86,7 @@ export class TappuntenPage {
     {
       "tappuntId": 6,
       "ruimte": "H.0.003B",
-      "functie": "behandelkamer",
+      "functie": "Behandelkamer",
       "omschrijving": "Wastafel-mengkraan",
       "opmerkingen": "",
       "gebruikersid": 19,
@@ -107,7 +110,7 @@ export class TappuntenPage {
     {
       "tappuntId": 1314,
       "ruimte": "D.1.224",
-      "functie": "berging verpleegk.magazijn",
+      "functie": "Berging verpleegk.magazijn",
       "omschrijving": "Aanrechtcombinatie-mengkraan",
       "opmerkingen": "",
       "gebruikersid": 36,
@@ -143,7 +146,7 @@ export class TappuntenPage {
     {
       "tappuntId": 1317,
       "ruimte": "D.1.226",
-      "functie": "trafokast C-3",
+      "functie": "Trafokast C-3",
       "omschrijving": "Techniekruimte",
       "opmerkingen": "",
       "gebruikersid": "",
@@ -171,35 +174,23 @@ export class TappuntenPage {
     public popoverCtrl: PopoverController) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad TappuntenPage');
+  ionViewDidLoad() { }
 
-  }
-
+  // open instellingen page
   openInstellingenPage() {
     this.navCtrl.push(InstellingenPage)
   }
 
+  // open popover page for creating a new tappunt
   newTappunt(myEvent) {
-
     let popover = this.popoverCtrl.create(NewtappuntPage, {}, { cssClass: 'custom-popover' });
     popover.present({
       ev: myEvent
     });
   }
 
-  // SOURCE: https://www.djamware.com/post/5a37ceaf80aca7059c142970/ionic-3-and-angular-5-search-and-sort-list-of-data
-  // Sorting on 'Functie' needs some fixing...
-  // And sorting a second column requires 2 clicks...
-  sort(sortme: string) {
-    this.column = sortme
-    console.log('Lets sort column: ', sortme)
-    this.descending = !this.descending;
-    this.order = this.descending ? 1 : -1;
-  }
-
+  // open popover page for editing a tappunt
   editTappunt(myEvent) {
-
     let popover = this.popoverCtrl.create(EdittappuntPage, {
       'myUserDataAfdeling': myEvent.afdeling,
       'myUserDataRuimte': myEvent.ruimte,
@@ -211,4 +202,13 @@ export class TappuntenPage {
     });
   }
 
+  // sorting of columns
+  // SOURCE: https://www.djamware.com/post/5a37ceaf80aca7059c142970/ionic-3-and-angular-5-search-and-sort-list-of-data
+  // And sorting a second column requires 2 clicks...
+  sort(sortme: string) {
+    this.column = sortme
+    console.log('Lets sort column: ', sortme)
+    this.descending = !this.descending;
+    this.order = this.descending ? 1 : -1;
+  }
 }

@@ -4,12 +4,12 @@
 
   <ion-grid class="table">
     <ion-row style="background-color: #266286" class="table-header">
-      <ion-col style="color: white"><button (click)="sort('weeknr')">Weeknr</button></ion-col>
-      <ion-col style="color: white"><button (click)="sort('afdeling')">Afdeling</button></ion-col>
-      <ion-col style="color: white"><button (click)="sort('ruimte')">Ruimte</button></ion-col>
-      <ion-col style="color: white"><button (click)="sort('omschrijving')">Omschrijving</button></ion-col>
-      <ion-col style="color: white"><button (click)="sort('functie')">Functie</button></ion-col>
-      <ion-col style="color: white"><button (click)="sort('gespoeld')">Gespoeld</button></ion-col>
+      <ion-col style="color: white" (click)="sort('weeknr')">Weeknr</ion-col>
+      <ion-col style="color: white" (click)="sort('afdeling')">Afdeling</ion-col>
+      <ion-col style="color: white" (click)="sort('ruimte')">Ruimte</ion-col>
+      <ion-col style="color: white" (click)="sort('omschrijving')">Omschrijving</ion-col>
+      <ion-col style="color: white" (click)="sort('functie')">Functie</ion-col>
+      <ion-col style="color: white" (click)="sort('gespoeld')">Gespoeld</ion-col>
     </ion-row>
     <ion-row *ngFor="let tappunt of tappunten | search : terms | sort: {property: column, order: order}">
       <ion-col>

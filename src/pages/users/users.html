@@ -9,10 +9,10 @@
 
   <ion-grid class="table">
     <ion-row style="background-color: #266286">
-      <ion-col style="color: white"><button (click)="sort('AD_naam')">AD naam</button></ion-col>
-      <ion-col style="color: white"><button (click)="sort('naam')">Naam</button></ion-col>
-      <ion-col style="color: white"><button (click)="sort('telefoon')">Telefoon</button></ion-col>
-      <ion-col style="color: white"><button (click)="sort('beheerder')">Beheerder</button></ion-col>
+      <ion-col style="color: white" (click)="sort('AD_naam')">AD naam</ion-col>
+      <ion-col style="color: white" (click)="sort('naam')">Naam</ion-col>
+      <ion-col style="color: white" (click)="sort('telefoon')">Telefoon</ion-col>
+      <ion-col style="color: white" (click)="sort('beheerder')">Beheerder</ion-col>
     </ion-row>
     <ion-row *ngFor="let user of users | search : terms | sort: {property: column, order: order}" (click)="editUser(user)">
       <ion-col>

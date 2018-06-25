@@ -1,3 +1,4 @@
+// imported plugins
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
@@ -19,6 +20,7 @@ export class InstellingenPage {
 
   }
 
+  // open the various pages
   openUsersPage() {
     this.navCtrl.push(UsersPage);
   }

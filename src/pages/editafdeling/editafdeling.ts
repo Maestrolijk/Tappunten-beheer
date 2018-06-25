@@ -1,12 +1,6 @@
+// imported plugins
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController, ItemSliding, ToastController } from 'ionic-angular';
-
-/**
- * Generated class for the EditafdelingPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -15,35 +9,39 @@ import { IonicPage, NavController, NavParams, ViewController, ItemSliding, Toast
 })
 export class EditafdelingPage {
 
+  // variables
   naam: string;
 
-  constructor(public navCtrl: NavController, 
+  constructor(public navCtrl: NavController,
     public navParams: NavParams,
     public viewCtrl: ViewController,
     private toastCtrl: ToastController) {
 
-      this.naam = navParams.get('myUserDataNaam');
+    // get variables from afdeling page
+    this.naam = navParams.get('myUserDataNaam');
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad EditafdelingPage');
-  }
+  ionViewDidLoad() { }
 
+  // close popover
   close() {
     this.viewCtrl.dismiss();
   }
 
+  // show toast message
   opslaan(item) {
     console.log(this.naam);
     this.viewCtrl.dismiss();
     this.expandAction(item, 'checked', 'Afdeling is opgeslagen.');
   }
 
+  // show toast message
   verwijderen(item) {
     this.viewCtrl.dismiss();
     this.expandAction(item, 'checked', 'Afdeling is verwijderd.');
   }
 
+  // function for creating the toast message
   expandAction(item: ItemSliding, _: any, text: string) {
     setTimeout(() => {
       const toast = this.toastCtrl.create({
@@ -53,5 +51,4 @@ export class EditafdelingPage {
       setTimeout(() => toast.dismiss(), 2000);
     }, 500);
   }
-
 }

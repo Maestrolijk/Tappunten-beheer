@@ -9,7 +9,7 @@
 
   <ion-grid class="table">
     <ion-row style="background-color: #266286">
-      <ion-col style="color: white"><button (click)="sort('naam')">Naam</button></ion-col>
+      <ion-col style="color: white" (click)="sort('naam')">Naam</ion-col>
     </ion-row>
     <ion-row *ngFor="let tappuntgroep of tappuntengroepen | search : terms | sort: {property: column, order: order}" (click)="editTappuntgroep(tappuntgroep)">
       <ion-col>

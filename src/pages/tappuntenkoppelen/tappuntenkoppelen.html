@@ -1,50 +1,53 @@
 <ion-content>
   <ion-card>
-      <div>
-          <ion-item style="width: 33%">
-            <ion-label>Tappuntgroep</ion-label>
-            <ion-select okText="OK" cancelText="Annuleren" [(ngModel)]="tappuntgroep">
-              <ion-option *ngFor="let tappuntgroep of tappuntgroepen">{{tappuntgroep.text}}</ion-option>
-            </ion-select>
-          </ion-item>
-        </div>
-    <ion-row text-center style="font-weight: bold">
-      <ion-col>Tappunten</ion-col>
+    <div>
+      <ion-item style="width: 33%">
+        <select-searchable [(ngModel)]="tappuntgroep" [items]="tappuntgroepen" itemValueField="id" itemTextField="name" [canSearch]="true" searchPlaceholder="Filter op tappuntgroep"
+          [focusSearchbar]="true">
+          <ng-template selectSearchableLabelTemplate>
+            Tappuntgroep
+          </ng-template>
+        </select-searchable>
+      </ion-item>
+    </div>
+    <ion-row text-center style="font-weight: bold" style="background-color: #266286">
+      <ion-col style="color: white">Tappunten</ion-col>
       <ion-col></ion-col>
-      <ion-col>Gekoppelde tappunten</ion-col>
+      <ion-col style="color: white">Gekoppelde tappunten</ion-col>
     </ion-row>
     <ion-row>
       <ion-col>
-          <ion-item *ngFor="let tappunt of tappunten; let even = even" [color]="even? 'light' : 'tap'">
-            <ion-checkbox (ionChange)="addTappunten(tappunt)"></ion-checkbox>
+        <ion-item *ngFor="let tappunt of tappunten; let even = even" [color]="even? 'light' : 'tap'">
+          <ion-checkbox (ionChange)="addTappunten(tappunt)"></ion-checkbox>
           <ion-label>
             <h4>{{tappunt.afdeling}} - {{tappunt.ruimte}}</h4>
             <p>{{tappunt.functie}}</p>
             <p>{{tappunt.omschrijving}}</p>
           </ion-label>
-        </ion-item> 
+        </ion-item>
       </ion-col>
       <ion-col text-center>
         <ion-card class="card">
           <h2 style="font-weight: bold">Werkwijze</h2>
           <div padding>
-            Selecteer de tappunten aan de linkerkant die gekoppeld moeten worden. Deze zullen daarna automatisch aan de rechterkant verschijnen onder [Gekoppelde tappunten].
+            Selecteer de tappunten aan de linkerkant die gekoppeld moeten worden. Deze zullen daarna automatisch aan de rechterkant verschijnen
+            onder [Gekoppelde tappunten].
           </div>
         </ion-card>
       </ion-col>
       <ion-col>
         <ion-list>
-            <ion-item *ngFor="let tappunt of tappuntenAdded; let even = even" [color]="even? 'light' : 'tap'">
-                <ion-checkbox (ionChange)="deleteTappunten(tappunt)"></ion-checkbox>
-              <ion-label>
-                <h4>{{tappunt.afdeling}} - {{tappunt.ruimte}}</h4>
-                <p>{{tappunt.functie}}</p>
-                <p>{{tappunt.omschrijving}}</p>
-              </ion-label>
-            </ion-item> 
+          <ion-item *ngFor="let tappunt of tappuntenAdded; let even = even" [color]="even? 'light' : 'tap'">
+            <ion-checkbox (ionChange)="deleteTappunten(tappunt)"></ion-checkbox>
+            <ion-label>
+              <h4>{{tappunt.afdeling}} - {{tappunt.ruimte}}</h4>
+              <p>{{tappunt.functie}}</p>
+              <p>{{tappunt.omschrijving}}</p>
+            </ion-label>
+          </ion-item>
         </ion-list>
       </ion-col>
-      </ion-row>
+    </ion-row>
   </ion-card>
 </ion-content>
 <ion-footer text-right style="background-color: #f4f4f4">

@@ -1,3 +1,4 @@
+// imported plugins
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, PopoverController } from 'ionic-angular';
 
@@ -6,13 +7,6 @@ import { InstellingenPage } from '../instellingen/instellingen';
 import { NewafdelingPage } from '../newafdeling/newafdeling';
 import { EditafdelingPage } from '../editafdeling/editafdeling';
 
-/**
- * Generated class for the AfdelingenPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @IonicPage()
 @Component({
   selector: 'page-afdelingen',
@@ -20,12 +14,14 @@ import { EditafdelingPage } from '../editafdeling/editafdeling';
 })
 export class AfdelingenPage {
 
+  // variables for sorting
   errorMessage: string;
   descending: boolean = false;
   order: number;
   column: string = 'naam';
 
-  public afdelingen :any = [
+  // afdelingen JSON object
+  public afdelingen: any = [
     {
       "afdelingsid": 1,
       "naam": "Fysiotherapie"
@@ -43,40 +39,39 @@ export class AfdelingenPage {
       "naam": "Geriatrie"
     }]
 
-  constructor(public navCtrl: NavController, 
+  constructor(public navCtrl: NavController,
     public navParams: NavParams,
     public popoverCtrl: PopoverController) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad AfdelingenPage');
-  }
+  ionViewDidLoad() { }
 
+  // open instellingen page
   openInstellingenPage() {
     this.navCtrl.push(InstellingenPage)
   }
 
+  // open popover page for creating a new afdeling
   newAfdeling(myEvent) {
-
     let popover = this.popoverCtrl.create(NewafdelingPage, {}, { cssClass: 'custom-popover' });
     popover.present({
       ev: myEvent
     });
   }
 
+  // open popover page for editing an afdeling
   editAfdeling(myEvent) {
-
-    let popover = this.popoverCtrl.create(EditafdelingPage, {'myUserDataNaam': myEvent.naam}, { cssClass: 'custom-popover' });
+    let popover = this.popoverCtrl.create(EditafdelingPage, { 'myUserDataNaam': myEvent.naam }, { cssClass: 'custom-popover' });
     popover.present({
       ev: myEvent
     });
   }
 
+  // sorting of columns
   sort(sortme: string) {
     this.column = sortme
     console.log('Lets sort column: ', sortme)
     this.descending = !this.descending;
     this.order = this.descending ? 1 : -1;
   }
-
 }

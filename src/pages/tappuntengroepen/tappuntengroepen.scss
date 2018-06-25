@@ -1,15 +1,16 @@
 page-tappuntengroepen {
+
     ion-row:nth-of-type(even) {
         background: #f4f4f4;
     }
 
-  ion-row:nth-of-type(odd) {
-      background: lightgray;
-  }
+    ion-row:nth-of-type(odd) {
+        background: lightgray;
+    }
 
-  ion-col > button {
-    background-color: #266286;
-    color: white;
+    ion-col > button {
+        background-color: #266286;
+        color: white;
     }
 
     .button {

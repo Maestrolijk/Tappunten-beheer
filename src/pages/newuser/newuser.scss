@@ -2,9 +2,9 @@ page-newuser {
     
     .card {
         background: linear-gradient(white, lightgrey);
-     }
+    }
 
-     .item.item-trns {
+    .item.item-trns {
         border-color: rgba(0, 0, 0, 0);
         background-color: rgba(0, 0, 0, 0);
     }
@@ -21,27 +21,4 @@ page-newuser {
     .button {
         border-radius: 10px;
     }
-
-    .myToast {
-        border-radius: 10px;
-    }
-
-    // .mini-toast {
-    //     background: transparent;
-    //     background-color: transparent;
-        
-    //      .toast-container{
-    //        background: transparent;
-    //        background-color: transparent;
-    //      }
-         
-    //      .toast-message{
-    //          display: table;
-    //          margin: 0 auto;
-    //          border-color: black;
-    //          border: 2px solid;
-    //          border-radius: 25px;
-    //          padding:3px 10p
-    //      }
-    //  }
 }

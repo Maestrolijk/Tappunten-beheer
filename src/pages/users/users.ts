@@ -1,3 +1,4 @@
+// imported plugins
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, PopoverController } from 'ionic-angular';
 
@@ -6,13 +7,6 @@ import { InstellingenPage } from '../instellingen/instellingen';
 import { NewuserPage } from '../newuser/newuser';
 import { EdituserPage } from '../edituser/edituser';
 
-/**
- * Generated class for the UsersPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @IonicPage()
 @Component({
   selector: 'page-users',
@@ -20,11 +14,13 @@ import { EdituserPage } from '../edituser/edituser';
 })
 export class UsersPage {
 
+  // variables for sorting
   errorMessage: string;
   descending: boolean = false;
   order: number;
   column: string = 'user';
 
+  // users JSON object
   public users: any = [
     {
       "gebruikerid": 36,
@@ -64,24 +60,23 @@ export class UsersPage {
     public popoverCtrl: PopoverController) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad UsersPage');
-  }
+  ionViewDidLoad() { }
 
+  // open instellingen page
   openInstellingenPage() {
     this.navCtrl.push(InstellingenPage)
   }
 
+  // open popover page for creating a new user
   newUser(myEvent) {
-
     let popover = this.popoverCtrl.create(NewuserPage, {}, { cssClass: 'custom-popover' });
     popover.present({
       ev: myEvent
     });
   }
 
+  // open popover page for editing a user
   editUser(myEvent) {
-
     let popover = this.popoverCtrl.create(EdituserPage, {'myUserDataADNaam': myEvent.AD_naam, 
     'myUserDataNaam': myEvent.naam, 
     'myUserDataTelefoon': myEvent.telefoon,
@@ -91,6 +86,7 @@ export class UsersPage {
     });
   }
 
+  // sorting of columns
   sort(sortme: string) {
     this.column = sortme
     console.log('Lets sort column: ', sortme)

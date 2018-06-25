@@ -1,3 +1,4 @@
+// imported plugins
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, PopoverController } from 'ionic-angular';
 
@@ -6,13 +7,6 @@ import { InstellingenPage } from '../instellingen/instellingen';
 import { NewtappuntgroepPage } from '../newtappuntgroep/newtappuntgroep';
 import { EdittappuntgroepPage } from '../edittappuntgroep/edittappuntgroep';
 
-/**
- * Generated class for the TappuntengroepenPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @IonicPage()
 @Component({
   selector: 'page-tappuntengroepen',
@@ -20,12 +14,14 @@ import { EdittappuntgroepPage } from '../edittappuntgroep/edittappuntgroep';
 })
 export class TappuntengroepenPage {
 
+  // variables for sorting
   errorMessage: string;
   descending: boolean = false;
   order: number;
   column: string = 'tappuntgroep';
 
-  public tappuntengroepen :any = [
+  // tappuntengroepen JSON object
+  public tappuntengroepen: any = [
     {
       "groepid": 1,
       "naam": "Fysiotherapie"
@@ -43,40 +39,39 @@ export class TappuntengroepenPage {
       "naam": "Geriatrie"
     }]
 
-  constructor(public navCtrl: NavController, 
+  constructor(public navCtrl: NavController,
     public navParams: NavParams,
     public popoverCtrl: PopoverController) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad TappuntengroepenPage');
-  }
+  ionViewDidLoad() { }
 
+  // open instellingen page
   openInstellingenPage() {
     this.navCtrl.push(InstellingenPage)
   }
 
+  // open popover page for creating a new tappuntgroep
   newTappuntgroep(myEvent) {
-
     let popover = this.popoverCtrl.create(NewtappuntgroepPage, {}, { cssClass: 'custom-popover' });
     popover.present({
       ev: myEvent
     });
   }
 
+  // open popover page for editing a new tappuntgroep
   editTappuntgroep(myEvent) {
-
-    let popover = this.popoverCtrl.create(EdittappuntgroepPage, {'myUserDataNaam': myEvent.naam}, { cssClass: 'custom-popover' });
+    let popover = this.popoverCtrl.create(EdittappuntgroepPage, { 'myUserDataNaam': myEvent.naam }, { cssClass: 'custom-popover' });
     popover.present({
       ev: myEvent
     });
   }
 
+  // sorting of columns
   sort(sortme: string) {
     this.column = sortme
     console.log('Lets sort column: ', sortme)
     this.descending = !this.descending;
     this.order = this.descending ? 1 : -1;
   }
-
 }

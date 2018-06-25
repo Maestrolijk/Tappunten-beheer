@@ -1,6 +1,6 @@
+// imported plugins
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { FormGroup, FormBuilder } from '@angular/forms';
 import { StorageProvider } from '../../providers/storage/storage';
 
 // imported pages
@@ -13,10 +13,7 @@ import { TabsPage } from '../tabs/tabs';
 })
 export class LoginPage {
 
-  splash = true;
-
-  loginForm: FormGroup;
-
+  // variables
   username: string;
   loginname: string;
   showMe = false;
@@ -25,20 +22,19 @@ export class LoginPage {
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
-    public storageProvider: StorageProvider,
-    formBuilder: FormBuilder) { }
+    public storageProvider: StorageProvider) { }
 
   ionViewDidLoad() {
     this.getUserName();
   }
 
+  // do a user validation before continuing
   doLoadHomePage() {
     this.username = this.username.toLowerCase();
     if (this.username === "grobbens") {
       this.loginname = this.username;
 
       // if button is toggled, write the loginname to the localstorage
-
       if (this.remembertoggle === true) {
         this.storageProvider.setData("storedname", this.username);
       }
@@ -48,10 +44,12 @@ export class LoginPage {
       this.navCtrl.setRoot(TabsPage, { 'loginname': this.loginname })
     }
     else {
+      // if user not eligable show login failed text
       this.showMe = true;
     }
   }
 
+  // get the name of the user from the local storage
   getUserName() {
     this.storageProvider.getData("storedname").then((val) => {
       this.username = val;
@@ -59,6 +57,5 @@ export class LoginPage {
         this.remembertoggle = true;
       }
     });
-
   }
 }

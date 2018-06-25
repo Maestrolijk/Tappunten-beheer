@@ -1,12 +1,6 @@
+// imported plugins
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController, ItemSliding, ToastController } from 'ionic-angular';
-
-/**
- * Generated class for the EdituserPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -15,6 +9,7 @@ import { IonicPage, NavController, NavParams, ViewController, ItemSliding, Toast
 })
 export class EdituserPage {
 
+  // variables
   afdelingen: any;
   adnaam: string;
   naam: string;
@@ -24,34 +19,36 @@ export class EdituserPage {
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
     public viewCtrl: ViewController,
-    private toastCtrl: ToastController,
-    params: NavParams) {
+    private toastCtrl: ToastController) {
 
-    this.adnaam = params.get('myUserDataADNaam');
-    this.naam = params.get('myUserDataNaam');
-    this.telefoon = params.get('myUserDataTelefoon');
-    this.beheerder = params.get('myUserDataBeheerder');
+    // get variables from user page
+    this.adnaam = navParams.get('myUserDataADNaam');
+    this.naam = navParams.get('myUserDataNaam');
+    this.telefoon = navParams.get('myUserDataTelefoon');
+    this.beheerder = navParams.get('myUserDataBeheerder');
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad EdituserPage');
-  }
+  ionViewDidLoad() { }
 
+  // close popover
   close() {
     this.viewCtrl.dismiss();
   }
 
+  // show toast message
   opslaan(item) {
     console.log(this.adnaam + ", " + this.naam + ", " + this.telefoon + ", " + this.beheerder);
     this.viewCtrl.dismiss();
     this.expandAction(item, 'checked', 'Gebruiker is opgeslagen.');
   }
 
+  // show toast message
   verwijderen(item) {
     this.viewCtrl.dismiss();
     this.expandAction(item, 'checked', 'Gebruiker is verwijderd.');
   }
 
+  // function for creating the toast message
   expandAction(item: ItemSliding, _: any, text: string) {
     setTimeout(() => {
       const toast = this.toastCtrl.create({
@@ -61,5 +58,4 @@ export class EdituserPage {
       setTimeout(() => toast.dismiss(), 2000);
     }, 500);
   }
-
 }

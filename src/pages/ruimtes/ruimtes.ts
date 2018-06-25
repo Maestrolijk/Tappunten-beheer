@@ -1,3 +1,4 @@
+// imported plugins
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, PopoverController } from 'ionic-angular';
 
@@ -6,13 +7,6 @@ import { InstellingenPage } from '../instellingen/instellingen';
 import { NewruimtePage } from '../newruimte/newruimte';
 import { EditruimtePage } from '../editruimte/editruimte';
 
-/**
- * Generated class for the RuimtesPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @IonicPage()
 @Component({
   selector: 'page-ruimtes',
@@ -20,12 +14,14 @@ import { EditruimtePage } from '../editruimte/editruimte';
 })
 export class RuimtesPage {
 
+  // variables for sorting
   errorMessage: string;
   descending: boolean = false;
   order: number;
   column: string = 'ruimte';
 
-  public ruimtes :any = [
+  // ruimtes JSON object
+  public ruimtes: any = [
     {
       "ruimteid": 1,
       "naam": "A.0.052"
@@ -67,40 +63,39 @@ export class RuimtesPage {
       "naam": "A.0.003"
     }]
 
-  constructor(public navCtrl: NavController, 
+  constructor(public navCtrl: NavController,
     public navParams: NavParams,
     public popoverCtrl: PopoverController) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad RuimtesPage');
-  }
+  ionViewDidLoad() { }
 
+  // open instellingen page
   openInstellingenPage() {
     this.navCtrl.push(InstellingenPage)
   }
 
+  // open popover page for creating a new ruimte
   newRuimte(myEvent) {
-
     let popover = this.popoverCtrl.create(NewruimtePage, {}, { cssClass: 'custom-popover' });
     popover.present({
       ev: myEvent
     });
   }
 
+  // open popover page for editing a ruimte
   editRuimte(myEvent) {
-
-    let popover = this.popoverCtrl.create(EditruimtePage, {'myUserDataNaam': myEvent.naam}, { cssClass: 'custom-popover' });
+    let popover = this.popoverCtrl.create(EditruimtePage, { 'myUserDataNaam': myEvent.naam }, { cssClass: 'custom-popover' });
     popover.present({
       ev: myEvent
     });
   }
 
+  // sorting of columns
   sort(sortme: string) {
     this.column = sortme
     console.log('Lets sort column: ', sortme)
     this.descending = !this.descending;
     this.order = this.descending ? 1 : -1;
   }
-
 }

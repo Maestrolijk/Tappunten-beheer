@@ -1,13 +1,14 @@
+// imported plugins
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
   name: 'sort',
 })
+
+// pipe sorts values ascending (when clicked again descending)
 export class SortPipe implements PipeTransform {
   transform(array: Array<string>, args?: any): Array<string> {
     return array.sort(function(a, b){
-        // console.log('a:' , a.functie)
-        // console.log('b:' , b.functie)
       if(a[args.property] < b[args.property]){
           return -1 * args.order;
       }

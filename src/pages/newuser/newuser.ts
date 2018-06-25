@@ -1,12 +1,6 @@
+// imported plugins
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController, ItemSliding, ToastController } from 'ionic-angular';
-
-/**
- * Generated class for the NewuserPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -15,6 +9,7 @@ import { IonicPage, NavController, NavParams, ViewController, ItemSliding, Toast
 })
 export class NewuserPage {
 
+  // variables
   afdelingen: any;
   adnaam: string;
   naam: string;
@@ -27,25 +22,26 @@ export class NewuserPage {
     private toastCtrl: ToastController) {
   }
 
+  // close popover
   close() {
     this.viewCtrl.dismiss();
   }
 
+  // show toast message
   opslaan(item) {
     console.log(this.adnaam + ", " + this.naam + ", " + this.telefoon + ", " + this.beheerder);
     this.viewCtrl.dismiss();
     this.expandAction(item, 'checked', 'Gebruiker is opgeslagen.');
   }
 
+  // function for creating the toast message
   expandAction(item: ItemSliding, _: any, text: string) {
     setTimeout(() => {
       const toast = this.toastCtrl.create({
-        message: text,
-        cssClass: "myToast",
+        message: text
       });
       toast.present();
       setTimeout(() => toast.dismiss(), 2000);
     }, 500);
   }
-
 }

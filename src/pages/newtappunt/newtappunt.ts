@@ -1,18 +1,14 @@
+// imported plugins
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController, ItemSliding, ToastController } from 'ionic-angular';
 
-/**
- * Generated class for the NewtappuntPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
+// class for afdeling search
 class afdeling {
   public id: number;
   public name: string;
 }
 
+// class for ruimte search
 class ruimte {
   public id: number;
   public name: string;
@@ -25,6 +21,7 @@ class ruimte {
 })
 export class NewtappuntPage {
 
+  // variables
   omschrijving; string;
   functie: string;
 
@@ -38,6 +35,7 @@ export class NewtappuntPage {
     public viewCtrl: ViewController,
     private toastCtrl: ToastController) {
 
+    // afdelingen JSON object
     this.afdelingen = [
       { id: 1, name: 'Fysiotherapie' },
       { id: 2, name: 'Dialyse' },
@@ -45,6 +43,7 @@ export class NewtappuntPage {
       { id: 4, name: 'Geriatrie' }
     ];
 
+    // ruimtes JSON object
     this.ruimtes = [
       { id: 1, name: 'A.0.003' },
       { id: 2, name: 'A.0.011' },
@@ -59,20 +58,21 @@ export class NewtappuntPage {
 
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad NewtappuntPage');
-  }
+  ionViewDidLoad() { }
 
+  // close popover
   close() {
     this.viewCtrl.dismiss();
   }
 
+  // show toast message
   opslaan(item) {
     console.log(this.afdeling + ", " + this.ruimte + ", " + this.omschrijving + ", " + this.functie);
     this.viewCtrl.dismiss();
     this.expandAction(item, 'checked', 'Tappunt is opgeslagen.');
   }
 
+  // function for creating the toast message
   expandAction(item: ItemSliding, _: any, text: string) {
     setTimeout(() => {
       const toast = this.toastCtrl.create({

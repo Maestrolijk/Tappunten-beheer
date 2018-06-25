@@ -38,27 +38,26 @@ page-login {
 
     .card {
         background: linear-gradient(white, grey);
-     }
+    }
 
-     .gegevens {
+    .gegevens {
         border: 1px solid grey;
         border-radius: 10px;
     }
 
-    .loginbutton {
-        
+    .loginbutton {      
         border-radius: 10px;
         background-color: #266286;
      }
 
-     .remember {
+    .remember {
         padding: 0px;
         background-color: transparent;
     }
 
     .toggle.toggle-checked .toggle-inner{
         background-color: #266286;
-        }  
+    }  
         
 
 }

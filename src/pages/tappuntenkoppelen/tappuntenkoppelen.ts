@@ -1,16 +1,10 @@
+// imported plugins
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { differenceWith } from 'lodash';
 
 // imported pages
 import { InstellingenPage } from '../instellingen/instellingen';
-
-/**
- * Generated class for the TappuntenkoppelenPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -19,13 +13,19 @@ import { InstellingenPage } from '../instellingen/instellingen';
 })
 export class TappuntenkoppelenPage {
 
+  // variables
   tappunt: any;
   tappuntgroepen: any;
   tappuntgroep: any;
   tappuntenOriginal: any;
   tappuntenAdded: any;
 
-  public tappunten :any = [
+  temptappuntgroep: string;
+  tappuntgroepnummer: number;
+  tappuntgroepfiltered: any;
+
+  // tappunten JSON object
+  public tappunten: any = [
     {
       "tappuntId": 1,
       "ruimte": "A.0.052",
@@ -172,40 +172,51 @@ export class TappuntenkoppelenPage {
     }
   ]
 
-  constructor(public navCtrl: NavController, 
+  constructor(public navCtrl: NavController,
     public navParams: NavParams) {
 
+    // tappuntgroepen JSON object
     this.tappuntgroepen = [
-      { text: 'Fysiotherapie', value: 'Fysiotherapie' },
-      { text: 'Intensive Care', value: 'Intensive Care' },
-      { text: 'Dialyse', value: 'Dialyse' },
-      { text: 'Neonatologie', value: 'Neonatologie' },
-      { text: 'KNO', value: 'KNO' },
-      { text: 'ICT', value: 'ICT' },
-      { text: 'Spoed Eisende Hulp', value: 'Spoed Eisende Hulp' },
-      { text: 'Geriatrie', value: 'Geriatrie' }
+      { id: 0, name: '' },
+      { id: 1, name: 'Fysiotherapie' },
+      { id: 2, name: 'Intensive Care' },
+      { id: 3, name: 'Dialyse' },
+      { id: 4, name: 'Neonatologie' },
+      { id: 5, name: 'KNO' },
+      { id: 6, name: 'ICT' },
+      { id: 7, name: 'Spoed Eisende Hulp' },
+      { id: 8, name: 'Geriatrie' }
     ];
 
+    // set original object
     this.tappuntenOriginal = this.tappunten;
-    this.tappuntgroep = navParams.get('myDataTappuntgroep');
+
+    // get the right tappuntgroep from the list
+    this.tappuntgroepfiltered = this.tappuntgroepen;
+    this.temptappuntgroep = navParams.get('myDataTappuntgroep');
+    this.tappuntgroepfiltered = this.tappuntgroepen.filter(i => i.name == this.temptappuntgroep);
+    for (let key of this.tappuntgroepfiltered) {
+      this.tappuntgroepnummer = key.id;
+    }
+    this.tappuntgroep = this.tappuntgroepen[this.tappuntgroepnummer];
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad TappuntenkoppelenPage');
-  }
+  ionViewDidLoad() { }
 
+  // open instellingen page
   openInstellingenPage() {
     this.navCtrl.push(InstellingenPage)
   }
 
+  // when tappunten from the left list are clicked they disappear and appear on the list to the right
   addTappunten(tappuntData) {
     this.tappunten = this.tappunten.filter(i => i.tappuntId != tappuntData.tappuntId);
     this.tappuntenAdded = differenceWith(this.tappuntenOriginal, this.tappunten);
   }
 
+  // when tappunten from the right list are clicked they disappear and appear on the list to the left
   deleteTappunten(tappuntData) {
     this.tappuntenAdded = this.tappuntenAdded.filter(i => i.tappuntId != tappuntData.tappuntId);
     this.tappunten = differenceWith(this.tappuntenOriginal, this.tappuntenAdded);
   }
-
 }

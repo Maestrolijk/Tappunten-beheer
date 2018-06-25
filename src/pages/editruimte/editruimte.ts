@@ -14,6 +14,8 @@ export class EditruimtePage {
 
   // variables
   naam: string;
+  ruimtes: any[];
+  index: number;
 
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
@@ -21,7 +23,9 @@ export class EditruimtePage {
     public toastProvider: ToastProvider) {
 
     // get variables from ruimte page
-    this.naam = navParams.get('myUserDataNaam');
+    this.ruimtes = navParams.get('myRuimtes');
+    this.naam = navParams.get('myRuimteDataNaam');
+    this.index = navParams.get('myRuimteDataIndex');
   }
 
   ionViewDidLoad() { }
@@ -33,14 +37,17 @@ export class EditruimtePage {
 
   // show toast message
   opslaan(item) {
-    console.log(this.naam);
     this.viewCtrl.dismiss();
+    this.ruimtes.splice(this.index, 1, {
+      naam: this.naam
+    });
     this.toastProvider.expandAction(item, 'checked', 'Ruimte is opgeslagen.');
   }
 
   // show toast message
   verwijderen(item) {
     this.viewCtrl.dismiss();
+    this.ruimtes.splice(this.index, 1);
     this.toastProvider.expandAction(item, 'checked', 'Ruimte is verwijderd.');
   }
 }

@@ -17,6 +17,8 @@ export class EdittappuntgroepPage {
 
   // variables
   naam: string;
+  tappuntgroepen: any[];
+  index: number;
 
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
@@ -25,7 +27,9 @@ export class EdittappuntgroepPage {
     public appCtrl: App) {
 
     // get variables from tappuntgroep page
-    this.naam = navParams.get('myUserDataNaam');
+    this.tappuntgroepen = navParams.get('myTappuntgroepen');
+    this.naam = navParams.get('myTappuntgroepDataNaam');
+    this.index = navParams.get('myTappuntgroepDataIndex');
   }
 
   ionViewDidLoad() { }
@@ -39,12 +43,16 @@ export class EdittappuntgroepPage {
   opslaan(item) {
     console.log(this.naam);
     this.viewCtrl.dismiss();
+    this.tappuntgroepen.splice(this.index, 1, {
+      naam: this.naam
+    })
     this.toastProvider.expandAction(item, 'checked', 'Tappuntgroep is opgeslagen.');
   }
 
   // show toast message
   verwijderen(item) {
     this.viewCtrl.dismiss();
+    this.tappuntgroepen.splice(this.index, 1);
     this.toastProvider.expandAction(item, 'checked', 'Tappuntgroep is verwijderd.');
   }
 

@@ -14,7 +14,7 @@
       <ion-col style="color: white" (click)="sort('telefoon')">Telefoon</ion-col>
       <ion-col style="color: white" (click)="sort('beheerder')">Beheerder</ion-col>
     </ion-row>
-    <ion-row *ngFor="let user of users | search : terms | sort: {property: column, order: order}" (click)="editUser(user)">
+    <ion-row *ngFor="let user of users | search : terms | sort: {property: column, order: order}; let i = index" (click)="editUser(user, i)">
       <ion-col>
         {{user.AD_naam}}
       </ion-col>

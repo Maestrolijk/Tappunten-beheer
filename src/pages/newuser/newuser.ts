@@ -19,10 +19,15 @@ export class NewuserPage {
   telefoon: number;
   beheerder: boolean;
 
+  user: any[];
+
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
     public viewCtrl: ViewController,
     public toastProvider: ToastProvider) {
+
+    // get variables from user page
+    this.user = navParams.get('myUsers');
   }
 
   // close popover
@@ -30,10 +35,19 @@ export class NewuserPage {
     this.viewCtrl.dismiss();
   }
 
-  // show toast message
+  // add the user to the JSON object
   opslaan(item) {
-    console.log(this.adnaam + ", " + this.naam + ", " + this.telefoon + ", " + this.beheerder);
     this.viewCtrl.dismiss();
+    this.user.push({
+      gebruikerid: 999,
+      AD_naam: this.adnaam,
+      naam: this.naam,
+      beheerder: this.beheerder,
+      telefoon: this.telefoon,
+      weken_terug: "0"
+    });
+
+    // show toast message
     this.toastProvider.expandAction(item, 'checked', 'Gebruiker is opgeslagen.');
   }
 }

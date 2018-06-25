@@ -14,11 +14,15 @@ export class NewafdelingPage {
 
   // variables
   naam: string;
+  afdeling: any[];
 
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
     public viewCtrl: ViewController,
     public toastProvider: ToastProvider) {
+
+    // get variables from user page
+    this.afdeling = navParams.get('myAfdelingen');
   }
 
   ionViewDidLoad() { }
@@ -28,10 +32,15 @@ export class NewafdelingPage {
     this.viewCtrl.dismiss();
   }
 
-  // show toast message
+  // add the afdeling to the JSON object
   opslaan(item) {
-    console.log(this.naam);
     this.viewCtrl.dismiss();
+    this.afdeling.push({
+      afdelingsid: 999,
+      naam: this.naam
+    });
+
+    // show toast message
     this.toastProvider.expandAction(item, 'checked', 'Afdeling is opgeslagen.');
   }
 }

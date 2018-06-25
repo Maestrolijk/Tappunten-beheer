@@ -14,11 +14,15 @@ export class NewruimtePage {
 
   // variables
   naam: string;
+  ruimte: any[];
 
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
     public viewCtrl: ViewController,
     public toastProvider: ToastProvider) {
+
+    // get variables from user page
+    this.ruimte = navParams.get('myRuimtes');
   }
 
   ionViewDidLoad() { }
@@ -28,10 +32,15 @@ export class NewruimtePage {
     this.viewCtrl.dismiss();
   }
 
-  // show toast message
+  // add the ruimte to the JSON object
   opslaan(item) {
-    console.log(this.naam);
     this.viewCtrl.dismiss();
+    this.ruimte.push({
+      ruimteid: 999,
+      naam: this.naam
+    });
+
+    // show toast message
     this.toastProvider.expandAction(item, 'checked', 'Ruimte is opgeslagen.');
   }
 }

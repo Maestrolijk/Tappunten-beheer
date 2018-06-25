@@ -53,15 +53,19 @@ export class AfdelingenPage {
 
   // open popover page for creating a new afdeling
   newAfdeling(myEvent) {
-    let popover = this.popoverCtrl.create(NewafdelingPage, {}, { cssClass: 'custom-popover' });
+    let popover = this.popoverCtrl.create(NewafdelingPage, { 'myAfdelingen': this.afdelingen }, { cssClass: 'custom-popover' });
     popover.present({
       ev: myEvent
     });
   }
 
   // open popover page for editing an afdeling
-  editAfdeling(myEvent) {
-    let popover = this.popoverCtrl.create(EditafdelingPage, { 'myUserDataNaam': myEvent.naam }, { cssClass: 'custom-popover' });
+  editAfdeling(myEvent, index) {
+    let popover = this.popoverCtrl.create(EditafdelingPage, {
+      'myAfdelingen': this.afdelingen,
+      'myAfdelingDataNaam': myEvent.naam,
+      'myAfdelingDataIndex': index
+    }, { cssClass: 'custom-popover' });
     popover.present({
       ev: myEvent
     });

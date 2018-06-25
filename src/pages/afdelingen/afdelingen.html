@@ -11,7 +11,7 @@
     <ion-row style="background-color: #266286">
       <ion-col style="color: white" (click)="sort('naam')">Naam</ion-col>
     </ion-row>
-    <ion-row *ngFor="let afdeling of afdelingen | search : terms | sort: {property: column, order: order}" (click)="editAfdeling(afdeling)">
+    <ion-row *ngFor="let afdeling of afdelingen | search : terms | sort: {property: column, order: order}; let i = index" (click)="editAfdeling(afdeling, i)">
       <ion-col>
         {{afdeling.naam}}
       </ion-col>

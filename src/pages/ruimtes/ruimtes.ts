@@ -77,15 +77,19 @@ export class RuimtesPage {
 
   // open popover page for creating a new ruimte
   newRuimte(myEvent) {
-    let popover = this.popoverCtrl.create(NewruimtePage, {}, { cssClass: 'custom-popover' });
+    let popover = this.popoverCtrl.create(NewruimtePage, { 'myRuimtes': this.ruimtes }, { cssClass: 'custom-popover' });
     popover.present({
       ev: myEvent
     });
   }
 
   // open popover page for editing a ruimte
-  editRuimte(myEvent) {
-    let popover = this.popoverCtrl.create(EditruimtePage, { 'myUserDataNaam': myEvent.naam }, { cssClass: 'custom-popover' });
+  editRuimte(myEvent, index) {
+    let popover = this.popoverCtrl.create(EditruimtePage, {
+      'myRuimtes': this.ruimtes,
+      'myRuimteDataNaam': myEvent.naam,
+      'myRuimteDataIndex': index
+    }, { cssClass: 'custom-popover' });
     popover.present({
       ev: myEvent
     });

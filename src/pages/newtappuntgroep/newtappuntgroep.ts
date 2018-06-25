@@ -15,10 +15,15 @@ export class NewtappuntgroepPage {
   // variables
   naam: string;
 
+  tappuntgroep: any[];
+
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
     public viewCtrl: ViewController,
     public toastProvider: ToastProvider) {
+
+    // get variables from user page
+    this.tappuntgroep = navParams.get('myTappuntgroepen');
   }
 
   ionViewDidLoad() { }
@@ -28,10 +33,15 @@ export class NewtappuntgroepPage {
     this.viewCtrl.dismiss();
   }
 
-  // show toast message
+  // add the tappuntgroep to the JSON object
   opslaan(item) {
-    console.log(this.naam);
     this.viewCtrl.dismiss();
+    this.tappuntgroep.push({
+      groepid: 999,
+      naam: this.naam
+    });
+
+    // show toast message
     this.toastProvider.expandAction(item, 'checked', 'Tappuntgroep is opgeslagen.');
   }
 }

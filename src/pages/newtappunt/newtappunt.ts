@@ -33,10 +33,15 @@ export class NewtappuntPage {
   ruimtes: ruimte[];
   ruimte: ruimte;
 
+  tappunt: any[];
+
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
     public viewCtrl: ViewController,
     public toastProvider: ToastProvider) {
+
+    // get variables from tappunten page
+    this.tappunt = navParams.get('myTappunten');
 
     // afdelingen JSON object
     this.afdelingen = [
@@ -68,10 +73,19 @@ export class NewtappuntPage {
     this.viewCtrl.dismiss();
   }
 
-  // show toast message
+  // add the tappunt to the JSON object
   opslaan(item) {
-    console.log(this.afdeling + ", " + this.ruimte + ", " + this.omschrijving + ", " + this.functie);
     this.viewCtrl.dismiss();
+    this.tappunt.push({
+      tappuntId: 999,
+      ruimte: this.ruimte.name,
+      functie: this.functie,
+      omschrijving: this.omschrijving,
+      opmerkingen: "",
+      afdeling: this.afdeling.name
+    });
+
+    // show toast message
     this.toastProvider.expandAction(item, 'checked', 'Tappunt is opgeslagen.');
   }
 }

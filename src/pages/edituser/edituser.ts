@@ -19,16 +19,21 @@ export class EdituserPage {
   telefoon: number;
   beheerder: boolean;
 
+  users: any[];
+  index: number;
+
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
     public viewCtrl: ViewController,
     public toastProvider: ToastProvider) {
 
     // get variables from user page
+    this.users = navParams.get('myUsers');
     this.adnaam = navParams.get('myUserDataADNaam');
     this.naam = navParams.get('myUserDataNaam');
     this.telefoon = navParams.get('myUserDataTelefoon');
     this.beheerder = navParams.get('myUserDataBeheerder');
+    this.index = navParams.get('myUserDataIndex');
   }
 
   ionViewDidLoad() { }
@@ -40,14 +45,20 @@ export class EdituserPage {
 
   // show toast message
   opslaan(item) {
-    console.log(this.adnaam + ", " + this.naam + ", " + this.telefoon + ", " + this.beheerder);
     this.viewCtrl.dismiss();
+    this.users.splice(this.index, 1, {
+      AD_naam: this.adnaam,
+      naam: this.naam,
+      beheerder: this.beheerder,
+      telefoon: this.telefoon
+    })
     this.toastProvider.expandAction(item, 'checked', 'Gebruiker is opgeslagen.');
   }
 
   // show toast message
   verwijderen(item) {
     this.viewCtrl.dismiss();
+    this.users.splice(this.index, 1);
     this.toastProvider.expandAction(item, 'checked', 'Gebruiker is verwijderd.');
   }
 }

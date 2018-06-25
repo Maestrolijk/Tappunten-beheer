@@ -14,6 +14,8 @@ export class EditafdelingPage {
 
   // variables
   naam: string;
+  afdelingen: any[];
+  index: number;
 
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
@@ -21,7 +23,9 @@ export class EditafdelingPage {
     public toastProvider: ToastProvider) {
 
     // get variables from afdeling page
-    this.naam = navParams.get('myUserDataNaam');
+    this.afdelingen = navParams.get('myAfdelingen');
+    this.naam = navParams.get('myAfdelingDataNaam');
+    this.index = navParams.get('myAfdelingDataIndex');
   }
 
   ionViewDidLoad() { }
@@ -35,12 +39,16 @@ export class EditafdelingPage {
   opslaan(item) {
     console.log(this.naam);
     this.viewCtrl.dismiss();
+    this.afdelingen.splice(this.index, 1, {
+      naam: this.naam
+    })
     this.toastProvider.expandAction(item, 'checked', 'Afdeling is opgeslagen.');
   }
 
   // show toast message
   verwijderen(item) {
     this.viewCtrl.dismiss();
+    this.afdelingen.splice(this.index, 1);
     this.toastProvider.expandAction(item, 'checked', 'Afdeling is verwijderd.');
   }
 }

@@ -183,19 +183,21 @@ export class TappuntenPage {
 
   // open popover page for creating a new tappunt
   newTappunt(myEvent) {
-    let popover = this.popoverCtrl.create(NewtappuntPage, {}, { cssClass: 'custom-popover' });
+    let popover = this.popoverCtrl.create(NewtappuntPage, { 'myTappunten': this.tappunten }, { cssClass: 'custom-popover' });
     popover.present({
       ev: myEvent
     });
   }
 
   // open popover page for editing a tappunt
-  editTappunt(myEvent) {
+  editTappunt(myEvent, index) {
     let popover = this.popoverCtrl.create(EdittappuntPage, {
-      'myUserDataAfdeling': myEvent.afdeling,
-      'myUserDataRuimte': myEvent.ruimte,
-      'myUserDataOmschrijving': myEvent.omschrijving,
-      'myUserDataFunctie': myEvent.functie
+      'myTappunten': this.tappunten,
+      'myTappuntDataAfdeling': myEvent.afdeling,
+      'myTappuntDataRuimte': myEvent.ruimte,
+      'myTappuntDataOmschrijving': myEvent.omschrijving,
+      'myTappuntDataFunctie': myEvent.functie,
+      'myTappuntDataIndex': index
     }, { cssClass: 'custom-popover' });
     popover.present({
       ev: myEvent

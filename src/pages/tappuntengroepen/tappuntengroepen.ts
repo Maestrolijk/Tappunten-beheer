@@ -53,15 +53,19 @@ export class TappuntengroepenPage {
 
   // open popover page for creating a new tappuntgroep
   newTappuntgroep(myEvent) {
-    let popover = this.popoverCtrl.create(NewtappuntgroepPage, {}, { cssClass: 'custom-popover' });
+    let popover = this.popoverCtrl.create(NewtappuntgroepPage, { 'myTappuntgroepen': this.tappuntengroepen }, { cssClass: 'custom-popover' });
     popover.present({
       ev: myEvent
     });
   }
 
   // open popover page for editing a new tappuntgroep
-  editTappuntgroep(myEvent) {
-    let popover = this.popoverCtrl.create(EdittappuntgroepPage, { 'myUserDataNaam': myEvent.naam }, { cssClass: 'custom-popover' });
+  editTappuntgroep(myEvent, index) {
+    let popover = this.popoverCtrl.create(EdittappuntgroepPage, {
+      'myTappuntgroepen': this.tappuntengroepen,
+      'myTappuntgroepDataNaam': myEvent.naam,
+      'myTappuntgroepDataIndex': index
+    }, { cssClass: 'custom-popover' });
     popover.present({
       ev: myEvent
     });

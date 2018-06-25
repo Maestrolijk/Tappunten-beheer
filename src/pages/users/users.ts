@@ -69,18 +69,22 @@ export class UsersPage {
 
   // open popover page for creating a new user
   newUser(myEvent) {
-    let popover = this.popoverCtrl.create(NewuserPage, {}, { cssClass: 'custom-popover' });
+    let popover = this.popoverCtrl.create(NewuserPage, { 'myUsers': this.users }, { cssClass: 'custom-popover' });
     popover.present({
       ev: myEvent
     });
   }
 
   // open popover page for editing a user
-  editUser(myEvent) {
-    let popover = this.popoverCtrl.create(EdituserPage, {'myUserDataADNaam': myEvent.AD_naam, 
-    'myUserDataNaam': myEvent.naam, 
-    'myUserDataTelefoon': myEvent.telefoon,
-    'myUserDataBeheerder': myEvent.beheerder}, { cssClass: 'custom-popover' });
+  editUser(myEvent, index) {
+    let popover = this.popoverCtrl.create(EdituserPage, {
+      'myUsers': this.users,
+      'myUserDataADNaam': myEvent.AD_naam,
+      'myUserDataNaam': myEvent.naam,
+      'myUserDataTelefoon': myEvent.telefoon,
+      'myUserDataBeheerder': myEvent.beheerder,
+      'myUserDataIndex': index
+    }, { cssClass: 'custom-popover' });
     popover.present({
       ev: myEvent
     });

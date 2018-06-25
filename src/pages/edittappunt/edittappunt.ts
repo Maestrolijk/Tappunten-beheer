@@ -41,6 +41,9 @@ export class EdittappuntPage {
   ruimtes: ruimte[];
   ruimte: ruimte;
 
+  tappunten: any[];
+  index: number;
+
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
     public viewCtrl: ViewController,
@@ -71,7 +74,7 @@ export class EdittappuntPage {
 
     // get the right afdeling from the list
     this.afdelingfiltered = this.afdelingen;
-    this.tempafdeling = navParams.get('myUserDataAfdeling');
+    this.tempafdeling = navParams.get('myTappuntDataAfdeling');
     this.afdelingfiltered = this.afdelingen.filter(i => i.name == this.tempafdeling);
     for (let key of this.afdelingfiltered) {
       this.afdelingnummer = key.id;
@@ -80,7 +83,7 @@ export class EdittappuntPage {
 
     // get the right ruimte from the list
     this.ruimtesfiltered = this.ruimtes;
-    this.tempruimte = navParams.get('myUserDataRuimte');
+    this.tempruimte = navParams.get('myTappuntDataRuimte');
     this.ruimtesfiltered = this.ruimtes.filter(i => i.name == this.tempruimte);
     for (let key of this.ruimtesfiltered) {
       this.ruimtenummer = key.id;
@@ -88,8 +91,10 @@ export class EdittappuntPage {
     this.ruimte = this.ruimtes[this.ruimtenummer];
 
     // get variables from tappunt page
-    this.omschrijving = navParams.get('myUserDataOmschrijving');
-    this.functie = navParams.get('myUserDataFunctie');
+    this.tappunten = navParams.get('myTappunten');
+    this.omschrijving = navParams.get('myTappuntDataOmschrijving');
+    this.functie = navParams.get('myTappuntDataFunctie');
+    this.index = navParams.get('myTappuntDataIndex');
   }
 
   ionViewDidLoad() { }
@@ -102,12 +107,19 @@ export class EdittappuntPage {
   // show toast message
   opslaan(item) {
     this.viewCtrl.dismiss();
+    this.tappunten.splice(this.index, 1, {
+      ruimte: this.ruimte.name,
+      functie: this.functie,
+      omschrijving: this.omschrijving,
+      afdeling: this.afdeling.name
+    })
     this.toastProvider.expandAction(item, 'checked', 'Tappunt is opgeslagen.');
   }
 
   // show toast message
   verwijderen(item) {
     this.viewCtrl.dismiss();
+    this.tappunten.splice(this.index, 1);
     this.toastProvider.expandAction(item, 'checked', 'Tappunt is verwijderd.');
   }
 }

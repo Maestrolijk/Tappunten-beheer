@@ -34,7 +34,7 @@ export class EdittappuntgroepPage {
     this.naam = navParams.get('myTappuntgroepDataNaam');
     this.index = navParams.get('myTappuntgroepDataIndex');
   }
-  
+
   // set autofocus on this field
   ngAfterViewChecked() {
     this.myInput.setFocus();
@@ -47,7 +47,6 @@ export class EdittappuntgroepPage {
 
   // save the changes
   opslaan(item) {
-    this.viewCtrl.dismiss();
     this.tappuntgroepen.splice(this.index, 1, {
       naam: this.naam
     })

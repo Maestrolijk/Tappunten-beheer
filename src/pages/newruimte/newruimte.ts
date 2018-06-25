@@ -40,12 +40,10 @@ export class NewruimtePage {
 
   // add the ruimte to the JSON object
   opslaan(item) {
-
     this.ruimte.push({
       ruimteid: 999,
       naam: this.naam
     });
-    this.viewCtrl.dismiss();
     // show toast message
     this.toastProvider.expandAction(item, 'checked', 'Ruimte is opgeslagen.');
   }

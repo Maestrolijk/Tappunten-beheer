@@ -51,7 +51,6 @@ export class EdituserPage {
 
   // save the changes
   opslaan(item) {
-    this.viewCtrl.dismiss();
     this.users.splice(this.index, 1, {
       AD_naam: this.adnaam,
       naam: this.naam,

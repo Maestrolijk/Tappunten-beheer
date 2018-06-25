@@ -3,7 +3,7 @@
 </ion-header>
 
 <ion-content>
-  <!-- <form (ngSubmit)="opslaan()"> -->
+  <form (ngSubmit)="opslaan()">
     <ion-card class="card" padding>
       <div padding>
         <ion-input #myInput placeholder="Naam" [(ngModel)]="naam" name="naam"></ion-input>
@@ -13,5 +13,5 @@
         <button ion-button small color="dz" class="button" (click)="opslaan()">Opslaan</button>
       </div>
     </ion-card>
-  <!-- </form> -->
+  </form>
 </ion-content>

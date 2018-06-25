@@ -3,26 +3,28 @@
 </ion-header>
 
 <ion-content>
-  <ion-card class="card" padding>
-    <div padding>
-      <ion-input #myInput placeholder="AD naam" [(ngModel)]="adnaam"></ion-input>
-    </div>
-    <div padding>
-      <ion-input placeholder="Naam" [(ngModel)]="naam"></ion-input>
-    </div>
-    <div padding>
-      <ion-input placeholder="Telefoonnummer" type="number" [(ngModel)]="telefoon"></ion-input>
-    </div>
-    <div padding>
-      <ion-item>
-        <ion-label style="color: rgb(150, 150, 150)">Beheerder</ion-label>
-        <ion-toggle [(ngModel)]="beheerder"></ion-toggle>
-      </ion-item>
-    </div>
-    <div text-center>
-      <button ion-button small color="dz" class="button" (click)="close()">Annuleren</button>
-      <button ion-button small color="dz" class="button" (click)="opslaan()">Opslaan</button>
-      <button ion-button small color="dz" class="button" (click)="verwijderen()">Verwijderen</button>
-    </div>
-  </ion-card>
+  <form (ngSubmit)="opslaan()">
+    <ion-card class="card" padding>
+      <div padding>
+        <ion-input #myInput placeholder="AD naam" [(ngModel)]="adnaam" name="adnaam"></ion-input>
+      </div>
+      <div padding>
+        <ion-input placeholder="Naam" [(ngModel)]="naam" name="naam"></ion-input>
+      </div>
+      <div padding>
+        <ion-input placeholder="Telefoonnummer" type="number" [(ngModel)]="telefoon" name="telefoon"></ion-input>
+      </div>
+      <div padding>
+        <ion-item>
+          <ion-label style="color: rgb(150, 150, 150)">Beheerder</ion-label>
+          <ion-toggle [(ngModel)]="beheerder" name="beheerder"></ion-toggle>
+        </ion-item>
+      </div>
+      <div text-center>
+        <button ion-button small color="dz" class="button" (click)="close()">Annuleren</button>
+        <button ion-button small color="dz" class="button" (click)="opslaan()">Opslaan</button>
+        <button ion-button small color="dz" class="button" (click)="verwijderen()">Verwijderen</button>
+      </div>
+    </ion-card>
+  </form>
 </ion-content>

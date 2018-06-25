@@ -43,7 +43,6 @@ export class EditafdelingPage {
 
   // save the changes
   opslaan(item) {
-    this.viewCtrl.dismiss();
     this.afdelingen.splice(this.index, 1, {
       naam: this.naam
     })

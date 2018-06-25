@@ -40,7 +40,6 @@ export class NewafdelingPage {
 
   // add the afdeling to the JSON object
   opslaan(item) {
-    this.viewCtrl.dismiss();
     this.afdeling.push({
       afdelingsid: 999,
       naam: this.naam

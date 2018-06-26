@@ -4,32 +4,34 @@
 
 <ion-content>
   <ion-card class="card" padding>
-    <div padding>
-      <ion-item>
-        <select-searchable [(ngModel)]="afdeling" name="afdeling" [items]="afdelingen" itemValueField="id" itemTextField="name" [canSearch]="true"
-          searchPlaceholder="Filter op afdeling" [focusSearchbar]="true">
-          <ng-template selectSearchableLabelTemplate>
-            Afdeling
-          </ng-template>
-        </select-searchable>
-      </ion-item>
-    </div>
-    <div padding>
-      <ion-item>
-        <select-searchable [(ngModel)]="ruimte" name="ruimte" [items]="ruimtes" itemValueField="id" itemTextField="name" [canSearch]="true"
-          searchPlaceholder="Filter op ruimte" [focusSearchbar]="true">
-          <ng-template selectSearchableLabelTemplate>
-            Ruimte
-          </ng-template>
-        </select-searchable>
-      </ion-item>
-    </div>
-    <div padding>
-      <ion-input placeholder="Omschrijving" [(ngModel)]="omschrijving" name="omschrijving"></ion-input>
-    </div>
-    <div padding>
-      <ion-input placeholder="Functie" [(ngModel)]="functie" name="functie"></ion-input>
-    </div>
+    <form (ngSubmit)="opslaan()">
+      <div padding>
+        <ion-item>
+          <select-searchable [(ngModel)]="afdeling" name="afdeling" [items]="afdelingen" itemValueField="id" itemTextField="name" [canSearch]="true"
+            searchPlaceholder="Filter op afdeling" [focusSearchbar]="true">
+            <ng-template selectSearchableLabelTemplate>
+              Afdeling
+            </ng-template>
+          </select-searchable>
+        </ion-item>
+      </div>
+      <div padding>
+        <ion-item>
+          <select-searchable [(ngModel)]="ruimte" name="ruimte" [items]="ruimtes" itemValueField="id" itemTextField="name" [canSearch]="true"
+            searchPlaceholder="Filter op ruimte" [focusSearchbar]="true">
+            <ng-template selectSearchableLabelTemplate>
+              Ruimte
+            </ng-template>
+          </select-searchable>
+        </ion-item>
+      </div>
+      <div padding>
+        <ion-input placeholder="Omschrijving" [(ngModel)]="omschrijving" name="omschrijving"></ion-input>
+      </div>
+      <div padding>
+        <ion-input placeholder="Functie" [(ngModel)]="functie" name="functie"></ion-input>
+      </div>
+    </form>
     <div text-center>
       <button ion-button small color="dz" class="button" (click)="close()">Annuleren</button>
       <button ion-button small color="dz" class="button" (click)="opslaan()">Opslaan</button>

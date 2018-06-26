@@ -1,6 +1,17 @@
 <ion-content>
 
-  <ion-searchbar [(ngModel)]="terms" placeholder="Filter op afdeling"></ion-searchbar>
+    <ion-item style="width: 33%">
+        <ion-label>Filter op kolom</ion-label>
+        <ion-select [(ngModel)]="columnname">
+            <ion-option value="afdeling">Afdeling</ion-option>
+            <ion-option value="ruimte">Ruimte</ion-option>
+            <ion-option value="omschrijving">Omschrijving</ion-option>
+            <ion-option value="functie">Functie</ion-option>
+            <ion-option value="gespoeld">Gespoeld</ion-option>
+        </ion-select>
+    </ion-item>
+
+  <ion-searchbar *ngIf="columnname" [(ngModel)]="terms" placeholder="Filter op..."></ion-searchbar>
 
   <ion-grid class="table">
     <ion-row style="background-color: #266286" class="table-header">
@@ -11,7 +22,7 @@
       <ion-col style="color: white" (click)="sort('functie')">Functie</ion-col>
       <ion-col style="color: white" (click)="sort('gespoeld')">Gespoeld</ion-col>
     </ion-row>
-    <ion-row *ngFor="let tappunt of tappunten | search : terms | sort: {property: column, order: order}">
+    <ion-row *ngFor="let tappunt of tappunten | search : terms : columnname | sort: {property: column, order: order}">
       <ion-col>
         {{tappunt.weeknr}}
       </ion-col>

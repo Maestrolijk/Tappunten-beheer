@@ -5,7 +5,16 @@
     </button>
   </ion-fab>
 
-  <ion-searchbar [(ngModel)]="terms" placeholder="Filter op AD naam"></ion-searchbar>
+  <ion-item style="width: 33%">
+    <ion-label>Filter op kolom</ion-label>
+    <ion-select [(ngModel)]="columnname">
+      <ion-option value="AD_naam">AD naam</ion-option>
+      <ion-option value="naam">Naam</ion-option>
+      <ion-option value="telefoon">Telefoon</ion-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-searchbar *ngIf="columnname" [(ngModel)]="terms" placeholder="Filter op..."></ion-searchbar>
 
   <ion-grid class="table">
     <ion-row style="background-color: #266286">
@@ -14,7 +23,8 @@
       <ion-col style="color: white" (click)="sort('telefoon')">Telefoon</ion-col>
       <ion-col style="color: white" (click)="sort('beheerder')">Beheerder</ion-col>
     </ion-row>
-    <ion-row *ngFor="let user of users | search : terms | sort: {property: column, order: order}; let i = index" (click)="editUser(user, i)">
+    <ion-row *ngFor="let user of users | search : terms : columnname | sort: {property: column, order: order}; let i = index"
+      (click)="editUser(user, i)">
       <ion-col>
         {{user.AD_naam}}
       </ion-col>

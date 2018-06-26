@@ -39,9 +39,11 @@ export class EdituserPage {
     this.index = navParams.get('myUserDataIndex');
   }
 
-  // set autofocus on this field
-  ngAfterViewChecked() {
-    this.myInput.setFocus();
+  // // set autofocus on this field
+  ngAfterViewInit() {
+    setTimeout(() => {
+      this.myInput.setFocus();
+    }, 500);
   }
 
   // close popover

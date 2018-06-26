@@ -38,8 +38,10 @@ export class EdittappuntPage {
 
   afdelingen: afdeling[];
   afdeling: afdeling;
+  afdelingtemp: string;
   ruimtes: ruimte[];
   ruimte: ruimte;
+  ruimtetemp: string;
 
   tappunten: any[];
   index: number;
@@ -105,11 +107,13 @@ export class EdittappuntPage {
   // save the changes
   opslaan(item) {
     this.viewCtrl.dismiss();
+    if (this.afdeling === undefined) { this.afdelingtemp = "" } else { this.afdelingtemp = this.afdeling.name }
+    if (this.ruimte === undefined) { this.ruimtetemp = "" } else { this.ruimtetemp = this.ruimte.name }
     this.tappunten.splice(this.index, 1, {
-      ruimte: this.ruimte.name,
+      ruimte: this.ruimtetemp,
       functie: this.functie,
       omschrijving: this.omschrijving,
-      afdeling: this.afdeling.name
+      afdeling: this.afdelingtemp
     })
     // show toast message
     this.toastProvider.expandAction(item, 'checked', 'Tappunt is opgeslagen.');

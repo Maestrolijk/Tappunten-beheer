@@ -4,9 +4,11 @@
 
 <ion-content>
   <ion-card class="card" padding>
-    <div padding>
-      <ion-input #myInput placeholder="Naam" [(ngModel)]="naam" name="naam"></ion-input>
-    </div>
+    <form (ngSubmit)="opslaan()">
+      <div padding>
+        <ion-input #myInput placeholder="Naam" [(ngModel)]="naam" name="naam"></ion-input>
+      </div>
+    </form>
     <div text-center>
       <button ion-button small color="dz" class="button" (click)="close()">Annuleren</button>
       <button ion-button small color="dz" class="button" (click)="opslaan()">Opslaan</button>

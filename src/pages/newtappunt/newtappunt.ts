@@ -30,8 +30,10 @@ export class NewtappuntPage {
 
   afdelingen: afdeling[];
   afdeling: afdeling;
+  afdelingtemp: string;
   ruimtes: ruimte[];
   ruimte: ruimte;
+  ruimtetemp: string;
 
   tappunt: any[];
 
@@ -74,13 +76,15 @@ export class NewtappuntPage {
   // add the tappunt to the JSON object
   opslaan(item) {
     this.viewCtrl.dismiss();
+    if (this.afdeling === undefined) { this.afdelingtemp = "" } else { this.afdelingtemp = this.afdeling.name }
+    if (this.ruimte === undefined) { this.ruimtetemp = "" } else { this.ruimtetemp = this.ruimte.name }
     this.tappunt.push({
       tappuntId: 999,
-      ruimte: this.ruimte.name,
+      ruimte: this.ruimtetemp,
       functie: this.functie,
       omschrijving: this.omschrijving,
       opmerkingen: "",
-      afdeling: this.afdeling.name
+      afdeling: this.afdelingtemp
     });
     // show toast message
     this.toastProvider.expandAction(item, 'checked', 'Tappunt is opgeslagen.');

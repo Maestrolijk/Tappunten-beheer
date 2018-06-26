@@ -34,8 +34,10 @@ export class NewuserPage {
   }
 
   // set autofocus on this field
-  ngAfterViewChecked() {
-    this.myInput.setFocus();
+  ngAfterViewInit() {
+    setTimeout(() => {
+      this.myInput.setFocus();
+    }, 500);
   }
 
   // close popover

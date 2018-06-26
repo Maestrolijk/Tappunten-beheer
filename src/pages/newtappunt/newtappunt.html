@@ -3,7 +3,8 @@
 </ion-header>
 
 <ion-content>
-    <ion-card class="card" padding>
+  <ion-card class="card" padding>
+    <form (ngSubmit)="opslaan()">
       <div padding>
         <ion-item>
           <select-searchable [(ngModel)]="afdeling" name="afdeling" [items]="afdelingen" itemValueField="id" itemTextField="name" [canSearch]="true"
@@ -30,9 +31,10 @@
       <div padding>
         <ion-input placeholder="Functie" [(ngModel)]="functie" name="functie"></ion-input>
       </div>
-      <div text-center>
-        <button ion-button small color="dz" class="button" (click)="close()">Annuleren</button>
-        <button ion-button small color="dz" class="button" (click)="opslaan()">Opslaan</button>
-      </div>
-    </ion-card>
+    </form>
+    <div text-center>
+      <button ion-button small color="dz" class="button" (click)="close()">Annuleren</button>
+      <button ion-button small color="dz" class="button" (click)="opslaan()">Opslaan</button>
+    </div>
+  </ion-card>
 </ion-content>

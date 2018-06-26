@@ -3,14 +3,16 @@
 </ion-header>
 
 <ion-content>
-    <ion-card class="card" padding>
+  <ion-card class="card" padding>
+    <form (ngSubmit)="opslaan()">
       <div padding>
         <ion-input #myInput placeholder="Naam" [(ngModel)]="naam" name="naam"></ion-input>
       </div>
-      <div text-center>
-        <button ion-button small color="dz" class="button" (click)="close()">Annuleren</button>
-        <button ion-button small color="dz" class="button" (click)="opslaan()">Opslaan</button>
-        <button ion-button small color="dz" class="button" (click)="verwijderen()">Verwijderen</button>
-      </div>
-    </ion-card>
+    </form>
+    <div text-center>
+      <button ion-button small color="dz" class="button" (click)="close()">Annuleren</button>
+      <button ion-button small color="dz" class="button" (click)="opslaan()">Opslaan</button>
+      <button ion-button small color="dz" class="button" (click)="verwijderen()">Verwijderen</button>
+    </div>
+  </ion-card>
 </ion-content>

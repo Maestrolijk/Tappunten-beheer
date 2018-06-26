@@ -57,6 +57,6 @@ export class NewuserPage {
       weken_terug: "0"
     });
     // show toast message
-    this.toastProvider.expandAction(item, 'checked', 'Gebruiker is opgeslagen.');
+    this.toastProvider.expandAction(item, 'checked', 'Gebruiker "' + this.naam + '" is opgeslagen.');
   }
 }

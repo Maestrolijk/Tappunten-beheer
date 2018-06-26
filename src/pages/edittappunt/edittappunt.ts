@@ -116,7 +116,7 @@ export class EdittappuntPage {
       afdeling: this.afdelingtemp
     })
     // show toast message
-    this.toastProvider.expandAction(item, 'checked', 'Tappunt is opgeslagen.');
+    this.toastProvider.expandAction(item, 'checked', 'Tappunt "' + this.omschrijving + '" is opgeslagen.');
   }
 
   // delete the item
@@ -124,6 +124,6 @@ export class EdittappuntPage {
     this.viewCtrl.dismiss();
     this.tappunten.splice(this.index, 1);
     // show toast message
-    this.toastProvider.expandAction(item, 'checked', 'Tappunt is verwijderd.');
+    this.toastProvider.expandAction(item, 'checked', 'Tappunt "' + this.omschrijving + '" is verwijderd.');
   }
 }

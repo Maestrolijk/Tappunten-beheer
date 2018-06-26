@@ -61,7 +61,7 @@ export class EdituserPage {
       telefoon: this.telefoon
     })
     // show toast message
-    this.toastProvider.expandAction(item, 'checked', 'Gebruiker is opgeslagen.');
+    this.toastProvider.expandAction(item, 'checked', 'Gebruiker "' + this.naam + '" is opgeslagen.');
   }
 
   // delete the item
@@ -69,6 +69,6 @@ export class EdituserPage {
     this.viewCtrl.dismiss();
     this.users.splice(this.index, 1);
     // show toast message
-    this.toastProvider.expandAction(item, 'checked', 'Gebruiker is verwijderd.');
+    this.toastProvider.expandAction(item, 'checked', 'Gebruiker "' + this.naam + '" is verwijderd.');
   }
 }

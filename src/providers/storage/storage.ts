@@ -8,7 +8,6 @@ export class StorageProvider {
 
   constructor(public http: HttpClient,
     public storage: Storage) {
-    console.log('Hello StorageProvider Provider');
   }
 
   // set local storage values

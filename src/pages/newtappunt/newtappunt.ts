@@ -87,6 +87,6 @@ export class NewtappuntPage {
       afdeling: this.afdelingtemp
     });
     // show toast message
-    this.toastProvider.expandAction(item, 'checked', 'Tappunt is opgeslagen.');
+    this.toastProvider.expandAction(item, 'checked', 'Tappunt "' + this.omschrijving + '" is opgeslagen.');
   }
 }

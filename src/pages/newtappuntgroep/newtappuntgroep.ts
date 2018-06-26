@@ -47,6 +47,6 @@ export class NewtappuntgroepPage {
       naam: this.naam
     });
     // show toast message
-    this.toastProvider.expandAction(item, 'checked', 'Tappuntgroep is opgeslagen.');
+    this.toastProvider.expandAction(item, 'checked', 'Tappuntgroep "' + this.naam + '" is opgeslagen.');
   }
 }

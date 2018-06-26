@@ -52,7 +52,7 @@ export class EdittappuntgroepPage {
       naam: this.naam
     })
     // show toast message
-    this.toastProvider.expandAction(item, 'checked', 'Tappuntgroep is opgeslagen.');
+    this.toastProvider.expandAction(item, 'checked', 'Tappuntgroep "' + this.naam + '" is opgeslagen.');
   }
 
   // delete the item
@@ -60,7 +60,7 @@ export class EdittappuntgroepPage {
     this.viewCtrl.dismiss();
     this.tappuntgroepen.splice(this.index, 1);
     // show toast message
-    this.toastProvider.expandAction(item, 'checked', 'Tappuntgroep is verwijderd.');
+    this.toastProvider.expandAction(item, 'checked', 'Tappuntgroep "' + this.naam + '" is verwijderd.');
   }
 
   // open the TappuntenKoppelen page while keeping the tabs on the top of the screen

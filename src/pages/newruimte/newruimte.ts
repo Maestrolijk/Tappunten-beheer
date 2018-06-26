@@ -46,6 +46,6 @@ export class NewruimtePage {
       naam: this.naam
     });
     // show toast message
-    this.toastProvider.expandAction(item, 'checked', 'Ruimte is opgeslagen.');
+    this.toastProvider.expandAction(item, 'checked', 'Ruimte "' + this.naam + '" is opgeslagen.');
   }
 }

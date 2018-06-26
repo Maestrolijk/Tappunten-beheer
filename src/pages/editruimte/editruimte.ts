@@ -48,7 +48,7 @@ export class EditruimtePage {
       naam: this.naam
     });
     // show toast message
-    this.toastProvider.expandAction(item, 'checked', 'Ruimte is opgeslagen.');
+    this.toastProvider.expandAction(item, 'checked', 'Ruimte "' + this.naam + '" is opgeslagen.');
   }
 
   // delete the item
@@ -56,6 +56,6 @@ export class EditruimtePage {
     this.viewCtrl.dismiss();
     this.ruimtes.splice(this.index, 1);
     // show toast message
-    this.toastProvider.expandAction(item, 'checked', 'Ruimte is verwijderd.');
+    this.toastProvider.expandAction(item, 'checked', 'Ruimte "' + this.naam + '" is verwijderd.');
   }
 }

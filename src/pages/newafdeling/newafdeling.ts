@@ -46,6 +46,6 @@ export class NewafdelingPage {
       naam: this.naam
     });
     // show toast message
-    this.toastProvider.expandAction(item, 'checked', 'Afdeling is opgeslagen.');
+    this.toastProvider.expandAction(item, 'checked', 'Afdeling "' + this.naam + '" is opgeslagen.');
   }
 }

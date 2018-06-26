@@ -48,7 +48,7 @@ export class EditafdelingPage {
       naam: this.naam
     })
     // show toast message
-    this.toastProvider.expandAction(item, 'checked', 'Afdeling is opgeslagen.');
+    this.toastProvider.expandAction(item, 'checked', 'Afdeling "' + this.naam + '" is opgeslagen.');
   }
 
   // delete the afdeling
@@ -56,6 +56,6 @@ export class EditafdelingPage {
     this.viewCtrl.dismiss();
     this.afdelingen.splice(this.index, 1);
     // show toast message
-    this.toastProvider.expandAction(item, 'checked', 'Afdeling is verwijderd.');
+    this.toastProvider.expandAction(item, 'checked', 'Afdeling "' + this.naam + '" is verwijderd.');
   }
 }

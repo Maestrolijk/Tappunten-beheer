@@ -4,6 +4,7 @@
       <ion-col style="color: white">Weeknr
         <img src="../../assets/imgs/sortcaretdzdownsmall.png" (click)="sort('weeknr')" *ngIf="weeknrsort == 0">
         <img src="../../assets/imgs/sortcaretdzupsmall.png" (click)="sort('weeknr')" *ngIf="weeknrsort != 0">
+        <ion-input text-left no-margin [(ngModel)]="termsweeknr" placeholder="Filter op weeknr..." (ionChange)="setFilter('weeknr')"></ion-input>
       </ion-col>
       <ion-col style="color: white">Afdeling
         <img src="../../assets/imgs/sortcaretdzdownsmall.png" (click)="sort('afdeling')" *ngIf="afdelingsort == 0">

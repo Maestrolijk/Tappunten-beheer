@@ -17,7 +17,9 @@
       <ion-col style="color: white" (click)="sort('telefoon')">Telefoon
           <ion-input text-left no-margin [(ngModel)]="termstelefoon" placeholder="Filter op telefoon..." (ionChange)="setFilter('telefoon')"></ion-input>
       </ion-col>
-      <ion-col style="color: white" (click)="sort('beheerder')">Beheerder</ion-col>
+      <ion-col style="color: white" (click)="sort('beheerder')">Beheerder
+          <ion-input text-left no-margin [(ngModel)]="termsbeheerder" placeholder="Filter op beheerder..." (ionChange)="setFilter('beheerder')"></ion-input>
+      </ion-col>
     </ion-row>
     <ion-row *ngFor="let user of users | search : terms : columnname | sort: {property: column, order: order}; let i = index"
       (click)="editUser(user, i)">

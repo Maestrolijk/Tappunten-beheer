@@ -13,6 +13,9 @@ export class SearchPipe implements PipeTransform {
     terms = terms.toLowerCase();
     return items.filter(it => {
       switch (columnname) {
+        case "weeknr": {
+          return it.weeknr.toLowerCase().includes(terms);
+        }
         case "afdeling": {
           return it.afdeling.toLowerCase().includes(terms);
         }
@@ -36,6 +39,9 @@ export class SearchPipe implements PipeTransform {
         }
         case "telefoon": {
           return it.telefoon.toLowerCase().includes(terms);
+        }
+        case "beheerder": {
+          return it.beheerder.toLowerCase().includes(terms);
         }
         default: {
           return [];

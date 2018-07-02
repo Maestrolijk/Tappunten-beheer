@@ -25,6 +25,7 @@ export class OverzichtPage {
 
   // variables for filtering
   columnname: string;
+  termsweeknr: string;
   termsafdeling: string;
   termsruimte: string;
   termsomschrijving: string;
@@ -36,7 +37,7 @@ export class OverzichtPage {
   public tappunten: any = [
     {
       "tappuntId": 1,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "A.0.052",
       "functie": "Onderzoekkamer",
       "omschrijving": "Wastafel-mengkraan",
@@ -50,7 +51,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 2,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "E.0.241",
       "functie": "Onderzoekkamer",
       "omschrijving": "Aanrechtcombinatie-mengkraan",
@@ -64,7 +65,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 3,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "A.0.012",
       "functie": "Spr.onderzoekkamer",
       "omschrijving": "Aanrechtcombinatie-Mengkraan",
@@ -78,7 +79,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 4,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "A.0.002",
       "functie": "Magazijn",
       "omschrijving": "Wastafel-mengkraan",
@@ -92,7 +93,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 5,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "A.0.011",
       "functie": "Spr.onderzoekkamer",
       "omschrijving": "Aanrechtcombinatie-mengkraan",
@@ -106,7 +107,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 6,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "H.0.003B",
       "functie": "behandelkamer",
       "omschrijving": "Wastafel-mengkraan",
@@ -120,7 +121,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 8,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "C.0.078",
       "functie": "Spr.onderzoekkamer",
       "omschrijving": "Wastafel-mengkraan",
@@ -134,7 +135,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 1314,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "D.1.224",
       "functie": "berging verpleegk.magazijn",
       "omschrijving": "Aanrechtcombinatie-mengkraan",
@@ -148,7 +149,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 1315,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "D.1.225",
       "functie": "Spoelruimte/vuil/vuil linnen",
       "omschrijving": "Aanrechtcombinatie-mengkraan",
@@ -162,7 +163,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 1316,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "D.1.225",
       "functie": "Spoelruimte/vuil/vuil linnen",
       "omschrijving": "Desinfectie machine",
@@ -176,7 +177,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 1317,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "D.1.226",
       "functie": "trafokast C-3",
       "omschrijving": "Techniekruimte",
@@ -190,7 +191,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 1318,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "D.1.227",
       "functie": "Schone werkruimte",
       "omschrijving": "Aanrechtcombinatie-mengkraan",
@@ -204,7 +205,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 1,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "A.0.052",
       "functie": "Onderzoekkamer",
       "omschrijving": "Wastafel-mengkraan",
@@ -218,7 +219,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 2,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "E.0.241",
       "functie": "Onderzoekkamer",
       "omschrijving": "Aanrechtcombinatie-mengkraan",
@@ -232,7 +233,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 3,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "A.0.012",
       "functie": "Spr.onderzoekkamer",
       "omschrijving": "Aanrechtcombinatie-Mengkraan",
@@ -246,7 +247,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 4,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "A.0.002",
       "functie": "Magazijn",
       "omschrijving": "Wastafel-mengkraan",
@@ -260,7 +261,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 5,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "A.0.011",
       "functie": "Spr.onderzoekkamer",
       "omschrijving": "Aanrechtcombinatie-mengkraan",
@@ -274,7 +275,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 6,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "H.0.003B",
       "functie": "behandelkamer",
       "omschrijving": "Wastafel-mengkraan",
@@ -288,7 +289,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 8,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "C.0.078",
       "functie": "Spr.onderzoekkamer",
       "omschrijving": "Wastafel-mengkraan",
@@ -302,7 +303,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 1314,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "D.1.224",
       "functie": "berging verpleegk.magazijn",
       "omschrijving": "Aanrechtcombinatie-mengkraan",
@@ -316,7 +317,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 1315,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "D.1.225",
       "functie": "Spoelruimte/vuil/vuil linnen",
       "omschrijving": "Aanrechtcombinatie-mengkraan",
@@ -330,7 +331,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 1316,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "D.1.225",
       "functie": "Spoelruimte/vuil/vuil linnen",
       "omschrijving": "Desinfectie machine",
@@ -344,7 +345,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 1317,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "D.1.226",
       "functie": "trafokast C-3",
       "omschrijving": "Techniekruimte",
@@ -358,7 +359,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 1318,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "D.1.227",
       "functie": "Schone werkruimte",
       "omschrijving": "Aanrechtcombinatie-mengkraan",
@@ -372,7 +373,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 1,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "A.0.052",
       "functie": "Onderzoekkamer",
       "omschrijving": "Wastafel-mengkraan",
@@ -386,7 +387,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 2,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "E.0.241",
       "functie": "Onderzoekkamer",
       "omschrijving": "Aanrechtcombinatie-mengkraan",
@@ -400,7 +401,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 3,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "A.0.012",
       "functie": "Spr.onderzoekkamer",
       "omschrijving": "Aanrechtcombinatie-Mengkraan",
@@ -414,7 +415,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 4,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "A.0.002",
       "functie": "Magazijn",
       "omschrijving": "Wastafel-mengkraan",
@@ -428,7 +429,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 5,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "A.0.011",
       "functie": "Spr.onderzoekkamer",
       "omschrijving": "Aanrechtcombinatie-mengkraan",
@@ -442,7 +443,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 6,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "H.0.003B",
       "functie": "behandelkamer",
       "omschrijving": "Wastafel-mengkraan",
@@ -456,7 +457,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 8,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "C.0.078",
       "functie": "Spr.onderzoekkamer",
       "omschrijving": "Wastafel-mengkraan",
@@ -470,7 +471,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 1314,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "D.1.224",
       "functie": "berging verpleegk.magazijn",
       "omschrijving": "Aanrechtcombinatie-mengkraan",
@@ -484,7 +485,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 1315,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "D.1.225",
       "functie": "Spoelruimte/vuil/vuil linnen",
       "omschrijving": "Aanrechtcombinatie-mengkraan",
@@ -498,7 +499,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 1316,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "D.1.225",
       "functie": "Spoelruimte/vuil/vuil linnen",
       "omschrijving": "Desinfectie machine",
@@ -512,7 +513,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 1317,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "D.1.226",
       "functie": "trafokast C-3",
       "omschrijving": "Techniekruimte",
@@ -526,7 +527,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 1318,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "D.1.227",
       "functie": "Schone werkruimte",
       "omschrijving": "Aanrechtcombinatie-mengkraan",
@@ -540,7 +541,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 1,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "A.0.052",
       "functie": "Onderzoekkamer",
       "omschrijving": "Wastafel-mengkraan",
@@ -554,7 +555,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 2,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "E.0.241",
       "functie": "Onderzoekkamer",
       "omschrijving": "Aanrechtcombinatie-mengkraan",
@@ -568,7 +569,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 3,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "A.0.012",
       "functie": "Spr.onderzoekkamer",
       "omschrijving": "Aanrechtcombinatie-Mengkraan",
@@ -582,7 +583,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 4,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "A.0.002",
       "functie": "Magazijn",
       "omschrijving": "Wastafel-mengkraan",
@@ -596,7 +597,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 5,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "A.0.011",
       "functie": "Spr.onderzoekkamer",
       "omschrijving": "Aanrechtcombinatie-mengkraan",
@@ -610,7 +611,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 6,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "H.0.003B",
       "functie": "behandelkamer",
       "omschrijving": "Wastafel-mengkraan",
@@ -624,7 +625,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 8,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "C.0.078",
       "functie": "Spr.onderzoekkamer",
       "omschrijving": "Wastafel-mengkraan",
@@ -638,7 +639,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 1314,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "D.1.224",
       "functie": "berging verpleegk.magazijn",
       "omschrijving": "Aanrechtcombinatie-mengkraan",
@@ -652,7 +653,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 1315,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "D.1.225",
       "functie": "Spoelruimte/vuil/vuil linnen",
       "omschrijving": "Aanrechtcombinatie-mengkraan",
@@ -666,7 +667,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 1316,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "D.1.225",
       "functie": "Spoelruimte/vuil/vuil linnen",
       "omschrijving": "Desinfectie machine",
@@ -680,7 +681,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 1317,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "D.1.226",
       "functie": "trafokast C-3",
       "omschrijving": "Techniekruimte",
@@ -694,7 +695,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 1318,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "D.1.227",
       "functie": "Schone werkruimte",
       "omschrijving": "Aanrechtcombinatie-mengkraan",
@@ -708,7 +709,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 1,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "A.0.052",
       "functie": "Onderzoekkamer",
       "omschrijving": "Wastafel-mengkraan",
@@ -722,7 +723,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 2,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "E.0.241",
       "functie": "Onderzoekkamer",
       "omschrijving": "Aanrechtcombinatie-mengkraan",
@@ -736,7 +737,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 3,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "A.0.012",
       "functie": "Spr.onderzoekkamer",
       "omschrijving": "Aanrechtcombinatie-Mengkraan",
@@ -750,7 +751,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 4,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "A.0.002",
       "functie": "Magazijn",
       "omschrijving": "Wastafel-mengkraan",
@@ -764,7 +765,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 5,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "A.0.011",
       "functie": "Spr.onderzoekkamer",
       "omschrijving": "Aanrechtcombinatie-mengkraan",
@@ -778,7 +779,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 6,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "H.0.003B",
       "functie": "behandelkamer",
       "omschrijving": "Wastafel-mengkraan",
@@ -792,7 +793,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 8,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "C.0.078",
       "functie": "Spr.onderzoekkamer",
       "omschrijving": "Wastafel-mengkraan",
@@ -806,7 +807,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 1314,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "D.1.224",
       "functie": "berging verpleegk.magazijn",
       "omschrijving": "Aanrechtcombinatie-mengkraan",
@@ -820,7 +821,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 1315,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "D.1.225",
       "functie": "Spoelruimte/vuil/vuil linnen",
       "omschrijving": "Aanrechtcombinatie-mengkraan",
@@ -834,7 +835,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 1316,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "D.1.225",
       "functie": "Spoelruimte/vuil/vuil linnen",
       "omschrijving": "Desinfectie machine",
@@ -848,7 +849,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 1317,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "D.1.226",
       "functie": "trafokast C-3",
       "omschrijving": "Techniekruimte",
@@ -862,7 +863,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 1318,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "D.1.227",
       "functie": "Schone werkruimte",
       "omschrijving": "Aanrechtcombinatie-mengkraan",
@@ -876,7 +877,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 1,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "A.0.052",
       "functie": "Onderzoekkamer",
       "omschrijving": "Wastafel-mengkraan",
@@ -890,7 +891,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 2,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "E.0.241",
       "functie": "Onderzoekkamer",
       "omschrijving": "Aanrechtcombinatie-mengkraan",
@@ -904,7 +905,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 3,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "A.0.012",
       "functie": "Spr.onderzoekkamer",
       "omschrijving": "Aanrechtcombinatie-Mengkraan",
@@ -918,7 +919,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 4,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "A.0.002",
       "functie": "Magazijn",
       "omschrijving": "Wastafel-mengkraan",
@@ -932,7 +933,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 5,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "A.0.011",
       "functie": "Spr.onderzoekkamer",
       "omschrijving": "Aanrechtcombinatie-mengkraan",
@@ -946,7 +947,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 6,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "H.0.003B",
       "functie": "behandelkamer",
       "omschrijving": "Wastafel-mengkraan",
@@ -960,7 +961,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 8,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "C.0.078",
       "functie": "Spr.onderzoekkamer",
       "omschrijving": "Wastafel-mengkraan",
@@ -974,7 +975,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 1314,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "D.1.224",
       "functie": "berging verpleegk.magazijn",
       "omschrijving": "Aanrechtcombinatie-mengkraan",
@@ -988,7 +989,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 1315,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "D.1.225",
       "functie": "Spoelruimte/vuil/vuil linnen",
       "omschrijving": "Aanrechtcombinatie-mengkraan",
@@ -1002,7 +1003,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 1316,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "D.1.225",
       "functie": "Spoelruimte/vuil/vuil linnen",
       "omschrijving": "Desinfectie machine",
@@ -1016,7 +1017,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 1317,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "D.1.226",
       "functie": "trafokast C-3",
       "omschrijving": "Techniekruimte",
@@ -1030,7 +1031,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 1318,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "D.1.227",
       "functie": "Schone werkruimte",
       "omschrijving": "Aanrechtcombinatie-mengkraan",
@@ -1044,7 +1045,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 1,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "A.0.052",
       "functie": "Onderzoekkamer",
       "omschrijving": "Wastafel-mengkraan",
@@ -1058,7 +1059,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 2,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "E.0.241",
       "functie": "Onderzoekkamer",
       "omschrijving": "Aanrechtcombinatie-mengkraan",
@@ -1072,7 +1073,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 3,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "A.0.012",
       "functie": "Spr.onderzoekkamer",
       "omschrijving": "Aanrechtcombinatie-Mengkraan",
@@ -1086,7 +1087,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 4,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "A.0.002",
       "functie": "Magazijn",
       "omschrijving": "Wastafel-mengkraan",
@@ -1100,7 +1101,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 5,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "A.0.011",
       "functie": "Spr.onderzoekkamer",
       "omschrijving": "Aanrechtcombinatie-mengkraan",
@@ -1114,7 +1115,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 6,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "H.0.003B",
       "functie": "behandelkamer",
       "omschrijving": "Wastafel-mengkraan",
@@ -1128,7 +1129,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 8,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "C.0.078",
       "functie": "Spr.onderzoekkamer",
       "omschrijving": "Wastafel-mengkraan",
@@ -1142,7 +1143,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 1314,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "D.1.224",
       "functie": "berging verpleegk.magazijn",
       "omschrijving": "Aanrechtcombinatie-mengkraan",
@@ -1156,7 +1157,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 1315,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "D.1.225",
       "functie": "Spoelruimte/vuil/vuil linnen",
       "omschrijving": "Aanrechtcombinatie-mengkraan",
@@ -1170,7 +1171,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 1316,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "D.1.225",
       "functie": "Spoelruimte/vuil/vuil linnen",
       "omschrijving": "Desinfectie machine",
@@ -1184,7 +1185,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 1317,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "D.1.226",
       "functie": "trafokast C-3",
       "omschrijving": "Techniekruimte",
@@ -1198,7 +1199,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 1318,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "D.1.227",
       "functie": "Schone werkruimte",
       "omschrijving": "Aanrechtcombinatie-mengkraan",
@@ -1212,7 +1213,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 1,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "A.0.052",
       "functie": "Onderzoekkamer",
       "omschrijving": "Wastafel-mengkraan",
@@ -1226,7 +1227,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 2,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "E.0.241",
       "functie": "Onderzoekkamer",
       "omschrijving": "Aanrechtcombinatie-mengkraan",
@@ -1240,7 +1241,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 3,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "A.0.012",
       "functie": "Spr.onderzoekkamer",
       "omschrijving": "Aanrechtcombinatie-Mengkraan",
@@ -1254,7 +1255,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 4,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "A.0.002",
       "functie": "Magazijn",
       "omschrijving": "Wastafel-mengkraan",
@@ -1268,7 +1269,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 5,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "A.0.011",
       "functie": "Spr.onderzoekkamer",
       "omschrijving": "Aanrechtcombinatie-mengkraan",
@@ -1282,7 +1283,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 6,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "H.0.003B",
       "functie": "behandelkamer",
       "omschrijving": "Wastafel-mengkraan",
@@ -1296,7 +1297,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 8,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "C.0.078",
       "functie": "Spr.onderzoekkamer",
       "omschrijving": "Wastafel-mengkraan",
@@ -1310,7 +1311,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 1314,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "D.1.224",
       "functie": "berging verpleegk.magazijn",
       "omschrijving": "Aanrechtcombinatie-mengkraan",
@@ -1324,7 +1325,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 1315,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "D.1.225",
       "functie": "Spoelruimte/vuil/vuil linnen",
       "omschrijving": "Aanrechtcombinatie-mengkraan",
@@ -1338,7 +1339,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 1316,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "D.1.225",
       "functie": "Spoelruimte/vuil/vuil linnen",
       "omschrijving": "Desinfectie machine",
@@ -1352,7 +1353,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 1317,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "D.1.226",
       "functie": "trafokast C-3",
       "omschrijving": "Techniekruimte",
@@ -1366,7 +1367,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 1318,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "D.1.227",
       "functie": "Schone werkruimte",
       "omschrijving": "Aanrechtcombinatie-mengkraan",
@@ -1380,7 +1381,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 1,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "A.0.052",
       "functie": "Onderzoekkamer",
       "omschrijving": "Wastafel-mengkraan",
@@ -1394,7 +1395,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 2,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "E.0.241",
       "functie": "Onderzoekkamer",
       "omschrijving": "Aanrechtcombinatie-mengkraan",
@@ -1408,7 +1409,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 3,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "A.0.012",
       "functie": "Spr.onderzoekkamer",
       "omschrijving": "Aanrechtcombinatie-Mengkraan",
@@ -1422,7 +1423,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 4,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "A.0.002",
       "functie": "Magazijn",
       "omschrijving": "Wastafel-mengkraan",
@@ -1436,7 +1437,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 5,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "A.0.011",
       "functie": "Spr.onderzoekkamer",
       "omschrijving": "Aanrechtcombinatie-mengkraan",
@@ -1450,7 +1451,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 6,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "H.0.003B",
       "functie": "behandelkamer",
       "omschrijving": "Wastafel-mengkraan",
@@ -1464,7 +1465,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 8,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "C.0.078",
       "functie": "Spr.onderzoekkamer",
       "omschrijving": "Wastafel-mengkraan",
@@ -1478,7 +1479,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 1314,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "D.1.224",
       "functie": "berging verpleegk.magazijn",
       "omschrijving": "Aanrechtcombinatie-mengkraan",
@@ -1492,7 +1493,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 1315,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "D.1.225",
       "functie": "Spoelruimte/vuil/vuil linnen",
       "omschrijving": "Aanrechtcombinatie-mengkraan",
@@ -1506,7 +1507,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 1316,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "D.1.225",
       "functie": "Spoelruimte/vuil/vuil linnen",
       "omschrijving": "Desinfectie machine",
@@ -1520,7 +1521,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 1317,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "D.1.226",
       "functie": "trafokast C-3",
       "omschrijving": "Techniekruimte",
@@ -1534,7 +1535,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 1318,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "D.1.227",
       "functie": "Schone werkruimte",
       "omschrijving": "Aanrechtcombinatie-mengkraan",
@@ -1548,7 +1549,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 1,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "A.0.052",
       "functie": "Onderzoekkamer",
       "omschrijving": "Wastafel-mengkraan",
@@ -1562,7 +1563,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 2,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "E.0.241",
       "functie": "Onderzoekkamer",
       "omschrijving": "Aanrechtcombinatie-mengkraan",
@@ -1576,7 +1577,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 3,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "A.0.012",
       "functie": "Spr.onderzoekkamer",
       "omschrijving": "Aanrechtcombinatie-Mengkraan",
@@ -1590,7 +1591,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 4,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "A.0.002",
       "functie": "Magazijn",
       "omschrijving": "Wastafel-mengkraan",
@@ -1604,7 +1605,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 5,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "A.0.011",
       "functie": "Spr.onderzoekkamer",
       "omschrijving": "Aanrechtcombinatie-mengkraan",
@@ -1618,7 +1619,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 6,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "H.0.003B",
       "functie": "behandelkamer",
       "omschrijving": "Wastafel-mengkraan",
@@ -1632,7 +1633,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 8,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "C.0.078",
       "functie": "Spr.onderzoekkamer",
       "omschrijving": "Wastafel-mengkraan",
@@ -1646,7 +1647,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 1314,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "D.1.224",
       "functie": "berging verpleegk.magazijn",
       "omschrijving": "Aanrechtcombinatie-mengkraan",
@@ -1660,7 +1661,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 1315,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "D.1.225",
       "functie": "Spoelruimte/vuil/vuil linnen",
       "omschrijving": "Aanrechtcombinatie-mengkraan",
@@ -1674,7 +1675,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 1316,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "D.1.225",
       "functie": "Spoelruimte/vuil/vuil linnen",
       "omschrijving": "Desinfectie machine",
@@ -1688,7 +1689,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 1317,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "D.1.226",
       "functie": "trafokast C-3",
       "omschrijving": "Techniekruimte",
@@ -1702,7 +1703,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 1318,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "D.1.227",
       "functie": "Schone werkruimte",
       "omschrijving": "Aanrechtcombinatie-mengkraan",
@@ -1716,7 +1717,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 1,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "A.0.052",
       "functie": "Onderzoekkamer",
       "omschrijving": "Wastafel-mengkraan",
@@ -1730,7 +1731,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 2,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "E.0.241",
       "functie": "Onderzoekkamer",
       "omschrijving": "Aanrechtcombinatie-mengkraan",
@@ -1744,7 +1745,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 3,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "A.0.012",
       "functie": "Spr.onderzoekkamer",
       "omschrijving": "Aanrechtcombinatie-Mengkraan",
@@ -1758,7 +1759,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 4,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "A.0.002",
       "functie": "Magazijn",
       "omschrijving": "Wastafel-mengkraan",
@@ -1772,7 +1773,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 5,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "A.0.011",
       "functie": "Spr.onderzoekkamer",
       "omschrijving": "Aanrechtcombinatie-mengkraan",
@@ -1786,7 +1787,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 6,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "H.0.003B",
       "functie": "behandelkamer",
       "omschrijving": "Wastafel-mengkraan",
@@ -1800,7 +1801,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 8,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "C.0.078",
       "functie": "Spr.onderzoekkamer",
       "omschrijving": "Wastafel-mengkraan",
@@ -1814,7 +1815,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 1314,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "D.1.224",
       "functie": "berging verpleegk.magazijn",
       "omschrijving": "Aanrechtcombinatie-mengkraan",
@@ -1828,7 +1829,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 1315,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "D.1.225",
       "functie": "Spoelruimte/vuil/vuil linnen",
       "omschrijving": "Aanrechtcombinatie-mengkraan",
@@ -1842,7 +1843,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 1316,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "D.1.225",
       "functie": "Spoelruimte/vuil/vuil linnen",
       "omschrijving": "Desinfectie machine",
@@ -1856,7 +1857,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 1317,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "D.1.226",
       "functie": "trafokast C-3",
       "omschrijving": "Techniekruimte",
@@ -1870,7 +1871,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 1318,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "D.1.227",
       "functie": "Schone werkruimte",
       "omschrijving": "Aanrechtcombinatie-mengkraan",
@@ -1884,7 +1885,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 1,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "A.0.052",
       "functie": "Onderzoekkamer",
       "omschrijving": "Wastafel-mengkraan",
@@ -1898,7 +1899,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 2,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "E.0.241",
       "functie": "Onderzoekkamer",
       "omschrijving": "Aanrechtcombinatie-mengkraan",
@@ -1912,7 +1913,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 3,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "A.0.012",
       "functie": "Spr.onderzoekkamer",
       "omschrijving": "Aanrechtcombinatie-Mengkraan",
@@ -1926,7 +1927,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 4,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "A.0.002",
       "functie": "Magazijn",
       "omschrijving": "Wastafel-mengkraan",
@@ -1940,7 +1941,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 5,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "A.0.011",
       "functie": "Spr.onderzoekkamer",
       "omschrijving": "Aanrechtcombinatie-mengkraan",
@@ -1954,7 +1955,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 6,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "H.0.003B",
       "functie": "behandelkamer",
       "omschrijving": "Wastafel-mengkraan",
@@ -1968,7 +1969,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 8,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "C.0.078",
       "functie": "Spr.onderzoekkamer",
       "omschrijving": "Wastafel-mengkraan",
@@ -1982,7 +1983,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 1314,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "D.1.224",
       "functie": "berging verpleegk.magazijn",
       "omschrijving": "Aanrechtcombinatie-mengkraan",
@@ -1996,7 +1997,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 1315,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "D.1.225",
       "functie": "Spoelruimte/vuil/vuil linnen",
       "omschrijving": "Aanrechtcombinatie-mengkraan",
@@ -2010,7 +2011,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 1316,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "D.1.225",
       "functie": "Spoelruimte/vuil/vuil linnen",
       "omschrijving": "Desinfectie machine",
@@ -2024,7 +2025,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 1317,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "D.1.226",
       "functie": "trafokast C-3",
       "omschrijving": "Techniekruimte",
@@ -2038,7 +2039,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 1318,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "D.1.227",
       "functie": "Schone werkruimte",
       "omschrijving": "Aanrechtcombinatie-mengkraan",
@@ -2052,7 +2053,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 1,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "A.0.052",
       "functie": "Onderzoekkamer",
       "omschrijving": "Wastafel-mengkraan",
@@ -2066,7 +2067,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 2,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "E.0.241",
       "functie": "Onderzoekkamer",
       "omschrijving": "Aanrechtcombinatie-mengkraan",
@@ -2080,7 +2081,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 3,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "A.0.012",
       "functie": "Spr.onderzoekkamer",
       "omschrijving": "Aanrechtcombinatie-Mengkraan",
@@ -2094,7 +2095,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 4,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "A.0.002",
       "functie": "Magazijn",
       "omschrijving": "Wastafel-mengkraan",
@@ -2108,7 +2109,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 5,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "A.0.011",
       "functie": "Spr.onderzoekkamer",
       "omschrijving": "Aanrechtcombinatie-mengkraan",
@@ -2122,7 +2123,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 6,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "H.0.003B",
       "functie": "behandelkamer",
       "omschrijving": "Wastafel-mengkraan",
@@ -2136,7 +2137,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 8,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "C.0.078",
       "functie": "Spr.onderzoekkamer",
       "omschrijving": "Wastafel-mengkraan",
@@ -2150,7 +2151,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 1314,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "D.1.224",
       "functie": "berging verpleegk.magazijn",
       "omschrijving": "Aanrechtcombinatie-mengkraan",
@@ -2164,7 +2165,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 1315,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "D.1.225",
       "functie": "Spoelruimte/vuil/vuil linnen",
       "omschrijving": "Aanrechtcombinatie-mengkraan",
@@ -2178,7 +2179,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 1316,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "D.1.225",
       "functie": "Spoelruimte/vuil/vuil linnen",
       "omschrijving": "Desinfectie machine",
@@ -2192,7 +2193,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 1317,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "D.1.226",
       "functie": "trafokast C-3",
       "omschrijving": "Techniekruimte",
@@ -2206,7 +2207,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 1318,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "D.1.227",
       "functie": "Schone werkruimte",
       "omschrijving": "Aanrechtcombinatie-mengkraan",
@@ -2220,7 +2221,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 1,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "A.0.052",
       "functie": "Onderzoekkamer",
       "omschrijving": "Wastafel-mengkraan",
@@ -2234,7 +2235,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 2,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "E.0.241",
       "functie": "Onderzoekkamer",
       "omschrijving": "Aanrechtcombinatie-mengkraan",
@@ -2248,7 +2249,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 3,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "A.0.012",
       "functie": "Spr.onderzoekkamer",
       "omschrijving": "Aanrechtcombinatie-Mengkraan",
@@ -2262,7 +2263,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 4,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "A.0.002",
       "functie": "Magazijn",
       "omschrijving": "Wastafel-mengkraan",
@@ -2276,7 +2277,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 5,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "A.0.011",
       "functie": "Spr.onderzoekkamer",
       "omschrijving": "Aanrechtcombinatie-mengkraan",
@@ -2290,7 +2291,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 6,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "H.0.003B",
       "functie": "behandelkamer",
       "omschrijving": "Wastafel-mengkraan",
@@ -2304,7 +2305,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 8,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "C.0.078",
       "functie": "Spr.onderzoekkamer",
       "omschrijving": "Wastafel-mengkraan",
@@ -2318,7 +2319,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 1314,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "D.1.224",
       "functie": "berging verpleegk.magazijn",
       "omschrijving": "Aanrechtcombinatie-mengkraan",
@@ -2332,7 +2333,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 1315,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "D.1.225",
       "functie": "Spoelruimte/vuil/vuil linnen",
       "omschrijving": "Aanrechtcombinatie-mengkraan",
@@ -2346,7 +2347,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 1316,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "D.1.225",
       "functie": "Spoelruimte/vuil/vuil linnen",
       "omschrijving": "Desinfectie machine",
@@ -2360,7 +2361,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 1317,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "D.1.226",
       "functie": "trafokast C-3",
       "omschrijving": "Techniekruimte",
@@ -2374,7 +2375,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 1318,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "D.1.227",
       "functie": "Schone werkruimte",
       "omschrijving": "Aanrechtcombinatie-mengkraan",
@@ -2388,7 +2389,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 1,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "A.0.052",
       "functie": "Onderzoekkamer",
       "omschrijving": "Wastafel-mengkraan",
@@ -2402,7 +2403,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 2,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "E.0.241",
       "functie": "Onderzoekkamer",
       "omschrijving": "Aanrechtcombinatie-mengkraan",
@@ -2416,7 +2417,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 3,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "A.0.012",
       "functie": "Spr.onderzoekkamer",
       "omschrijving": "Aanrechtcombinatie-Mengkraan",
@@ -2430,7 +2431,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 4,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "A.0.002",
       "functie": "Magazijn",
       "omschrijving": "Wastafel-mengkraan",
@@ -2444,7 +2445,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 5,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "A.0.011",
       "functie": "Spr.onderzoekkamer",
       "omschrijving": "Aanrechtcombinatie-mengkraan",
@@ -2458,7 +2459,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 6,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "H.0.003B",
       "functie": "behandelkamer",
       "omschrijving": "Wastafel-mengkraan",
@@ -2472,7 +2473,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 8,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "C.0.078",
       "functie": "Spr.onderzoekkamer",
       "omschrijving": "Wastafel-mengkraan",
@@ -2486,7 +2487,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 1314,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "D.1.224",
       "functie": "berging verpleegk.magazijn",
       "omschrijving": "Aanrechtcombinatie-mengkraan",
@@ -2500,7 +2501,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 1315,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "D.1.225",
       "functie": "Spoelruimte/vuil/vuil linnen",
       "omschrijving": "Aanrechtcombinatie-mengkraan",
@@ -2514,7 +2515,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 1316,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "D.1.225",
       "functie": "Spoelruimte/vuil/vuil linnen",
       "omschrijving": "Desinfectie machine",
@@ -2528,7 +2529,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 1317,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "D.1.226",
       "functie": "trafokast C-3",
       "omschrijving": "Techniekruimte",
@@ -2542,7 +2543,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 1318,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "D.1.227",
       "functie": "Schone werkruimte",
       "omschrijving": "Aanrechtcombinatie-mengkraan",
@@ -2556,7 +2557,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 1,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "A.0.052",
       "functie": "Onderzoekkamer",
       "omschrijving": "Wastafel-mengkraan",
@@ -2570,7 +2571,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 2,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "E.0.241",
       "functie": "Onderzoekkamer",
       "omschrijving": "Aanrechtcombinatie-mengkraan",
@@ -2584,7 +2585,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 3,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "A.0.012",
       "functie": "Spr.onderzoekkamer",
       "omschrijving": "Aanrechtcombinatie-Mengkraan",
@@ -2598,7 +2599,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 4,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "A.0.002",
       "functie": "Magazijn",
       "omschrijving": "Wastafel-mengkraan",
@@ -2612,7 +2613,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 5,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "A.0.011",
       "functie": "Spr.onderzoekkamer",
       "omschrijving": "Aanrechtcombinatie-mengkraan",
@@ -2626,7 +2627,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 6,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "H.0.003B",
       "functie": "behandelkamer",
       "omschrijving": "Wastafel-mengkraan",
@@ -2640,7 +2641,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 8,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "C.0.078",
       "functie": "Spr.onderzoekkamer",
       "omschrijving": "Wastafel-mengkraan",
@@ -2654,7 +2655,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 1314,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "D.1.224",
       "functie": "berging verpleegk.magazijn",
       "omschrijving": "Aanrechtcombinatie-mengkraan",
@@ -2668,7 +2669,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 1315,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "D.1.225",
       "functie": "Spoelruimte/vuil/vuil linnen",
       "omschrijving": "Aanrechtcombinatie-mengkraan",
@@ -2682,7 +2683,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 1316,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "D.1.225",
       "functie": "Spoelruimte/vuil/vuil linnen",
       "omschrijving": "Desinfectie machine",
@@ -2696,7 +2697,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 1317,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "D.1.226",
       "functie": "trafokast C-3",
       "omschrijving": "Techniekruimte",
@@ -2710,7 +2711,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 1318,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "D.1.227",
       "functie": "Schone werkruimte",
       "omschrijving": "Aanrechtcombinatie-mengkraan",
@@ -2724,7 +2725,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 1,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "A.0.052",
       "functie": "Onderzoekkamer",
       "omschrijving": "Wastafel-mengkraan",
@@ -2738,7 +2739,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 2,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "E.0.241",
       "functie": "Onderzoekkamer",
       "omschrijving": "Aanrechtcombinatie-mengkraan",
@@ -2752,7 +2753,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 3,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "A.0.012",
       "functie": "Spr.onderzoekkamer",
       "omschrijving": "Aanrechtcombinatie-Mengkraan",
@@ -2766,7 +2767,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 4,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "A.0.002",
       "functie": "Magazijn",
       "omschrijving": "Wastafel-mengkraan",
@@ -2780,7 +2781,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 5,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "A.0.011",
       "functie": "Spr.onderzoekkamer",
       "omschrijving": "Aanrechtcombinatie-mengkraan",
@@ -2794,7 +2795,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 6,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "H.0.003B",
       "functie": "behandelkamer",
       "omschrijving": "Wastafel-mengkraan",
@@ -2808,7 +2809,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 8,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "C.0.078",
       "functie": "Spr.onderzoekkamer",
       "omschrijving": "Wastafel-mengkraan",
@@ -2822,7 +2823,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 1314,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "D.1.224",
       "functie": "berging verpleegk.magazijn",
       "omschrijving": "Aanrechtcombinatie-mengkraan",
@@ -2836,7 +2837,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 1315,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "D.1.225",
       "functie": "Spoelruimte/vuil/vuil linnen",
       "omschrijving": "Aanrechtcombinatie-mengkraan",
@@ -2850,7 +2851,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 1316,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "D.1.225",
       "functie": "Spoelruimte/vuil/vuil linnen",
       "omschrijving": "Desinfectie machine",
@@ -2864,7 +2865,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 1317,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "D.1.226",
       "functie": "trafokast C-3",
       "omschrijving": "Techniekruimte",
@@ -2878,7 +2879,7 @@ export class OverzichtPage {
     },
     {
       "tappuntId": 1318,
-      "weeknr": 24,
+      "weeknr": "24",
       "ruimte": "D.1.227",
       "functie": "Schone werkruimte",
       "omschrijving": "Aanrechtcombinatie-mengkraan",
@@ -2976,6 +2977,9 @@ export class OverzichtPage {
   // function to determine on which column is being filtered
   setFilter(value) {
     this.columnname = value;
+    if (value === 'weeknr') {
+      this.terms = this.termsweeknr;
+    }
     if (value === 'afdeling') {
       this.terms = this.termsafdeling;
     }

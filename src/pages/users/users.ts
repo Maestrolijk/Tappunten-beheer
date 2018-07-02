@@ -25,6 +25,7 @@ export class UsersPage {
   termsadnaam: string;
   termsnaam: string;
   termstelefoon: string;
+  termsbeheerder: string;
   terms: string;
 
   // users JSON object
@@ -33,7 +34,7 @@ export class UsersPage {
       "gebruikerid": 36,
       "AD_naam": "GeurinkJ",
       "naam": "Geurink J. (John)",
-      "beheerder": 0,
+      "beheerder": "Nee",
       "telefoon": "6382",
       "weken_terug": "0"
     },
@@ -41,7 +42,7 @@ export class UsersPage {
       "gebruikerid": 26,
       "AD_naam": "WiltinkG",
       "naam": "Wiltink G. (Gerrike)",
-      "beheerder": 0,
+      "beheerder": "Nee",
       "telefoon": "6153",
       "weken_terug": "0"
     },
@@ -49,7 +50,7 @@ export class UsersPage {
       "gebruikerid": 2,
       "AD_naam": "BosgoedR",
       "naam": "Bosgoed R. (Robert)",
-      "beheerder": 1,
+      "beheerder": "Ja",
       "telefoon": "6076",
       "weken_terug": "0"
     },
@@ -57,7 +58,7 @@ export class UsersPage {
       "gebruikerid": 247,
       "AD_naam": "MeijdJ",
       "naam": "Meij J.E. de (Jacobine)",
-      "beheerder": 0,
+      "beheerder": "Nee",
       "telefoon": "2948",
       "weken_terug": "0"
     }]
@@ -116,6 +117,9 @@ export class UsersPage {
     }
     if (value === 'telefoon') {
       this.terms = this.termstelefoon;
+    }
+    if (value === 'beheerder') {
+      this.terms = this.termsbeheerder;
     }
   }
 }

@@ -13,6 +13,24 @@ export class OverzichtPage {
   descending: boolean = false;
   order: number;
   column: string = 'overzicht';
+  gespoeldPercentage: number;
+  gespoeldCount: number;
+  tappuntenTotalCount: number;
+  weeknrsort: number = 0;
+  afdelingsort: number = 0;
+  ruimtesort: number = 0;
+  omschrijvingsort: number = 0;
+  functiesort: number = 0;
+  gespoeldsort: number = 0;
+
+  // variables for filtering
+  columnname: string;
+  termsafdeling: string;
+  termsruimte: string;
+  termsomschrijving: string;
+  termsfunctie: string;
+  termsgespoeld: string;
+  terms: string;
 
   // tappunten JSON object
   public tappunten: any = [
@@ -2878,11 +2896,100 @@ export class OverzichtPage {
 
   }
 
+  ionViewDidLoad() {
+    this.weeknrsort = 0;
+    this.afdelingsort = 0;
+    this.ruimtesort = 0;
+    this.omschrijvingsort = 0;
+    this.functiesort = 0;
+    this.gespoeldsort = 0;
+
+    setTimeout(() => {
+      this.tappuntenTotalCount = this.tappunten.length;
+      this.gespoeldCount = this.tappunten.filter(item => item.gespoeld.includes("ja")).length;
+      this.gespoeldPercentage = Math.round(this.gespoeldCount / this.tappuntenTotalCount * 100);
+    }, 150);
+
+  }
+
   // sorting of columns
   sort(sortme: string) {
+
+    if (sortme === 'weeknr') {
+      if (this.weeknrsort === 0) {
+        this.weeknrsort = 1;
+      }
+      else {
+        this.weeknrsort = 0;
+      }
+    }
+
+    if (sortme === 'afdeling') {
+      if (this.afdelingsort === 0) {
+        this.afdelingsort = 1;
+      }
+      else {
+        this.afdelingsort = 0;
+      }
+    }
+
+    if (sortme === 'ruimte') {
+      if (this.ruimtesort === 0) {
+        this.ruimtesort = 1;
+      }
+      else {
+        this.ruimtesort = 0;
+      }
+    }
+
+    if (sortme === 'omschrijving') {
+      if (this.omschrijvingsort === 0) {
+        this.omschrijvingsort = 1;
+      }
+      else {
+        this.omschrijvingsort = 0;
+      }
+    }
+
+    if (sortme === 'functie') {
+      if (this.functiesort === 0) {
+        this.functiesort = 1;
+      }
+      else {
+        this.functiesort = 0;
+      }
+    }
+
+    if (sortme === 'gespoeld') {
+      if (this.gespoeldsort === 0) {
+        this.gespoeldsort = 1;
+      }
+      else {
+        this.gespoeldsort = 0;
+      }
+    }
     this.column = sortme
-    console.log('Lets sort column: ', sortme)
     this.descending = !this.descending;
     this.order = this.descending ? 1 : -1;
+  }
+
+  // function to determine on which column is being filtered
+  setFilter(value) {
+    this.columnname = value;
+    if (value === 'afdeling') {
+      this.terms = this.termsafdeling;
+    }
+    if (value === 'ruimte') {
+      this.terms = this.termsruimte;
+    }
+    if (value === 'omschrijving') {
+      this.terms = this.termsomschrijving;
+    }
+    if (value === 'functie') {
+      this.terms = this.termsfunctie;
+    }
+    if (value === 'gespoeld') {
+      this.terms = this.termsgespoeld;
+    }
   }
 }

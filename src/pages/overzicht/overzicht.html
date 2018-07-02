@@ -1,26 +1,35 @@
 <ion-content>
-
-    <ion-item style="width: 33%">
-        <ion-label>Filter op kolom</ion-label>
-        <ion-select [(ngModel)]="columnname">
-            <ion-option value="afdeling">Afdeling</ion-option>
-            <ion-option value="ruimte">Ruimte</ion-option>
-            <ion-option value="omschrijving">Omschrijving</ion-option>
-            <ion-option value="functie">Functie</ion-option>
-            <ion-option value="gespoeld">Gespoeld</ion-option>
-        </ion-select>
-    </ion-item>
-
-  <ion-searchbar *ngIf="columnname" [(ngModel)]="terms" placeholder="Filter op..."></ion-searchbar>
-
   <ion-grid class="table">
     <ion-row style="background-color: #266286" class="table-header">
-      <ion-col style="color: white" (click)="sort('weeknr')">Weeknr</ion-col>
-      <ion-col style="color: white" (click)="sort('afdeling')">Afdeling</ion-col>
-      <ion-col style="color: white" (click)="sort('ruimte')">Ruimte</ion-col>
-      <ion-col style="color: white" (click)="sort('omschrijving')">Omschrijving</ion-col>
-      <ion-col style="color: white" (click)="sort('functie')">Functie</ion-col>
-      <ion-col style="color: white" (click)="sort('gespoeld')">Gespoeld</ion-col>
+      <ion-col style="color: white">Weeknr
+        <img src="../../assets/imgs/sortcaretdzdownsmall.png" (click)="sort('weeknr')" *ngIf="weeknrsort == 0">
+        <img src="../../assets/imgs/sortcaretdzupsmall.png" (click)="sort('weeknr')" *ngIf="weeknrsort != 0">
+      </ion-col>
+      <ion-col style="color: white">Afdeling
+        <img src="../../assets/imgs/sortcaretdzdownsmall.png" (click)="sort('afdeling')" *ngIf="afdelingsort == 0">
+        <img src="../../assets/imgs/sortcaretdzupsmall.png" (click)="sort('afdeling')" *ngIf="afdelingsort != 0">
+        <ion-input text-left no-margin [(ngModel)]="termsafdeling" placeholder="Filter op afdeling..." (ionChange)="setFilter('afdeling')"></ion-input>
+      </ion-col>
+      <ion-col style="color: white">Ruimte
+        <img src="../../assets/imgs/sortcaretdzdownsmall.png" (click)="sort('ruimte')" *ngIf="ruimtesort == 0">
+        <img src="../../assets/imgs/sortcaretdzupsmall.png" (click)="sort('ruimte')" *ngIf="ruimtesort != 0">
+        <ion-input text-left no-margin [(ngModel)]="termsruimte" placeholder="Filter op ruimte..." (ionChange)="setFilter('ruimte')"></ion-input>
+      </ion-col>
+      <ion-col style="color: white">Omschrijving
+        <img src="../../assets/imgs/sortcaretdzdownsmall.png" (click)="sort('omschrijving')" *ngIf="omschrijvingsort == 0">
+        <img src="../../assets/imgs/sortcaretdzupsmall.png" (click)="sort('omschrijving')" *ngIf="omschrijvingsort != 0">
+        <ion-input text-left no-margin [(ngModel)]="termsomschrijving" placeholder="Filter op omschrijving..." (ionChange)="setFilter('omschrijving')"></ion-input>
+      </ion-col>
+      <ion-col style="color: white">Functie
+        <img src="../../assets/imgs/sortcaretdzdownsmall.png" (click)="sort('functie')" *ngIf="functiesort == 0">
+        <img src="../../assets/imgs/sortcaretdzupsmall.png" (click)="sort('functie')" *ngIf="functiesort != 0">
+        <ion-input text-left no-margin [(ngModel)]="termsfunctie" placeholder="Filter op functie..." (ionChange)="setFilter('functie')"></ion-input>
+      </ion-col>
+      <ion-col style="color: white">Gespoeld
+        <img src="../../assets/imgs/sortcaretdzdownsmall.png" (click)="sort('gespoeld')" *ngIf="gespoeldsort == 0">
+        <img src="../../assets/imgs/sortcaretdzupsmall.png" (click)="sort('gespoeld')" *ngIf="gespoeldsort != 0">
+        <ion-input text-left no-margin [(ngModel)]="termsgespoeld" placeholder="Filter op gespoeld..." (ionChange)="setFilter('gespoeld')"></ion-input>
+      </ion-col>
     </ion-row>
     <ion-row *ngFor="let tappunt of tappunten | search : terms : columnname | sort: {property: column, order: order}">
       <ion-col>
@@ -44,3 +53,7 @@
     </ion-row>
   </ion-grid>
 </ion-content>
+
+<ion-footer text-center padding color="dzblauw">
+  Tappunten gespoeld: {{gespoeldCount}} van {{tappuntenTotalCount}} ({{gespoeldPercentage}}%)
+</ion-footer>

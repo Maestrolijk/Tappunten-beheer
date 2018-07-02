@@ -20,6 +20,11 @@ export class TappuntengroepenPage {
   order: number;
   column: string = 'tappuntgroep';
 
+  // variables for filtering
+  columnname: string;
+  termsnaam: string;
+  terms: string;
+
   // tappuntengroepen JSON object
   public tappuntengroepen: any = [
     {
@@ -77,5 +82,13 @@ export class TappuntengroepenPage {
     console.log('Lets sort column: ', sortme)
     this.descending = !this.descending;
     this.order = this.descending ? 1 : -1;
+  }
+
+  // function to determine on which column is being filtered
+  setFilter(value) {
+    this.columnname = value;
+    if (value === 'naam') {
+      this.terms = this.termsnaam;
+    }
   }
 }

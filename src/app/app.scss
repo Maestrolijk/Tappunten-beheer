@@ -31,7 +31,12 @@
 }
 
 .list :hover {
-  // background-color: color($colors, dzroze);
   cursor: pointer;
   color: color($colors, dzroze);
+}
+
+// We need this to allow text selection in a web-app
+body {
+  -webkit-user-select: text;
+  user-select: text;
 }

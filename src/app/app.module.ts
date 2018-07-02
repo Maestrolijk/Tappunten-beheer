@@ -76,8 +76,8 @@ import { SortPipe } from '../pipes/sort/sort';
     IonicStorageModule.forRoot(),
     IonicModule.forRoot(MyApp, {
       tabsPlacement: 'top',
-      scrollAssist: false,
-      autoFocusAssist: false
+      scrollAssist: false, // Waarom gebruiken we dit?
+      autoFocusAssist: false // Waarom gebruiken we dit?
     })
   ],
   bootstrap: [IonicApp],

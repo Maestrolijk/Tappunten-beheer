@@ -20,6 +20,13 @@ export class UsersPage {
   order: number;
   column: string = 'user';
 
+  // variables for filtering
+  columnname: string;
+  termsadnaam: string;
+  termsnaam: string;
+  termstelefoon: string;
+  terms: string;
+
   // users JSON object
   public users: any = [
     {
@@ -96,5 +103,19 @@ export class UsersPage {
     console.log('Lets sort column: ', sortme)
     this.descending = !this.descending;
     this.order = this.descending ? 1 : -1;
+  }
+
+  // function to determine on which column is being filtered
+  setFilter(value) {
+    this.columnname = value;
+    if (value === 'adnaam') {
+      this.terms = this.termsadnaam;
+    }
+    if (value === 'naam') {
+      this.terms = this.termsnaam;
+    }
+    if (value === 'telefoon') {
+      this.terms = this.termstelefoon;
+    }
   }
 }

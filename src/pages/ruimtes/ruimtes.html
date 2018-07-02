@@ -5,18 +5,11 @@
     </button>
   </ion-fab>
 
-  <ion-item style="width: 33%">
-      <ion-label>Filter op kolom</ion-label>
-      <ion-select [(ngModel)]="columnname">
-        <ion-option value="naam">Naam</ion-option>
-      </ion-select>
-    </ion-item>
-
-  <ion-searchbar *ngIf="columnname" [(ngModel)]="terms" placeholder="Filter op..."></ion-searchbar>
-
   <ion-grid class="table">
     <ion-row style="background-color: #266286">
-      <ion-col style="color: white" (click)="sort('naam')">Naam</ion-col>
+      <ion-col style="color: white" (click)="sort('naam')">Naam
+          <ion-input text-left no-margin [(ngModel)]="termsnaam" placeholder="Filter op naam..." (ionChange)="setFilter('naam')"></ion-input>
+      </ion-col>
     </ion-row>
     <ion-row *ngFor="let ruimte of ruimtes | search : terms : columnname | sort: {property: column, order: order}; let i = index" (click)="editRuimte(ruimte, i)">
       <ion-col>
@@ -26,6 +19,6 @@
   </ion-grid>
 </ion-content>
 <ion-footer text-right style="background-color: #f4f4f4">
-  <button ion-button class="button" (click)="openInstellingenPage()" color="dz">Terug naar instellingen</button>
-  <button ion-button class="button" (click)="newRuimte()" color="dz">Nieuwe ruimte</button>
+  <button ion-button class="button" (click)="openInstellingenPage()" color="dzblauw">Terug naar instellingen</button>
+  <button ion-button class="button" (click)="newRuimte()" color="dzblauw">Nieuwe ruimte</button>
 </ion-footer>

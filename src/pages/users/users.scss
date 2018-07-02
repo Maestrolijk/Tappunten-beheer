@@ -16,5 +16,20 @@ page-users {
     .button {
         border-radius: 10px;
     }
+    
+    .searchbar-input {
+        min-height: 4.4rem;
+
+    }
+
+    .searchbar {
+        padding: 0px;
+    }
+
+    .rounded {
+        -moz-border-radius: 50px;
+        -webkit-border-radius: 50px;
+        border-radius: 7px;
+    }
 }
 

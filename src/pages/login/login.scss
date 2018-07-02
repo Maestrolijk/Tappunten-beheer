@@ -1,5 +1,7 @@
 page-login {
 
+    /****
+    ** VORMGEVING SJOERD **
     ion-content {
         // position:absolute;
         // left:30%;
@@ -57,7 +59,75 @@ page-login {
 
     .toggle.toggle-checked .toggle-inner{
         background-color: #266286;
-    }  
-        
+    } 
+    */
+    
+    ion-content {
+        background-color: #fafafa !important;
+    }
+    
+    .outer {
+        display: table;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+    }
+
+    .middle {
+        display: table-cell;
+        vertical-align: middle;
+    }
+
+    .inner {
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+        max-width: 440px;
+        width: calc(100% - 40px);
+        padding: 44px;
+        margin-bottom: 28px;
+        background-color: #fff;
+        border: 1px solid #e6e6e6;
+        min-width: 320px;
+        min-height: 338px;
+        -moz-border-radius: 50px;
+        -webkit-border-radius: 50px;
+        border-radius: 7px;
+    }
+
+    .button {
+        background-color: color($colors, dzblauw);
+    }
+
+    .button:hover:not(.disable-hover) {
+        background-color: color($colors, dzroze);
+    }
+
+    .rounded {
+        border-top-right-radius: 14px;
+        border-bottom-left-radius: 14px;
+    }
+
+    a[disabled], button[disabled], [ion-button][disabled] {
+        cursor: not-allowed;
+        pointer-events: auto;
+    }
+
+    .margin-bottom {
+        margin-bottom: 8px;
+    }
+
+    .input2 {
+        border: 1px solid #efefef;
+        background-color: #fafafa;
+    }
+
+    .copyright {
+        color: #999;
+    }
+
+    .fail {
+        color: color($colors, danger);
+    }
 
 }

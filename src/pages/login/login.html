@@ -1,9 +1,11 @@
-<ion-content padding text-center>
-  <div class="wrapper" text-center>
-    <img src="./assets/imgs/logodz.png">
-    <h1>T
-      <i>app</i>unten - BEHEER</h1>
-    <ion-card class="card">
+<div class="background"></div>
+<ion-content text-center>
+  <div class="outer">
+    <div class="middle">
+      <div class="inner">
+        <img src="./assets/imgs/logodz.png">
+        <h1>T<i>app</i>unten - BEHEER</h1>
+        <!-- <ion-card class="card">
       <form (ngSubmit)="doLoadHomePage()" novalidate>
         <div padding *ngIf="showMe" class="fail">
           Gebruiker is niet gemachtigd om in te loggen
@@ -29,10 +31,43 @@
             <ion-col col-2></ion-col>
           </ion-row>
         </div>
-      </form>
-    </ion-card>
-    <div padding>
-      Copyright &copy; Deventer Ziekenhuis
+      
+    </ion-card> -->
+
+        <div padding *ngIf="showMe" class="fail">
+          Gebruiker is niet gemachtigd om in te loggen
+        </div>
+
+        <form [formGroup]="loginForm" (ngSubmit)="doLoadHomePage()">
+          <ion-item class="rounded input2 margin-bottom">
+            <ion-label>
+              <ion-icon name="person"></ion-icon>
+            </ion-label>
+            <ion-input #usernameInput type="text" formControlName="username" placeholder="Gebruikersnaam"></ion-input>
+          </ion-item>
+
+          <ion-row>
+            <button ion-button class="rounded" block type="submit" [disabled]="!loginForm.valid">Inloggen</button>
+          </ion-row>
+
+          <ion-row>
+            <ion-col col-3></ion-col>
+            <ion-col col-4>
+              <ion-label>Onthoud mij</ion-label>
+            </ion-col>
+            <ion-col col-3>
+              <ion-toggle item-start formControlName="remembertoggle" color="dzroze"></ion-toggle>
+            </ion-col>
+            <ion-col col-2></ion-col>
+          </ion-row>
+        </form>
+      </div>
     </div>
   </div>
 </ion-content>
+
+<ion-footer no-border padding text-center>
+  <div class="copyright">
+    Copyright &copy; Deventer Ziekenhuis
+  </div>
+</ion-footer>

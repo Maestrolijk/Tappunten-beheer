@@ -5,22 +5,18 @@
     </button>
   </ion-fab>
 
-  <ion-item style="width: 33%">
-    <ion-label>Filter op kolom</ion-label>
-    <ion-select [(ngModel)]="columnname">
-      <ion-option value="AD_naam">AD naam</ion-option>
-      <ion-option value="naam">Naam</ion-option>
-      <ion-option value="telefoon">Telefoon</ion-option>
-    </ion-select>
-  </ion-item>
-
-  <ion-searchbar *ngIf="columnname" [(ngModel)]="terms" placeholder="Filter op..."></ion-searchbar>
-
   <ion-grid class="table">
     <ion-row style="background-color: #266286">
-      <ion-col style="color: white" (click)="sort('AD_naam')">AD naam</ion-col>
-      <ion-col style="color: white" (click)="sort('naam')">Naam</ion-col>
-      <ion-col style="color: white" (click)="sort('telefoon')">Telefoon</ion-col>
+      <ion-col style="color: white" (click)="sort('AD_naam')">
+        AD naam
+        <ion-input text-left no-margin [(ngModel)]="termsadnaam" placeholder="Filter op AD naam..." (ionChange)="setFilter('adnaam')"></ion-input>
+      </ion-col>
+      <ion-col style="color: white" (click)="sort('naam')">Naam
+          <ion-input text-left no-margin [(ngModel)]="termsnaam" placeholder="Filter op naam..." (ionChange)="setFilter('naam')"></ion-input>
+      </ion-col>
+      <ion-col style="color: white" (click)="sort('telefoon')">Telefoon
+          <ion-input text-left no-margin [(ngModel)]="termstelefoon" placeholder="Filter op telefoon..." (ionChange)="setFilter('telefoon')"></ion-input>
+      </ion-col>
       <ion-col style="color: white" (click)="sort('beheerder')">Beheerder</ion-col>
     </ion-row>
     <ion-row *ngFor="let user of users | search : terms : columnname | sort: {property: column, order: order}; let i = index"
@@ -41,6 +37,6 @@
   </ion-grid>
 </ion-content>
 <ion-footer text-right style="background-color: #f4f4f4">
-  <button ion-button class="button" (click)="openInstellingenPage()" color="dz">Terug naar instellingen</button>
-  <button ion-button class="button" (click)="newUser()" color="dz">Nieuwe gebruiker</button>
+  <button ion-button class="button" (click)="openInstellingenPage()" color="dzblauw">Terug naar instellingen</button>
+  <button ion-button class="button" (click)="newUser()" color="dzblauw">Nieuwe gebruiker</button>
 </ion-footer>

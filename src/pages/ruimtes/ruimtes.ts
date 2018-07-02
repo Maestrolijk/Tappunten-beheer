@@ -20,6 +20,11 @@ export class RuimtesPage {
   order: number;
   column: string = 'ruimte';
 
+  // variables for filtering
+  columnname: string;
+  termsnaam: string;
+  terms: string;
+
   // ruimtes JSON object
   public ruimtes: any = [
     {
@@ -101,5 +106,13 @@ export class RuimtesPage {
     console.log('Lets sort column: ', sortme)
     this.descending = !this.descending;
     this.order = this.descending ? 1 : -1;
+  }
+
+  // function to determine on which column is being filtered
+  setFilter(value) {
+    this.columnname = value;
+    if (value === 'naam') {
+      this.terms = this.termsnaam;
+    }
   }
 }

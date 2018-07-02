@@ -5,20 +5,6 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'search',
 })
 
-// // // pipe looks for typed value (terms) and looks in specific column for value
-// export class SearchPipe implements PipeTransform {
-//   transform(items: any[], terms: string, columnname: string): any[] {
-//     if(!items) return [];
-//     if(!terms) return items;
-//     // if(!columnname) return [];
-//     terms = terms.toLowerCase();
-//     return items.filter( it => {
-//       return it.afdeling.toLowerCase().includes(terms) || it.ruimte.toLowerCase().includes(terms) || it.omschrijving.toLowerCase().includes(terms) || it.functie.toLowerCase().includes(terms) || it.gespoeld.toLowerCase().includes(terms);
-//     });
-//   }
-// }
-
-
 // // pipe looks for typed value (terms) and looks in specific column for value
 export class SearchPipe implements PipeTransform {
   transform(items: any[], terms: string, columnname: string): any[] {

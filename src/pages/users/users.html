@@ -7,18 +7,25 @@
 
   <ion-grid class="table">
     <ion-row style="background-color: #266286">
-      <ion-col style="color: white" (click)="sort('AD_naam')">
-        AD naam
+      <ion-col style="color: white">AD naam
+        <img src="../../assets/imgs/sortcaretdzdownsmall.png" (click)="sort('AD_naam')" *ngIf="adnaamsort == 0">
+        <img src="../../assets/imgs/sortcaretdzupsmall.png" (click)="sort('AD_naam')" *ngIf="adnaamsort != 0">
         <ion-input text-left no-margin [(ngModel)]="termsadnaam" placeholder="Filter op AD naam..." (ionChange)="setFilter('adnaam')"></ion-input>
       </ion-col>
-      <ion-col style="color: white" (click)="sort('naam')">Naam
-          <ion-input text-left no-margin [(ngModel)]="termsnaam" placeholder="Filter op naam..." (ionChange)="setFilter('naam')"></ion-input>
+      <ion-col style="color: white">Naam
+        <img src="../../assets/imgs/sortcaretdzdownsmall.png" (click)="sort('naam')" *ngIf="naamsort == 0">
+        <img src="../../assets/imgs/sortcaretdzupsmall.png" (click)="sort('naam')" *ngIf="naamsort != 0">
+        <ion-input text-left no-margin [(ngModel)]="termsnaam" placeholder="Filter op naam..." (ionChange)="setFilter('naam')"></ion-input>
       </ion-col>
-      <ion-col style="color: white" (click)="sort('telefoon')">Telefoon
-          <ion-input text-left no-margin [(ngModel)]="termstelefoon" placeholder="Filter op telefoon..." (ionChange)="setFilter('telefoon')"></ion-input>
+      <ion-col style="color: white">Telefoon
+        <img src="../../assets/imgs/sortcaretdzdownsmall.png" (click)="sort('telefoon')" *ngIf="telefoonsort == 0">
+        <img src="../../assets/imgs/sortcaretdzupsmall.png" (click)="sort('telefoon')" *ngIf="telefoonsort != 0">
+        <ion-input text-left no-margin [(ngModel)]="termstelefoon" placeholder="Filter op telefoon..." (ionChange)="setFilter('telefoon')"></ion-input>
       </ion-col>
-      <ion-col style="color: white" (click)="sort('beheerder')">Beheerder
-          <ion-input text-left no-margin [(ngModel)]="termsbeheerder" placeholder="Filter op beheerder..." (ionChange)="setFilter('beheerder')"></ion-input>
+      <ion-col style="color: white">Beheerder
+        <img src="../../assets/imgs/sortcaretdzdownsmall.png" (click)="sort('beheerder')" *ngIf="beheerdersort == 0">
+        <img src="../../assets/imgs/sortcaretdzupsmall.png" (click)="sort('beheerder')" *ngIf="beheerdersort != 0">
+        <ion-input text-left no-margin [(ngModel)]="termsbeheerder" placeholder="Filter op beheerder..." (ionChange)="setFilter('beheerder')"></ion-input>
       </ion-col>
     </ion-row>
     <ion-row *ngFor="let user of users | search : terms : columnname | sort: {property: column, order: order}; let i = index"

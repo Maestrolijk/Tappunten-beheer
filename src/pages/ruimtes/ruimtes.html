@@ -7,7 +7,9 @@
 
   <ion-grid class="table">
     <ion-row style="background-color: #266286">
-      <ion-col style="color: white" (click)="sort('naam')">Naam
+      <ion-col style="color: white">Naam
+          <img src="../../assets/imgs/sortcaretdzdownsmall.png" (click)="sort('naam')" *ngIf="naamsort == 0">
+          <img src="../../assets/imgs/sortcaretdzupsmall.png" (click)="sort('naam')" *ngIf="naamsort != 0">
           <ion-input text-left no-margin [(ngModel)]="termsnaam" placeholder="Filter op naam..." (ionChange)="setFilter('naam')"></ion-input>
       </ion-col>
     </ion-row>

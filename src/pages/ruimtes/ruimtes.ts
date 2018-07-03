@@ -19,6 +19,7 @@ export class RuimtesPage {
   descending: boolean = false;
   order: number;
   column: string = 'ruimte';
+  naamsort: number = 0;
 
   // variables for filtering
   columnname: string;
@@ -73,7 +74,9 @@ export class RuimtesPage {
     public popoverCtrl: PopoverController) {
   }
 
-  ionViewDidLoad() { }
+  ionViewDidLoad() {
+    this.naamsort = 0;
+  }
 
   // open instellingen page
   openInstellingenPage() {
@@ -102,8 +105,18 @@ export class RuimtesPage {
 
   // sorting of columns
   sort(sortme: string) {
+    switch (sortme) {
+      case "naam": {
+        if (this.naamsort === 0) {
+          this.naamsort = 1;
+        }
+        else {
+          this.naamsort = 0;
+        }
+        break;
+      }
+    }
     this.column = sortme
-    console.log('Lets sort column: ', sortme)
     this.descending = !this.descending;
     this.order = this.descending ? 1 : -1;
   }
@@ -111,8 +124,11 @@ export class RuimtesPage {
   // function to determine on which column is being filtered
   setFilter(value) {
     this.columnname = value;
-    if (value === 'naam') {
-      this.terms = this.termsnaam;
+    switch (value) {
+      case "naam": {
+        this.terms = this.termsnaam;
+        break;
+      }
     }
   }
 }

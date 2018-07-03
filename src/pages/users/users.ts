@@ -19,6 +19,10 @@ export class UsersPage {
   descending: boolean = false;
   order: number;
   column: string = 'user';
+  adnaamsort: number = 0;
+  naamsort: number = 0;
+  telefoonsort: number = 0;
+  beheerdersort: number = 0;
 
   // variables for filtering
   columnname: string;
@@ -68,7 +72,12 @@ export class UsersPage {
     public popoverCtrl: PopoverController) {
   }
 
-  ionViewDidLoad() { }
+  ionViewDidLoad() {
+    this.adnaamsort = 0;
+    this.naamsort = 0;
+    this.telefoonsort = 0;
+    this.beheerdersort = 0;
+  }
 
   // open instellingen page
   openInstellingenPage() {
@@ -100,8 +109,45 @@ export class UsersPage {
 
   // sorting of columns
   sort(sortme: string) {
+    switch (sortme) {
+      case "AD_naam": {
+        if (this.adnaamsort === 0) {
+          this.adnaamsort = 1;
+        }
+        else {
+          this.adnaamsort = 0;
+        }
+        break;
+      }
+      case "naam": {
+        if (this.naamsort === 0) {
+          this.naamsort = 1;
+        }
+        else {
+          this.naamsort = 0;
+        }
+        break;
+      }
+      case "telefoon": {
+        if (this.telefoonsort === 0) {
+          this.telefoonsort = 1;
+        }
+        else {
+          this.telefoonsort = 0;
+        }
+        break;
+      }
+      case "beheerder": {
+        if (this.beheerdersort === 0) {
+          this.beheerdersort = 1;
+        }
+        else {
+          this.beheerdersort = 0;
+        }
+        break;
+      }
+    }
     this.column = sortme
-    console.log('Lets sort column: ', sortme)
     this.descending = !this.descending;
     this.order = this.descending ? 1 : -1;
   }
@@ -109,17 +155,23 @@ export class UsersPage {
   // function to determine on which column is being filtered
   setFilter(value) {
     this.columnname = value;
-    if (value === 'adnaam') {
-      this.terms = this.termsadnaam;
-    }
-    if (value === 'naam') {
-      this.terms = this.termsnaam;
-    }
-    if (value === 'telefoon') {
-      this.terms = this.termstelefoon;
-    }
-    if (value === 'beheerder') {
-      this.terms = this.termsbeheerder;
+    switch (value) {
+      case "adnaam": {
+        this.terms = this.termsadnaam;
+        break;
+      }
+      case "naam": {
+        this.terms = this.termsnaam;
+        break;
+      }
+      case "telefoon": {
+        this.terms = this.termstelefoon;
+        break;
+      }
+      case "beheerder": {
+        this.terms = this.termsbeheerder;
+        break;
+      }
     }
   }
 }

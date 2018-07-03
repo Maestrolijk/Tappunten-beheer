@@ -20,6 +20,10 @@ export class TappuntenPage {
   descending: boolean = false;
   order: number;
   column: string = 'afdeling';
+  afdelingsort: number = 0;
+  ruimtesort: number = 0;
+  omschrijvingsort: number = 0;
+  functiesort: number = 0;
 
   // variables for filtering
   columnname: string;
@@ -182,7 +186,12 @@ export class TappuntenPage {
     public popoverCtrl: PopoverController) {
   }
 
-  ionViewDidLoad() { }
+  ionViewDidLoad() {
+    this.afdelingsort = 0;
+    this.ruimtesort = 0;
+    this.omschrijvingsort = 0;
+    this.functiesort = 0;
+  }
 
   // open instellingen page
   openInstellingenPage() {
@@ -216,8 +225,45 @@ export class TappuntenPage {
   // SOURCE: https://www.djamware.com/post/5a37ceaf80aca7059c142970/ionic-3-and-angular-5-search-and-sort-list-of-data
   // And sorting a second column requires 2 clicks...
   sort(sortme: string) {
+    switch (sortme) {
+      case "afdeling": {
+        if (this.afdelingsort === 0) {
+          this.afdelingsort = 1;
+        }
+        else {
+          this.afdelingsort = 0;
+        }
+        break;
+      }
+      case "ruimte": {
+        if (this.ruimtesort === 0) {
+          this.ruimtesort = 1;
+        }
+        else {
+          this.ruimtesort = 0;
+        }
+        break;
+      }
+      case "omschrijving": {
+        if (this.omschrijvingsort === 0) {
+          this.omschrijvingsort = 1;
+        }
+        else {
+          this.omschrijvingsort = 0;
+        }
+        break;
+      }
+      case "functie": {
+        if (this.functiesort === 0) {
+          this.functiesort = 1;
+        }
+        else {
+          this.functiesort = 0;
+        }
+        break;
+      }
+    }
     this.column = sortme
-    console.log('Lets sort column: ', sortme)
     this.descending = !this.descending;
     this.order = this.descending ? 1 : -1;
   }
@@ -225,17 +271,23 @@ export class TappuntenPage {
   // function to determine on which column is being filtered
   setFilter(value) {
     this.columnname = value;
-    if (value === 'afdeling') {
-      this.terms = this.termsafdeling;
-    }
-    if (value === 'ruimte') {
-      this.terms = this.termsruimte;
-    }
-    if (value === 'omschrijving') {
-      this.terms = this.termsomschrijving;
-    }
-    if (value === 'functie') {
-      this.terms = this.termsfunctie;
+    switch (value) {
+      case "afdeling": {
+        this.terms = this.termsafdeling;
+        break;
+      }
+      case "ruimte": {
+        this.terms = this.termsruimte;
+        break;
+      }
+      case "omschrijving": {
+        this.terms = this.termsomschrijving;
+        break;
+      }
+      case "functie": {
+        this.terms = this.termsfunctie;
+        break;
+      }
     }
   }
 }

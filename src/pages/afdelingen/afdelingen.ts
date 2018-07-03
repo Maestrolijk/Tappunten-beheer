@@ -19,6 +19,7 @@ export class AfdelingenPage {
   descending: boolean = false;
   order: number;
   column: string = 'naam';
+  naamsort: number = 0;
 
   // variables for filtering
   columnname: string;
@@ -49,7 +50,9 @@ export class AfdelingenPage {
     public popoverCtrl: PopoverController) {
   }
 
-  ionViewDidLoad() { }
+  ionViewDidLoad() {
+    this.naamsort = 0;
+  }
 
   // open instellingen page
   openInstellingenPage() {
@@ -78,8 +81,18 @@ export class AfdelingenPage {
 
   // sorting of columns
   sort(sortme: string) {
+    switch (sortme) {
+      case "naam": {
+        if (this.naamsort === 0) {
+          this.naamsort = 1;
+        }
+        else {
+          this.naamsort = 0;
+        }
+        break;
+      }
+    }
     this.column = sortme
-    console.log('Lets sort column: ', sortme)
     this.descending = !this.descending;
     this.order = this.descending ? 1 : -1;
   }
@@ -87,8 +100,11 @@ export class AfdelingenPage {
   // function to determine on which column is being filtered
   setFilter(value) {
     this.columnname = value;
-    if (value === 'naam') {
-      this.terms = this.termsnaam;
+    switch (value) {
+      case "naam": {
+        this.terms = this.termsnaam;
+        break;
+      }
     }
   }
 }

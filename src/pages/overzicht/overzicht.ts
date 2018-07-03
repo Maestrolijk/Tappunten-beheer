@@ -2915,58 +2915,60 @@ export class OverzichtPage {
 
   // sorting of columns
   sort(sortme: string) {
-
-    if (sortme === 'weeknr') {
-      if (this.weeknrsort === 0) {
-        this.weeknrsort = 1;
+    switch (sortme) {
+      case "weeknr": {
+        if (this.weeknrsort === 0) {
+          this.weeknrsort = 1;
+        }
+        else {
+          this.weeknrsort = 0;
+        }
+        break;
       }
-      else {
-        this.weeknrsort = 0;
+      case "afdeling": {
+        if (this.afdelingsort === 0) {
+          this.afdelingsort = 1;
+        }
+        else {
+          this.afdelingsort = 0;
+        }
+        break;
       }
-    }
-
-    if (sortme === 'afdeling') {
-      if (this.afdelingsort === 0) {
-        this.afdelingsort = 1;
+      case "ruimte": {
+        if (this.ruimtesort === 0) {
+          this.ruimtesort = 1;
+        }
+        else {
+          this.ruimtesort = 0;
+        }
+        break;
       }
-      else {
-        this.afdelingsort = 0;
+      case "omschrijving": {
+        if (this.omschrijvingsort === 0) {
+          this.omschrijvingsort = 1;
+        }
+        else {
+          this.omschrijvingsort = 0;
+        }
+        break;
       }
-    }
-
-    if (sortme === 'ruimte') {
-      if (this.ruimtesort === 0) {
-        this.ruimtesort = 1;
+      case "functie": {
+        if (this.functiesort === 0) {
+          this.functiesort = 1;
+        }
+        else {
+          this.functiesort = 0;
+        }
+        break;
       }
-      else {
-        this.ruimtesort = 0;
-      }
-    }
-
-    if (sortme === 'omschrijving') {
-      if (this.omschrijvingsort === 0) {
-        this.omschrijvingsort = 1;
-      }
-      else {
-        this.omschrijvingsort = 0;
-      }
-    }
-
-    if (sortme === 'functie') {
-      if (this.functiesort === 0) {
-        this.functiesort = 1;
-      }
-      else {
-        this.functiesort = 0;
-      }
-    }
-
-    if (sortme === 'gespoeld') {
-      if (this.gespoeldsort === 0) {
-        this.gespoeldsort = 1;
-      }
-      else {
-        this.gespoeldsort = 0;
+      case "gespoeld": {
+        if (this.gespoeldsort === 0) {
+          this.gespoeldsort = 1;
+        }
+        else {
+          this.gespoeldsort = 0;
+        }
+        break;
       }
     }
     this.column = sortme
@@ -2977,23 +2979,31 @@ export class OverzichtPage {
   // function to determine on which column is being filtered
   setFilter(value) {
     this.columnname = value;
-    if (value === 'weeknr') {
-      this.terms = this.termsweeknr;
-    }
-    if (value === 'afdeling') {
-      this.terms = this.termsafdeling;
-    }
-    if (value === 'ruimte') {
-      this.terms = this.termsruimte;
-    }
-    if (value === 'omschrijving') {
-      this.terms = this.termsomschrijving;
-    }
-    if (value === 'functie') {
-      this.terms = this.termsfunctie;
-    }
-    if (value === 'gespoeld') {
-      this.terms = this.termsgespoeld;
+    switch (value) {
+      case "weeknr": {
+        this.terms = this.termsweeknr;
+        break;
+      }
+      case "afdeling": {
+        this.terms = this.termsafdeling;
+        break;
+      }
+      case "ruimte": {
+        this.terms = this.termsruimte;
+        break;
+      }
+      case "omschrijving": {
+        this.terms = this.termsomschrijving;
+        break;
+      }
+      case "functie": {
+        this.terms = this.termsfunctie;
+        break;
+      }
+      case "gespoeld": {
+        this.terms = this.termsgespoeld;
+        break;
+      }
     }
   }
 }

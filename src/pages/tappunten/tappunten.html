@@ -7,20 +7,29 @@
 
     <ion-grid class="table">
         <ion-row style="background-color: #266286">
-            <ion-col style="color: white" (click)="sort('afdeling')">Afdeling
-                    <ion-input text-left no-margin [(ngModel)]="termsafdeling" placeholder="Filter op afdeling..." (ionChange)="setFilter('afdeling')"></ion-input>
+            <ion-col style="color: white">Afdeling
+                <img src="../../assets/imgs/sortcaretdzdownsmall.png" (click)="sort('afdeling')" *ngIf="afdelingsort == 0">
+                <img src="../../assets/imgs/sortcaretdzupsmall.png" (click)="sort('afdeling')" *ngIf="afdelingsort != 0">
+                <ion-input text-left no-margin [(ngModel)]="termsafdeling" placeholder="Filter op afdeling..." (ionChange)="setFilter('afdeling')"></ion-input>
             </ion-col>
-            <ion-col style="color: white" (click)="sort('ruimte')">Ruimte
-                    <ion-input text-left no-margin [(ngModel)]="termsruimte" placeholder="Filter op ruimte..." (ionChange)="setFilter('ruimte')"></ion-input>
+            <ion-col style="color: white">Ruimte
+                <img src="../../assets/imgs/sortcaretdzdownsmall.png" (click)="sort('ruimte')" *ngIf="ruimtesort == 0">
+                <img src="../../assets/imgs/sortcaretdzupsmall.png" (click)="sort('ruimte')" *ngIf="ruimtesort != 0">
+                <ion-input text-left no-margin [(ngModel)]="termsruimte" placeholder="Filter op ruimte..." (ionChange)="setFilter('ruimte')"></ion-input>
             </ion-col>
-            <ion-col style="color: white" (click)="sort('omschrijving')">Omschrijving
-                    <ion-input text-left no-margin [(ngModel)]="termsomschrijving" placeholder="Filter op omschrijving..." (ionChange)="setFilter('omschrijving')"></ion-input>
+            <ion-col style="color: white">Omschrijving
+                <img src="../../assets/imgs/sortcaretdzdownsmall.png" (click)="sort('omschrijving')" *ngIf="omschrijvingsort == 0">
+                <img src="../../assets/imgs/sortcaretdzupsmall.png" (click)="sort('omschrijving')" *ngIf="omschrijvingsort != 0">
+                <ion-input text-left no-margin [(ngModel)]="termsomschrijving" placeholder="Filter op omschrijving..." (ionChange)="setFilter('omschrijving')"></ion-input>
             </ion-col>
-            <ion-col style="color: white" (click)="sort('functie')">Functie
-                    <ion-input text-left no-margin [(ngModel)]="termsfunctie" placeholder="Filter op functie..." (ionChange)="setFilter('functie')"></ion-input>
+            <ion-col style="color: white">Functie
+                <img src="../../assets/imgs/sortcaretdzdownsmall.png" (click)="sort('functie')" *ngIf="functiesort == 0">
+                <img src="../../assets/imgs/sortcaretdzupsmall.png" (click)="sort('functie')" *ngIf="functiesort != 0">
+                <ion-input text-left no-margin [(ngModel)]="termsfunctie" placeholder="Filter op functie..." (ionChange)="setFilter('functie')"></ion-input>
             </ion-col>
         </ion-row>
-        <ion-row *ngFor="let tappunt of tappunten | search : terms : columnname | sort: {property: column, order: order}; let i = index" (click)="editTappunt(tappunt, i)">
+        <ion-row *ngFor="let tappunt of tappunten | search : terms : columnname | sort: {property: column, order: order}; let i = index"
+            (click)="editTappunt(tappunt, i)">
             <ion-col>
                 {{tappunt.afdeling}}
             </ion-col>
